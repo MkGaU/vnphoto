@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>VietnamPhotos - Image</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Show the selected images with full of it's descriptions and tags">
+<meta name="author" content="anhlt">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- NAVBAR HEADER -->
+
+<div class="navbar navbar-default">
+  <div class="container"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="http://www.google.com">Photos</a>
+      <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
+    </div>
+    <div class="navbar-collapse collapse"> 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <ul class="nav navbar-nav navbar-right">
+        
+        <!--sign in -->
+        
+        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Xin chào, <span id="username" class="text-danger">Hikaru</span> <strong class="caret"></strong></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          	
+         	<li role="presentation"><a role="menuitem" tabindex="-1" href="upload.html">Tải ảnh lên</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thông tin tài khoản cá nhân</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Đăng xuất</a></li>
+          </ul>
+        </li>
+        <li><a href="https://www.google.com.vn">Xem hình thức thanh toán <span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- /.navbar-collapse --> 
+  
+</div>
+<!-- container -->
+</div>
+
+<!-- end navbar row--> 
+
+
+
+
+<!-- Main Container -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <p class="h1">Vietnam<span class="text-danger">Photos</span></p>
+    </div>
+    <div class="col-lg-5">
+      <form role="form" action="index.html" method="post" accept-charset="UTF-8">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Tìm kiếm">
+            <span class="input-group-btn">
+            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </span> </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row" style="margin-top:10px; margin-bottom:10px;">
+    <div class="col-lg-4">
+      <p class="text-primary"><a href="index.html">Trở lại trang tìm kiếm</a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="thumbnail text-center"> <img class="img-responsive " src="img/vietnam_beauty__p5_by_banhbao223-d4b489q.jpg">
+
+      </div>
+      <div class="navbar text-center">
+        <ul class="nav navbar-nav">
+          <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Lưu trữ			<strong class="caret"></strong></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-folder-open"></span> Album1</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-folder-open"></span> Album2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Ảnh liên quan</a></li>
+          <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Chia sẻ			<strong class="caret"></strong></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Facebook</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Zing me</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div id="title">
+        <h3><label class="label label-info">Beauty Vietnam</label></h3>
+      </div>
+      <div id="Id">
+        <p><span class="text-muted">Mã ảnh:</span> <span>12345</span></p>
+      </div>
+      <div id="author">
+        <p><span class="text-muted">Tác giả:</span> <span>mangaka no one know</span></p>
+      </div>
+      <div id="description">
+        <p><span class="text-muted">Mô tả:</span> <span class="text-info">The Beauty of Ao Dai Viet Nam </span></p>
+      </div>
+      <div class="well">
+        <form class="form-control-static" role="form" action="index.html" method="post" accept-charset="UTF-8">
+          <div class="form-group">
+            <p>Định dạng: <span id="format">Jpg</span></p>
+          </div>
+          <div class="form-group">
+            <p>Kích thước: </p>
+            <label class="radio">
+              <input type="radio"  id="radioImage" value="small">
+              Nhỏ </label>
+            <label class="radio">
+              <input type="radio" id="radioImage" value="medium" >
+              Trung bình </label>
+            <label class="radio">
+              <input type="radio" id="radioImage" value="large" >
+              To </label>
+          </div>
+          <div class="form-group ">
+            <button class="btn btn-default">Tải về</button>
+          </div>
+        </form>
+      </div>
+      <div class="tags" style="border-top:1px solid #CCC;">
+      	<p>Tag: <a href="#">Vietnam</a>,<a href="#"> Girl</a>,<a href="#"> Áo dài</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4"> </div>
+</div>
+</div>
+<!--end container--> 
+
+<!--Footer-->
+<div class="footer">
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-2">
+        <p class="text-muted"> <strong>Vietnamphotos.com</strong></p>
+        <a href="http://google.com" class="text-muted">Trang chủ</a><br>
+        <a href="http://google.com" class="text-muted">Thông tin</a><br>
+      </div>
+      <div class="col-xs-2" >
+        <p class="text-muted"><strong>Liên hệ và hỗ trợ</strong></p>
+        <a href="http://google.com" class="text-muted">Liên hệ với chúng tôi</a><br>
+        <p class="text-muted">.............................</p>
+        <p class="text-muted">Điện thoại hỗ trợ</p>
+        <p class="text-muted">0163 255 7717</p>
+      </div>
+      <div class="col-xs-2" >
+        <p class="text-muted"><strong>Lựa chọn ngôn ngữ</strong></p>
+        <a href="http://google.com" class="text-muted">Tiếng Việt</a><br>
+        <a href="http://google.com" class="text-muted">English</a><br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.js">
+</script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
