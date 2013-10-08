@@ -12,6 +12,7 @@
  */
 class mýite {
     echo 'Do not do anything stupid';
+    da ngu lai to ra nguy hiem
 ;}
 
 ?>
