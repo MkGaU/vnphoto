@@ -11,7 +11,7 @@
  * @author Viet
  */
 class mýite {
-    
-}
+    echo 'Do not do anything stupid';
+;}
 
 ?>
