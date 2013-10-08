@@ -11,7 +11,7 @@
  * @author Viet
  */
 class mýite {
-    echo 'Do not do anything stupid';
+    echo 'Do not do anything supper stupid';
     da ngu lai to ra nguy hiem
 ;}
 
