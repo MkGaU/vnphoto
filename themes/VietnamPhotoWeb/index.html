@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>VietnamPhotos - Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Searching function for user">
+<meta name="author" content="anhlt">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- NAVBAR HEADER -->
+
+<div class="navbar navbar-default">
+  <div class="container"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="http://www.google.com">Home</a>
+      <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
+    </div>
+    <div class="navbar-collapse collapse"> 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <ul class="nav navbar-nav navbar-right">
+        
+        <!--sign in -->
+        
+        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Xin chào, <span id="username" class="text-danger">Hikaru</span> <strong class="caret"></strong></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="upload.html">Tải ảnh lên</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thông tin tài khoản cá nhân</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Đăng xuất</a></li>
+          </ul>
+        </li>
+        <li><a href="https://www.google.com.vn">Xem hình thức thanh toán <span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- /.navbar-collapse --> 
+  
+</div>
+<!-- container -->
+</div>
+
+<!-- end navbar row--> 
+
+<!--Logo-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6" >
+      <p class="h1">Vietnam<span class="text-danger">Photos</span></p>
+    </div>
+  </div>
+</div>
+<!--End logo --> 
+
+<!-- Main Container -->
+<div class="container"> 
+  
+  <!-- row main content-->
+  <div class="row"> 
+    <!--Side bar-->
+    
+    <div class="well col-lg-3">
+      <form  role="form" action="image_detail.html" method="post" accept-charset="UTF-8">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Tìm kiếm">
+            <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </span> </div>
+          <!-- /input-group --> 
+          
+          <!-- /input-group --> 
+          
+        </div>
+        <!-- form group -->
+        
+        <div class="form-group">
+          <label class="checkbox-inline">
+            <input type="checkbox"  id="inlineCheckbox1" value="horizontal">
+            Ảnh ngang </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="vertical" >
+            Ảnh dọc </label>
+        </div>
+        
+        <!--form group-->
+        
+        <div class="form-group">
+          <div class="control-group">
+            <div class="controls">
+              <select id="selectCatergory" class="form-control" >
+                <option>Loại ảnh</option>
+                <option> Ảnh người </option>
+                <option>Ảnh vật</option>
+                <option>Ảnh phong cảnh</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <!--End Catergory--> 
+        
+        <!--People-->
+        <div class="form-group">
+          <label class="label label-info">Tìm ảnh người</label>
+        </div>
+        <!--quantity-->
+        <div class="form-group">
+          <select id="selectPeopleAmount" class="form-control" disabled>
+            <option>So nguoi</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        
+        <!--Sex-->
+        <div class="form-group">
+          <select id="selectPeopleSex" class="form-control">
+            <option>Giới tính</option>
+            <option>Nam</option>
+            <option>Nữ</option>
+          </select>
+        </div>
+        
+        <!--form group--> 
+        
+        <!--Age-->
+        <div class="form-group">
+          <select id="selectPeopleAge" class="form-control">
+            <option>Do tuoi</option>
+            <option>duoi 16</option>
+            <option>16 -25</option>
+            <option>25 - 50</option>
+            <option>Tren 50</option>
+          </select>
+        </div>
+        
+        <!--form group-->
+        <div class="form-group text-center">
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary ">Tìm Kiếm</button>
+            <button type="button" class="btn btn-default ">Bỏ chọn</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--end collum sidebar --> 
+    
+    <!--start collum primary-->
+    <div class="col-lg-9">
+      
+      
+      <div class="row">
+        <div class="col-lg-5">
+          <ul class="nav nav-pills">
+            <li class="active"><a href="#">Ảnh mới</a></li>
+            <li><a href="#">Nhiều lượt xem</a></li>
+            <li><a href="#">Ngẫu nhiên</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4" style="font-size:12px; margin-top:8px;">
+          <p class="text-info">1-100 trên 3000 kết quả.   Trang <input type="text" class="" style="width:23px"> /55</p>
+          </div>
+        
+        <div class="col-lg-3" style="margin-top:-18px;">
+          <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+        </div>
+  </div>
+      <div class="list-image">
+        <div class="row" style="margin-bottom:10px;">
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img  class="img-responsive" src="img/ha-long-bay-vietnam-visa.jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/images.jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/vietnam (1).jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/vietnamese_girls21.jpg" alt="dg"> </a> </div>
+        </div>
+        <div class="row" style="margin-bottom:10px;">
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img  class="img-responsive" src="img/2952013missworldthoitrangtinmoi_6.jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/ha-long-bay-vietnam-visa.jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/vietnam_beauty__p2_by_banhbao223-d4b47yw.jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/Vietnam.jpg" alt="dg"> </a> </div>
+        </div>
+        <div class="row" style="margin-bottom:10px;">
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img  class="img-responsive" src="img/Top-10-Vietnam-Beauty-8.jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/images (1).jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/vietnam (1).jpg" alt="dg"> </a> </div>
+          <div class="col-sm-6 col-md-3"> <a href="image_detail.html" class="thumbnail"> <img class="img-responsive" src="img/vietnamese_girls21.jpg" alt="dg"> </a> </div>
+        </div>
+      </div>
+      <ul class="pager text-center">
+        <li><a href="#">Quay lại</a></li>
+        <li><a href="#">Tiếp theo</a></li>
+      </ul>
+    </div>
+    
+    <!--end primary--> 
+    
+  </div>
+  <!-- end main row --> 
+  
+</div>
+<!-- End Container --> 
+
+<!--Footer-->
+
+<div class="footer">
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-2">
+        <p class="text-muted"> <strong>Vietnamphotos.com</strong></p>
+        <a href="http://google.com" class="text-muted">Trang chủ</a><br>
+        <a href="http://google.com" class="text-muted">Thông tin</a><br>
+      </div>
+      <div class="col-xs-2" >
+        <p class="text-muted"><strong>Liên hệ và hỗ trợ</strong></p>
+        <a href="http://google.com" class="text-muted">Liên hệ với chúng tôi</a><br>
+        <p class="text-muted">.............................</p>
+        <p class="text-muted">Điện thoại hỗ trợ</p>
+        <p class="text-muted">0163 255 7717</p>
+      </div>
+      <div class="col-xs-2" >
+        <p class="text-muted"><strong>Lựa chọn ngôn ngữ</strong></p>
+        <a href="http://google.com" class="text-muted">Tiếng Việt</a><br>
+        <a href="http://google.com" class="text-muted">English</a><br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.js">
+</script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
