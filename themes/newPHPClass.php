@@ -11,7 +11,7 @@
  * @author trananh
  */
 class newPHPClass {
-   ngu vkl
+   ngu vkl sao may ngu the ko biet
 }
 
 ?>
