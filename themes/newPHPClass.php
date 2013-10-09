@@ -11,7 +11,7 @@
  * @author trananh
  */
 class newPHPClass {
-  
+  kokokokokoko
 }
 
 ?>
