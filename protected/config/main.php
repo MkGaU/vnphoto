@@ -60,7 +60,7 @@ return array(
 		*/
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=yii_tour',
+			'connectionString' => 'mysql:host=localhost;dbname=vietnamphoto',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',

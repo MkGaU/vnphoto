@@ -10,11 +10,11 @@
 	<br />
         
         <b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->title), array('view', 'id'=>$data->id)); ?>
+	<?php echo CHtml::link(CHtml::encode($data->Title), array('view', 'id'=>$data->id)); ?>
 	<br />
         
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Photo')); ?>:</b>
-	<?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl.'/data/'.$data->filename,"filename",array("width"=>200)),array('view','id'=>$data->id)); ?>
+	<?php echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl.'/data/'.$data->ImgLink,"ImgLink",array("width"=>200)),array('view','id'=>$data->id)); ?>
 	<br />
 
 	

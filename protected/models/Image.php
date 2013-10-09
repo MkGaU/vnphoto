@@ -1,12 +1,16 @@
 <?php
 
 /**
- * This is the model class for table "tbl_image".
+ * This is the model class for table "image".
  *
- * The followings are the available columns in table 'tbl_image':
+ * The followings are the available columns in table 'image':
  * @property integer $id
- * @property string $filename
- * @property string $title
+ * @property string $Title
+ * @property string $Author
+ * @property integer $Category
+ * @property string $Tags
+ * @property string $ImgLink
+ * @property integer $CreatedTime
  */
 class Image extends CActiveRecord
 {
@@ -15,7 +19,7 @@ class Image extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_image';
+		return 'image';
 	}
 
 	/**
@@ -26,13 +30,14 @@ class Image extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('filename, title', 'required'),  
-                        array('filename','file','types'=>'jpg,png','wrongType'=>'Chỉ úp load file ảnh.','maxSize'=>'10485760'),
-			array('filename', 'length', 'max'=>255),
-			array('title', 'length', 'max'=>150),
+			array('Title, ImgLink', 'required'),
+			array('Category, CreatedTime', 'numerical', 'integerOnly'=>true),
+			array('Title, ImgLink', 'length', 'max'=>255),
+			array('Author', 'length', 'max'=>11),
+			array('Tags', 'length', 'max'=>3000),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, filename, title', 'safe', 'on'=>'search'),
+			array('id, Title, Author, Category, Tags, ImgLink, CreatedTime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,8 +59,12 @@ class Image extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'filename' => 'Filename',
-			'title' => 'Title',
+			'Title' => 'Title',
+			'Author' => 'Author',
+			'Category' => 'Category',
+			'Tags' => 'Tags',
+			'ImgLink' => 'Img Link',
+			'CreatedTime' => 'Created Time',
 		);
 	}
 
@@ -78,8 +87,12 @@ class Image extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('filename',$this->filename,true);
-		$criteria->compare('title',$this->title,true);
+		$criteria->compare('Title',$this->Title,true);
+		$criteria->compare('Author',$this->Author,true);
+		$criteria->compare('Category',$this->Category);
+		$criteria->compare('Tags',$this->Tags,true);
+		$criteria->compare('ImgLink',$this->ImgLink,true);
+		$criteria->compare('CreatedTime',$this->CreatedTime);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

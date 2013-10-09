@@ -21,19 +21,19 @@
 	<?php echo $form->errorSummary($model); ?>
 
         <div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150)); ?>
-		<?php echo $form->error($model,'title'); ?>
+		<?php echo $form->labelEx($model,'Title'); ?>
+		<?php echo $form->textField($model,'Title',array('size'=>60,'maxlength'=>150)); ?>
+		<?php echo $form->error($model,'Title'); ?>
 	</div>
 	
         <div class="row">
-        <?php echo $form->labelEx($model,'filename'); ?>
-        <?php echo $form->fileField($model, 'filename'); ?>
-        <?php echo $form->error($model,'filename'); ?>
+        <?php echo $form->labelEx($model,'ImgLink'); ?>
+        <?php echo $form->fileField($model, 'ImgLink'); ?>
+        <?php echo $form->error($model,'ImgLink'); ?>
         </div>
         <?php if($model->isNewRecord!='1'){ ?>
         <div class="row">
-             <?php echo CHtml::image(Yii::app()->request->baseUrl.'/data/'.$model->filename,"filename",array("width"=>200)); ?> 
+             <?php echo CHtml::image(Yii::app()->request->baseUrl.'/data/'.$model->ImgLink,"ImgLink",array("width"=>200)); ?> 
             
         </div>
         <?php }?>

@@ -72,8 +72,8 @@ class ImageController extends Controller
             
             $model->attributes=$_POST['Image'];
             
-            $uploadedFile= CUploadedFile::getInstance($model,'filename');            
-            $model->filename = $uploadedFile;
+            $uploadedFile= CUploadedFile::getInstance($model,'ImgLink');            
+            $model->ImgLink = $uploadedFile;
  
             if($model->save())
             {
@@ -103,9 +103,9 @@ class ImageController extends Controller
 		{
 			
                         $model->attributes=$_POST['Image'];                       
-                        $uploadedFile= CUploadedFile::getInstance($model,'filename');
+                        $uploadedFile= CUploadedFile::getInstance($model,'ImgLink');
                         $fileName = $uploadedFile;
-                        $model->filename = $fileName;
+                        $model->ImgLink = $fileName;
 			if($model->save())
                                 $uploadedFile->saveAs(Yii::app()->basePath.'/../data/'.$fileName);
 				$this->redirect(array('view','id'=>$model->id));

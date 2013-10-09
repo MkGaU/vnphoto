@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Images'=>array('index'),
-	$model->title,
+	$model->Title,
 );
 
 $this->menu=array(
@@ -22,11 +22,11 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'title',
+		'Title',
 		array(
                 'label'=>'Photo',
 		'type'=>'raw',
-		'value'=>CHtml::image(Yii::app()->request->baseUrl.'/data/'.$model->filename,"filename",array("width"=>600)),   
+		'value'=>CHtml::image(Yii::app()->request->baseUrl.'/data/'.$model->ImgLink,"ImgLink",array("width"=>600)),   
                 ),
 	),
 )); 
