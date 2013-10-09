@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Images'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
+	$model->Title=>array('view','id'=>$model->id),
 	'Update',
 );
 
