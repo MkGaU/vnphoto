@@ -1,24 +1,4 @@
-<?php
-	Yii::app()->clientscript
-		// use it when you need it!
-		/*
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
-		->registerCoreScript( 'jquery' )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-alert.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-modal.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-dropdown.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-scrollspy.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-tab.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-tooltip.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-popover.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-button.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-collapse.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-carousel.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-typeahead.js', CClientScript::POS_END )
-		*/
-?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -31,118 +11,126 @@
 <![endif]-->
 <!-- Le styles -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-responsive.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-theme.css" />
+
 <!-- Le fav and touch icons -->
 </head>
 
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="#"><?php echo Yii::app()->name ?></a>
-				<div class="nav-collapse">
-					<?php $this->widget('zii.widgets.CMenu',array(
-						'htmlOptions' => array( 'class' => 'nav' ),
-						'activeCssClass'	=> 'active',
-						'items'=>array(
-							array('label'=>'Home', 'url'=>array('/site/index')),
-                                                        array('label'=>'Image','url'=>array('/image/index')),
-							array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-							array('label'=>'Contact', 'url'=>array('/site/contact')),
-							array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-							array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-						),
-					)); ?>
-					
-				</div><!--/.nav-collapse -->
-			</div>
-		</div>
-	</div>
-	
-	<div class="cont">
-	<div class="container-fluid">
-	  <?php if(isset($this->breadcrumbs)):?>
-			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-				'links'=>$this->breadcrumbs,
-				'homeLink'=>false,
-				'tagName'=>'ul',
-				'separator'=>'',
-				'activeLinkTemplate'=>'<li><a href="{url}">{label}</a> <span class="divider">/</span></li>',
-				'inactiveLinkTemplate'=>'<li><span>{label}</span></li>',
-				'htmlOptions'=>array ('class'=>'breadcrumb')
-			)); ?>
-		<!-- breadcrumbs -->
-	  <?php endif?>
-	
-	<?php echo $content ?>
-	
-	
-	</div><!--/.fluid-container-->
-	</div>
-	
-	<div class="extra">
-	  <div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<h4>Heading 1</h4>
-				<ul>
-					<li><a href="#">Subheading 1.1</a></li>
-					<li><a href="#">Subheading 1.2</a></li>
-					<li><a href="#">Subheading 1.3</a></li>
-					<li><a href="#">Subheading 1.4</a></li>
-				</ul>
-			</div> <!-- /span3 -->
-			
-			<div class="col-md-3">
-				<h4>Heading 2</h4>
-				<ul>
-					<li><a href="#">Subheading 2.1</a></li>
-					<li><a href="#">Subheading 2.2</a></li>
-					<li><a href="#">Subheading 2.3</a></li>
-					<li><a href="#">Subheading 2.4</a></li>
-				</ul>
-			</div> <!-- /span3 -->
-			
-			<div class="col-md-3">
-				<h4>Heading 3</h4>	
-				<ul>
-					<li><a href="#">Subheading 3.1</a></li>
-					<li><a href="#">Subheading 3.2</a></li>
-					<li><a href="#">Subheading 3.3</a></li>
-					<li><a href="#">Subheading 3.4</a></li>
-				</ul>
-			</div> <!-- /span3 -->
-			
-			<div class="col-md-3">
-				<h4>Heading 4</h4>
-				<ul>
-					<li><a href="#">Subheading 4.1</a></li>
-					<li><a href="#">Subheading 4.2</a></li>
-					<li><a href="#">Subheading 4.3</a></li>
-					<li><a href="#">Subheading 4.4</a></li>
-				</ul>
-				</div> <!-- /span3 -->
-			</div> <!-- /row -->
-		</div> <!-- /container -->
-	</div>
-	
-	<div class="footer">
-	  <div class="container">
-		<div class="row">
-			<div id="footer-copyright" class="col-md-6">
-				About us | Contact us | Terms & Conditions
-			</div> <!-- /span6 -->
-			<div id="footer-terms" class="col-md-6">
-				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
-			</div> <!-- /.span6 -->
-		 </div> <!-- /row -->
-	  </div> <!-- /container -->
-	</div>
+
+<!-- NAVBAR HEADER -->
+
+<div class="navbar navbar-default">
+  <div class="container"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="http://www.google.com">Home</a>
+      <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
+    
+    </div>
+    <div class="navbar-collapse collapse"> 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <ul class="nav navbar-nav navbar-right">
+        
+        <!--sign in -->
+        
+        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Xin chào, <span id="username" class="text-danger">Hikaru</span> <strong class="caret"></strong></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="upload.html">Tải ảnh lên</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thông tin tài khoản cá nhân</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Đăng xuất</a></li>
+          </ul>
+        </li>
+        <li><a href="https://www.google.com.vn">Xem hình thức thanh toán <span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- /.navbar-collapse --> 
+  
+</div>
+<!-- container -->
+</div>
+
+<!-- end navbar row--> 
+
+<!--Logo-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <p class="h1">Vietnam<span class="text-danger">Photos</span></p>
+    </div>
+    <div class="col-lg-5">
+      <form role="form" action="index.html" method="post" accept-charset="UTF-8">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Tìm kiếm">
+            <span class="input-group-btn">
+            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </span> </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--End logo --> 
+
+<!-- Main Container -->
+<div class="container"> 
+  
+  <!-- row main content-->
+  <div class="row"> 
+    <!--Side bar-->
+    
+    
+    <!--end collum sidebar -->     
+    <!--start collum primary-->     
+      
+    
+	<?php echo $content; ?>
+ 
+    
+    <!--end primary--> 
+    
+  </div>
+  <!-- end main row --> 
+  
+</div>
+<!-- End Container --> 
+
+<!--Footer-->
+
+<div class="footer">
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-2">
+        <p class="text-muted"> <strong>Vietnamphotos.com</strong></p>
+        <a href="http://google.com" class="text-muted">Trang chủ</a><br>
+        <a href="http://google.com" class="text-muted">Thông tin</a><br>
+      </div>
+      <div class="col-xs-2" >
+        <p class="text-muted"><strong>Liên hệ và hỗ trợ</strong></p>
+        <a href="http://google.com" class="text-muted">Liên hệ với chúng tôi</a><br>
+        <p class="text-muted">.............................</p>
+        <p class="text-muted">Điện thoại hỗ trợ</p>
+        <p class="text-muted">0163 255 7717</p>
+      </div>
+      <div class="col-xs-2" >
+        <p class="text-muted"><strong>Lựa chọn ngôn ngữ</strong></p>
+        <a href="http://google.com" class="text-muted">Tiếng Việt</a><br>
+        <a href="http://google.com" class="text-muted">English</a><br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js">
+</script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
 </body>
 </html>

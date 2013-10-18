@@ -33,7 +33,7 @@
         </div>
         <?php if($model->isNewRecord!='1'){ ?>
         <div class="row">
-             <?php echo CHtml::image(Yii::app()->request->baseUrl.'/data/'.$model->ImgLink,"ImgLink",array("width"=>200)); ?> 
+             <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/'.$model->ImgLink,"ImgLink",array("width"=>200)); ?> 
             
         </div>
         <?php }?>

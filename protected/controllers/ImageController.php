@@ -77,7 +77,7 @@ class ImageController extends Controller
  
             if($model->save())
             {
-                $uploadedFile->saveAs(Yii::app()->basePath.'/../data/'.$uploadedFile);  // image will uplode to rootDirectory/banner/
+                $uploadedFile->saveAs(Yii::app()->basePath.'/../images/'.$uploadedFile);  // image will uplode to rootDirectory/banner/
                 $this->redirect(array('view', 'id'=>$model->id));
             }
         }
@@ -107,7 +107,7 @@ class ImageController extends Controller
                         $fileName = $uploadedFile;
                         $model->ImgLink = $fileName;
 			if($model->save())
-                                $uploadedFile->saveAs(Yii::app()->basePath.'/../data/'.$fileName);
+                                $uploadedFile->saveAs(Yii::app()->basePath.'/../images/'.$fileName);
 				$this->redirect(array('view','id'=>$model->id));
 		}
 

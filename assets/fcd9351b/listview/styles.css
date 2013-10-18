@@ -7,6 +7,8 @@
 {
 	margin: 0 0 5px 0;
 	text-align: right;
+        float: right;
+        color: #09f; 
 }
 
 .list-view .sorter
@@ -19,6 +21,7 @@
 {
 	margin: 5px 0 0 0;
 	text-align: right;
+        float: right;
 }
 
 .list-view .sorter
