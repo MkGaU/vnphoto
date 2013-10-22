@@ -19,9 +19,10 @@ $this->breadcrumbs = array(
                 'attributes' => array(
                     array(
                         'type' => 'raw',
-                        'value' => CHtml::image(Yii::app()->request->baseUrl . '/images/' . $model->ImgLink, "ImgLink", array('class' => 'img-responsive')),
+                        'value' => CHtml::image(Yii::app()->request->baseUrl . '/images/thumbnails/thumb_' . $model->ImgLink, "ImgLink", array('class' => 'img-responsive')),
                     ),
                 ),
+                'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
             ));
             ?>
         </div>
