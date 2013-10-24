@@ -7,11 +7,9 @@
 <meta name="description" content="Show the selected images with full of it's descriptions and tags">
 <meta name="author" content="anhlt">
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-
 <!-- NAVBAR HEADER -->
 
 <div class="navbar navbar-default">
@@ -19,7 +17,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="http://www.google.com">Photos</a>
+      <a class="navbar-brand" href="hello.html"></a>
       <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
     </div>
     <div class="navbar-collapse collapse"> 
@@ -28,17 +26,16 @@
         
         <!--sign in -->
         
-        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Xin chào, <span id="username" class="text-danger">Hikaru</span> <strong class="caret"></strong></a>
+        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Hello, <span id="username" class="text-danger">Tohou</span> <strong class="caret"></strong></a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          	
-         	<li role="presentation"><a role="menuitem" tabindex="-1" href="upload.html">Tải ảnh lên</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thông tin tài khoản cá nhân</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="upload.html">Upload</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Favourite</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account Detail</a></li>
             <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Đăng xuất</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
           </ul>
         </li>
-        <li><a href="https://www.google.com.vn">Xem hình thức thanh toán <span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
+        <li><a href="https://www.google.com.vn">Download Planning<span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
       </ul>
     </div>
   </div>
@@ -48,11 +45,7 @@
 </div>
 <!-- container -->
 </div>
-
-<!-- end navbar row--> 
-
-
-
+<!-- END NAVBAR HEADER --> 
 
 <!-- Main Container -->
 <div class="container">
@@ -64,7 +57,7 @@
       <form role="form" action="index.html" method="post" accept-charset="UTF-8">
         <div class="form-group">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Tìm kiếm">
+            <input type="text" class="form-control" placeholder="Search">
             <span class="input-group-btn">
             <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
             </span> </div>
@@ -74,24 +67,22 @@
   </div>
   <div class="row" style="margin-top:10px; margin-bottom:10px;">
     <div class="col-lg-4">
-      <p class="text-primary"><a href="index.html">Trở lại trang tìm kiếm</a></p>
+      <p class="text-primary"><a href="index.html">Back to search's result</a></p>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-5">
-      <div class="thumbnail text-center"> <img class="img-responsive " src="img/vietnam_beauty__p5_by_banhbao223-d4b489q.jpg">
-
-      </div>
+      <div class="thumbnail"> <img class="img-responsive " src="img/vietnam_beauty__p5_by_banhbao223-d4b489q.jpg"> </div>
       <div class="navbar text-center">
         <ul class="nav navbar-nav">
-          <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Lưu trữ			<strong class="caret"></strong></a>
+          <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Set as favoutite <strong class="caret"></strong></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-folder-open"></span> Album1</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-folder-open"></span> Album2</a></li>
             </ul>
           </li>
-          <li><a href="#">Ảnh liên quan</a></li>
-          <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Chia sẻ			<strong class="caret"></strong></a>
+          <li><a href="#">Related Photo</a></li>
+          <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Share <strong class="caret"></strong></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Facebook</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Zing me</a></li>
@@ -102,77 +93,94 @@
     </div>
     <div class="col-lg-4">
       <div id="title">
-        <h3><label class="label label-info">Beauty Vietnam</label></h3>
+        <h3>
+          <label class="label label-info" style="min-width:600px;">Beauty Vietnam</label>
+        </h3>
       </div>
       <div id="Id">
-        <p><span class="text-muted">Mã ảnh:</span> <span>12345</span></p>
+        <p><span class="text-muted">Photo Id:</span> <span>12345</span></p>
       </div>
       <div id="author">
-        <p><span class="text-muted">Tác giả:</span> <span>mangaka no one know</span></p>
+        <p><span class="text-muted">Author:</span> <span>mangaka</span></p>
       </div>
       <div id="description">
-        <p><span class="text-muted">Mô tả:</span> <span class="text-info">The Beauty of Ao Dai Viet Nam </span></p>
+        <p><span class="text-muted">Description:</span> <span class="text-info">The Beauty of Ao Dai Viet Nam </span></p>
       </div>
       <div class="well">
         <form class="form-control-static" role="form" action="index.html" method="post" accept-charset="UTF-8">
           <div class="form-group">
-            <p>Định dạng: <span id="format">Jpg</span></p>
+            <p>Format: <span id="format">Jpg</span></p>
           </div>
           <div class="form-group">
-            <p>Kích thước: </p>
+            <p>Size: </p>
             <label class="radio">
               <input type="radio"  id="radioImage" value="small">
-              Nhỏ </label>
+              Small </label>
             <label class="radio">
               <input type="radio" id="radioImage" value="medium" >
-              Trung bình </label>
+              Medium </label>
             <label class="radio">
               <input type="radio" id="radioImage" value="large" >
-              To </label>
+              High </label>
           </div>
           <div class="form-group ">
-            <button class="btn btn-default">Tải về</button>
+            <button class="btn btn-default">Download</button>
           </div>
         </form>
       </div>
       <div class="tags" style="border-top:1px solid #CCC;">
-      	<p>Tag: <a href="#">Vietnam</a>,<a href="#"> Girl</a>,<a href="#"> Áo dài</a></p>
+        <p style="border-top:1px solid #CCC;">Tag: <span class="tag label label-default">Vietnam</span> <span class="tag label label-default">Beauty</span> <span class="tag label label-default">Girl</span> </p>
       </div>
     </div>
   </div>
-  <div class="col-lg-4"> </div>
-</div>
+  
+  <!-- Featured Image -->
+  
+  <div class="row" style="margin-bottom:30px; border-top:1px solid #CCC;">
+  <div class="col-lg-12" style="margin-top:10px;">
+  <p class="h4 text-left">Relative Images</p>
+  </div>
+    <div class="col-sm-2"> <a href="#" class="thumbnail"> <img src="../../VietnamPhotoWeb/img/2012-12-20.01.03.40-fascinatingbeautyandpeaceofvietnamthroughphotos5.jpg" alt=""> </a> </div>
+    <div class="col-sm-2"> <a href="#" class="thumbnail"> <img src="../../VietnamPhotoWeb/img/2952013missworldthoitrangtinmoi_6.jpg" alt=""> </a> </div>
+    <div class="col-sm-2"> <a href="#" class="thumbnail"> <img src="../../VietnamPhotoWeb/img/vietnamese_girls21.jpg" alt=""> </a> </div>
+    <div class="col-sm-2"> <a href="#" class="thumbnail"> <img src="../../VietnamPhotoWeb/img/vietnam_beauty__p2_by_banhbao223-d4b47yw.jpg" alt=""> </a> </div>
+  <div class="col-sm-2"> <a href="#" class="thumbnail"> <img src="../../VietnamPhotoWeb/img/loi-chu-ngay-phu-nu-viet-nam.jpg" alt=""> </a> </div>
+  
 </div>
 <!--end container--> 
 
-<!--Footer-->
+<!--FOOTER-->
+
 <div class="footer">
   <div class="panel-footer">
     <div class="row">
       <div class="col-xs-2"></div>
       <div class="col-xs-2">
-        <p class="text-muted"> <strong>Vietnamphotos.com</strong></p>
-        <a href="http://google.com" class="text-muted">Trang chủ</a><br>
-        <a href="http://google.com" class="text-muted">Thông tin</a><br>
+        <p class="text-muted" style="font-size:16px;">Vietnamphotos.com</p>
+        <a href="http://google.com" class="text-muted">Home</a>
+        <a href="http://google.com" class="text-muted">Info</a>
       </div>
       <div class="col-xs-2" >
-        <p class="text-muted"><strong>Liên hệ và hỗ trợ</strong></p>
-        <a href="http://google.com" class="text-muted">Liên hệ với chúng tôi</a><br>
-        <p class="text-muted">.............................</p>
-        <p class="text-muted">Điện thoại hỗ trợ</p>
+        <p class="text-muted" style="font-size:16px;">Contact & Support</p>
+        <a href="http://google.com" class="text-muted">Contact Us</a><br>
+        <p class="text-muted">-----------------------------</p>
+        <p class="text-muted">Phone contact</p>
         <p class="text-muted">0163 255 7717</p>
       </div>
-      <div class="col-xs-2" >
-        <p class="text-muted"><strong>Lựa chọn ngôn ngữ</strong></p>
+      <div class="col-xs-2" style="font-size:16px;" >
+        <p class="text-muted">Select Language</p>
         <a href="http://google.com" class="text-muted">Tiếng Việt</a><br>
         <a href="http://google.com" class="text-muted">English</a><br>
       </div>
     </div>
   </div>
 </div>
+
+<!-- ÈND FOOTER-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="js/jquery.js">
 </script> 
+<script src="js/holder.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.min.js"></script>
 </body>
