@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2013 at 11:25 AM
+-- Generation Time: Oct 29, 2013 at 09:19 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -35,16 +35,25 @@ CREATE TABLE IF NOT EXISTS `image` (
   `Category` int(11) DEFAULT NULL,
   `Tags` varchar(3000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ImgLink` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `thumbnails` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `CreatedTime` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=67 ;
 
 --
 -- Dumping data for table `image`
 --
 
-INSERT INTO `image` (`id`, `Title`, `Author`, `Category`, `Tags`, `ImgLink`, `CreatedTime`) VALUES
-(1, '12345', NULL, NULL, NULL, 'jumping.jpg', NULL);
+INSERT INTO `image` (`id`, `Title`, `Author`, `Category`, `Tags`, `ImgLink`, `thumbnails`, `CreatedTime`) VALUES
+(49, 'dsad', NULL, NULL, NULL, 'climbing.jpg', NULL, NULL),
+(50, 'troll', NULL, NULL, NULL, 'image.jpg', NULL, NULL),
+(52, 'jum', NULL, NULL, NULL, 'jumping.jpg', NULL, NULL),
+(57, 'fun', NULL, NULL, NULL, 'IMG_0813 as Smart Object-2.jpg', NULL, NULL),
+(58, 'fun', NULL, NULL, NULL, 'IMG_0813 as Smart Object-2.jpg', NULL, NULL),
+(59, 'ss', NULL, NULL, NULL, 'IMG_0868.jpg', NULL, NULL),
+(60, 'sdfggg', NULL, NULL, NULL, 'IMG_0823.jpg', NULL, NULL),
+(64, 'just do it', NULL, NULL, NULL, 'IMG_1011.jpg', NULL, NULL),
+(66, '2345678', NULL, NULL, NULL, 'IMG_1146.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
