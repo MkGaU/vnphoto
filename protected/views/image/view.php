@@ -6,7 +6,12 @@ $this->breadcrumbs = array(
     'Images' => array('index'),
     $model->Title,
 );
-
+$this->menu = array(
+    array('label' => 'List Image', 'url' => array('index')),
+    array('label' => 'Create Image', 'url' => array('create')),
+    array('label' => 'Update Image', 'url' => array('update', 'id' => $model->id)),
+    array('label' => 'Manage Image', 'url' => array('admin')),
+);
 ?>
 
 
@@ -19,7 +24,7 @@ $this->breadcrumbs = array(
                 'attributes' => array(
                     array(
                         'type' => 'raw',
-                        'value' => CHtml::image(Yii::app()->request->baseUrl . '/images/thumbnails/thumb_' . $model->ImgLink, "ImgLink", array('class' => 'img-responsive')),
+                        'value' => CHtml::image(Yii::app()->request->baseUrl . $model->thumbnails, "ImgLink", array('class' => 'img-responsive')),
                     ),
                 ),
                 'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
@@ -45,58 +50,105 @@ $this->breadcrumbs = array(
         </div>
     </div>
     <div class="col-lg-4">
-<?php
-$this->widget('bootstrap.widgets.TbDetailView', array(
-    'type' => 'bordered condensed',
-    'data' => $model,
-    'attributes' => array(
-        array(
-            'type' => 'html',
-            'value' => CHtml::link('<h3>' . $model->Title . '</h3>', "", array('class' => 'label label-info')),
-        ),
-        array(
-            'label' => CHtml::label('ID :', 'id', array('class' => 'text-muted')),
-            'type' => 'text',
-            'value' => $model->id,
-        ),
-        array(
-            'label' => CHtml::label('Author : ', 'id', array('class' => 'text-muted')),
-            'type' => 'text',
-            'value' => $model->Author,
-        ),
-        array(
-            'label' => CHtml::label('Tags : ', 'id', array('class' => 'text-muted')),
-            'type' => 'text',
-            'value' => $model->Tags,
-        ),
-    ),
-    'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
-));
-?>
+        <?php
+        $this->widget('bootstrap.widgets.TbDetailView', array(
+            'type' => 'bordered condensed',
+            'data' => $model,
+            'attributes' => array(
+                array(
+                    'type' => 'html',
+                    'value' => CHtml::link('<h3>' . $model->Title . '</h3>', "", array('class' => 'label label-info')),
+                ),
+                array(
+                    'label' => CHtml::label('ID :', 'id', array('class' => 'text-muted')),
+                    'type' => 'text',
+                    'value' => $model->id,
+                ),
+                array(
+                    'label' => CHtml::label('Author : ', 'id', array('class' => 'text-muted')),
+                    'type' => 'text',
+                    'value' => $model->Author,
+                ),
+               array(
+                    'label' => CHtml::label('Posted on : ', 'id', array('class' => 'text-muted')),
+                    'type' => 'text',
+                    'value' => date('M j, Y', $model->UpdateTime),
+                ),
+            ),
+            'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
+        ));
+        ?>       
+       <?php 
+        
+       $img = new imagick(Yii::app()->basePath.'/..'.$model->ImgLink);
+        print_r($img->getImageResolution());
+       ?>
         <div class="well">
             <form class="form-control-static" role="form" action="index.html" method="post" accept-charset="UTF-8">
                 <div class="form-group">
-                    <p>Định dạng: <span id="format">Jpg</span></p>
+                    <p>Format : <span id="format"><?php echo $model->format ?></span></p>
                 </div>
                 <div class="form-group">
-                    <p>Kích thước: </p>
-                    <label class="radio">
-                        <input type="radio"  id="radioImage" value="small">
-                        Nhỏ </label>
-                    <label class="radio">
-                        <input type="radio" id="radioImage" value="medium" >
-                        Trung bình </label>
-                    <label class="radio">
-                        <input type="radio" id="radioImage" value="large" >
-                        To </label>
+                    <p>Dimensions : <?php echo $model->width.' x '.$model->height ; ?></span></p>
                 </div>
+                <div class="form-group">
+                    <p>Size : <?php echo number_format($model->size/1048576,2);?> MB</p>
+                    <?php
+                    $this->widget('bootstrap.widgets.TbButtonGroup', array(
+                        'type' => 'primary',
+                        'toggle' => 'radio', // 'checkbox' or 'radio'
+                        'buttonType' => 'button',
+                        'buttons' => array(
+                            array('label' => 'small'),
+                            array('label' => 'medium'),
+                            array('label' => 'large'),
+                        ),
+                    ));
+                    ?>                 
+                </div>
+                 
                 <div class="form-group ">
-                    <button class="btn btn-default">Tải về</button>
+                    <?php
+                    $this->widget('bootstrap.widgets.TbDetailView', array(
+                        'type' => 'bordered condensed',
+                        'data' => $model,
+                        'attributes' => array(
+                            array(
+                                'type' => 'raw',
+                                'value' => function($data) {
+                                    return CHtml::link('Download', array('Image/DownloadFile',
+                                                'id' => $data->id,
+                                                'file_name' => $data->ImgLink,
+                                                'file_field' => 'ImgLink'), 
+                                            array('class' => 'btn btn-default')
+                                    );
+                                }),
+                        ),
+                        'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
+                    ));
+                    ?>
+
+                    <!--                    <button class="btn btn-default">Download</button>-->
+
                 </div>
             </form>
         </div>
-        <div class="tags" style="border-top:1px solid #CCC;">
-            <p>Tag: <a href="#">Vietnam</a>,<a href="#"> Girl</a>,<a href="#"> Áo dài</a></p>
+        <div class="form-group">            
+            <?php
+            $this->widget('bootstrap.widgets.TbDetailView', array(
+                'type' => 'bordered condensed',
+                'data' => $model,
+                'attributes' => array(
+                    array(
+                        'label' => CHtml::label('Tags : ', 'id', array('class' => 'text-muted')),
+                        'type' => 'html',
+                        'value' => implode(' ',$model->tagLinks),
+                    ),
+                ),
+                'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
+            ));
+            ?>
+            
         </div>
     </div>
 

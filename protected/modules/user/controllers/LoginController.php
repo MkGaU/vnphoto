@@ -25,7 +25,7 @@ class LoginController extends Controller
 				}
 			}
 			// display the login form
-			//$this->render('/user/Loginb',array('model'=>$model));
+			$this->render('/user/Loginb',array('model'=>$model));
 		} else
 			$this->redirect(Yii::app()->controller->module->returnUrl);
 	}

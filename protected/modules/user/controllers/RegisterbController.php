@@ -30,7 +30,7 @@ class RegisterbController extends Controller
 				if($model_l->validate()) {
 					$this->lastViset();
                                         
-					if (Yii::app()->user->returnUrl=='/index.php')
+					if (Yii::app()->user->returnUrl=='application/views/image/index.php')
 						$this->redirect(Yii::app()->controller->module->returnUrl);
 					else
 						$this->redirect(Yii::app()->user->returnUrl);

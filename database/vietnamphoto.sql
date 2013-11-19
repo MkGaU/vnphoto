@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2013 at 09:19 AM
+-- Generation Time: Nov 19, 2013 at 11:18 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -25,35 +25,199 @@ USE `vietnamphoto`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `authassignment`
+--
+
+CREATE TABLE IF NOT EXISTS `authassignment` (
+  `itemname` varchar(64) NOT NULL,
+  `userid` varchar(64) NOT NULL,
+  `bizrule` text,
+  `data` text,
+  PRIMARY KEY (`itemname`,`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `authassignment`
+--
+
+INSERT INTO `authassignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES
+('Admin', '1', NULL, 'N;'),
+('Uploader', '3', NULL, 'N;');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `authitem`
+--
+
+CREATE TABLE IF NOT EXISTS `authitem` (
+  `name` varchar(64) NOT NULL,
+  `type` int(11) NOT NULL,
+  `description` text,
+  `bizrule` text,
+  `data` text,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `authitem`
+--
+
+INSERT INTO `authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
+('Admin', 2, NULL, NULL, 'N;'),
+('Authenticated', 2, NULL, NULL, 'N;'),
+('Guest', 2, NULL, NULL, 'N;'),
+('Uploader', 2, 'Upload Images', NULL, 'N;');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `authitemchild`
+--
+
+CREATE TABLE IF NOT EXISTS `authitemchild` (
+  `parent` varchar(64) NOT NULL,
+  `child` varchar(64) NOT NULL,
+  PRIMARY KEY (`parent`,`child`),
+  KEY `child` (`child`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `image`
 --
 
 CREATE TABLE IF NOT EXISTS `image` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Title` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Author` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Category` int(11) DEFAULT NULL,
-  `Tags` varchar(3000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tags` varchar(3000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ImgLink` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `format` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `size` int(10) NOT NULL,
+  `width` int(10) NOT NULL,
+  `height` int(11) NOT NULL,
   `thumbnails` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `CreatedTime` int(10) DEFAULT NULL,
+  `UpdateTime` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=107 ;
 
 --
 -- Dumping data for table `image`
 --
 
-INSERT INTO `image` (`id`, `Title`, `Author`, `Category`, `Tags`, `ImgLink`, `thumbnails`, `CreatedTime`) VALUES
-(49, 'dsad', NULL, NULL, NULL, 'climbing.jpg', NULL, NULL),
-(50, 'troll', NULL, NULL, NULL, 'image.jpg', NULL, NULL),
-(52, 'jum', NULL, NULL, NULL, 'jumping.jpg', NULL, NULL),
-(57, 'fun', NULL, NULL, NULL, 'IMG_0813 as Smart Object-2.jpg', NULL, NULL),
-(58, 'fun', NULL, NULL, NULL, 'IMG_0813 as Smart Object-2.jpg', NULL, NULL),
-(59, 'ss', NULL, NULL, NULL, 'IMG_0868.jpg', NULL, NULL),
-(60, 'sdfggg', NULL, NULL, NULL, 'IMG_0823.jpg', NULL, NULL),
-(64, 'just do it', NULL, NULL, NULL, 'IMG_1011.jpg', NULL, NULL),
-(66, '2345678', NULL, NULL, NULL, 'IMG_1146.jpg', NULL, NULL);
+INSERT INTO `image` (`id`, `Title`, `filename`, `Author`, `Category`, `tags`, `ImgLink`, `format`, `size`, `width`, `height`, `thumbnails`, `CreatedTime`, `UpdateTime`) VALUES
+(101, 'dfdsfdsg', '10003.jpg', NULL, NULL, 'beautiful girl', '/images/2013/11/18/8f22b2d138a798b504cb01da952095b7.jpg', 'jpg', 124643, 2560, 1440, '/images/2013/11/18/thumbs/8f22b2d138a798b504cb01da952095b7.jpg', 1384761302, 1384761302),
+(102, 'jjjjjjjjjjjjjjjjjjjjjj', '9623.jpg', NULL, NULL, 'beautiful girl', '/images/2013/11/18/01672308d6a19878f31193f54ab7e424.jpg', 'jpg', 366740, 2560, 1440, '/images/2013/11/18/thumbs/01672308d6a19878f31193f54ab7e424.jpg', 1384761401, 1384761401),
+(103, 'sfjnsdfsknvkjsnf', 'Babes8676.jpg', NULL, NULL, 'babes', '/images/2013/11/18/0be44826e329c812ee7fafc990a8a7f0.jpg', 'jpg', 168076, 2560, 1440, '/images/2013/11/18/thumbs/ea22436a33ab497722cba4745eef50d5.jpg', 1384762218, 1384762218),
+(104, 'panorama', 'Untitled_Panorama2.jpg', NULL, NULL, '', '/images/2013/11/18/b99789e6a742704dd7fc9d6478a51f4b.jpg', 'jpg', 4033506, 4499, 3474, '/images/2013/11/18/thumbs/eed6700d3b87739182d1dd2e4254d5a8.jpg', 1384764526, 1384764526),
+(105, 'tgf', 'DSC_4568.JPG', NULL, NULL, '', '/images/2013/11/18/4f80df520270cfb63976705b186b2ddd.JPG', 'JPG', 3439296, 4928, 3264, '/images/2013/11/18/thumbs/4ce7fbb0299d30627261a9bf0cf93f38.JPG', 1384764733, 1384764733),
+(106, 'dsfgfdg', 'IMG_0252.JPG', NULL, NULL, '', '/images/2013/11/19/39eab2616d1933e86e26d4eb881efa2d.JPG', 'JPG', 3120477, 3888, 2592, '/images/2013/11/19/thumbs/099b8eeb64c1f8da0a7d9613da98d15f.JPG', 1384846271, 1384846271);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profiles`
+--
+
+CREATE TABLE IF NOT EXISTS `profiles` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `lastname` varchar(50) NOT NULL DEFAULT '',
+  `firstname` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `profiles`
+--
+
+INSERT INTO `profiles` (`user_id`, `lastname`, `firstname`) VALUES
+(1, 'Admin', 'Administrator'),
+(2, 'Demo', 'Demo'),
+(3, '1234567', '1234567');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profiles_fields`
+--
+
+CREATE TABLE IF NOT EXISTS `profiles_fields` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `varname` varchar(50) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `field_type` varchar(50) NOT NULL,
+  `field_size` varchar(15) NOT NULL DEFAULT '0',
+  `field_size_min` varchar(15) NOT NULL DEFAULT '0',
+  `required` int(1) NOT NULL DEFAULT '0',
+  `match` varchar(255) NOT NULL DEFAULT '',
+  `range` varchar(255) NOT NULL DEFAULT '',
+  `error_message` varchar(255) NOT NULL DEFAULT '',
+  `other_validator` varchar(5000) NOT NULL DEFAULT '',
+  `default` varchar(255) NOT NULL DEFAULT '',
+  `widget` varchar(255) NOT NULL DEFAULT '',
+  `widgetparams` varchar(5000) NOT NULL DEFAULT '',
+  `position` int(3) NOT NULL DEFAULT '0',
+  `visible` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `varname` (`varname`,`widget`,`visible`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `profiles_fields`
+--
+
+INSERT INTO `profiles_fields` (`id`, `varname`, `title`, `field_type`, `field_size`, `field_size_min`, `required`, `match`, `range`, `error_message`, `other_validator`, `default`, `widget`, `widgetparams`, `position`, `visible`) VALUES
+(1, 'lastname', 'Last Name', 'VARCHAR', '50', '3', 1, '', '', 'Incorrect Last Name (length between 3 and 50 characters).', '', '', '', '', 1, 3),
+(2, 'firstname', 'First Name', 'VARCHAR', '50', '3', 1, '', '', 'Incorrect First Name (length between 3 and 50 characters).', '', '', '', '', 0, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rights`
+--
+
+CREATE TABLE IF NOT EXISTS `rights` (
+  `itemname` varchar(64) NOT NULL,
+  `type` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  PRIMARY KEY (`itemname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tag`
+--
+
+CREATE TABLE IF NOT EXISTS `tag` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `frequency` int(11) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `tag`
+--
+
+INSERT INTO `tag` (`id`, `name`, `frequency`) VALUES
+(7, 'sf se', 1),
+(8, 'ad', 1),
+(9, 'sd', 1),
+(10, 'fs', 1),
+(11, 'df', 1),
+(12, 'troll', 2),
+(13, 'jav', 1),
+(14, 'storm', 2),
+(15, 'rock', 1),
+(16, 'mydinh', 1),
+(17, 'beautiful girl', 3),
+(18, 'babes', 1);
 
 -- --------------------------------------------------------
 
@@ -67,8 +231,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
   `activkey` varchar(128) NOT NULL DEFAULT '',
-  `createtime` int(10) NOT NULL DEFAULT '0',
-  `lastvisit` int(10) NOT NULL DEFAULT '0',
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastvisit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `superuser` int(1) NOT NULL DEFAULT '0',
   `status` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -76,24 +240,45 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `status` (`status`),
   KEY `superuser` (`superuser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `createtime`, `lastvisit`, `superuser`, `status`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '', 0, 1380697400, 1, 1),
-(2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo@example.com', '', 0, 1266543330, 0, 1),
-(3, 'nam', 'admin', 'nhaqueonline_24h@yahoo.com', '', 0, 0, 0, 0),
-(4, 'a', '1234', '', '', 0, 0, 0, 0),
-(8, 'name', '12345', 'a@yahoo.com', '', 0, 0, 0, 0),
-(9, 'nampd01372', 'e10adc3949ba59abbe56e057f20f883e', 'nhaqueonline@yahoo.com.vn', '', 0, 0, 0, 0),
-(12, 'nnha', 'e10adc3949ba59abbe56e057f20f883e', 'nampd@yahoo.com', '', 0, 0, 0, 0),
-(13, 'kfkkfk', 'e10adc3949ba59abbe56e057f20f883e', 'namdkd@yahoo.com', '', 0, 0, 0, 0),
-(14, 'hieu', 'e10adc3949ba59abbe56e057f20f883e', 'hieu@yahoo.com', '', 0, 0, 0, 0),
-(16, 'tuananh', 'e10adc3949ba59abbe56e057f20f883e', 'tuan@yahoo.com.vn', '', 0, 0, 0, 0),
-(17, 'lan', 'e10adc3949ba59abbe56e057f20f883e', 'lan@yahoo.com.vn', '', 0, 0, 0, 0);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `create_at`, `lastvisit_at`, `superuser`, `status`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', '2013-11-19 08:25:56', '2013-11-19 04:01:32', 1, 1),
+(2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo@example.com', '099f825543f7850cc038b90aaff39fac', '2013-11-19 08:25:56', '2013-11-19 02:45:47', 0, 1),
+(3, 'user', '81dc9bdb52d04dc20036dbd8313ed055', 'user@gmail.com', '9851627579fd331bf6ffeb7ac1688190', '2013-11-19 09:19:21', '2013-11-19 03:56:05', 0, 1);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `authassignment`
+--
+ALTER TABLE `authassignment`
+  ADD CONSTRAINT `authassignment_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `authitemchild`
+--
+ALTER TABLE `authitemchild`
+  ADD CONSTRAINT `authitemchild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `authitemchild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD CONSTRAINT `user_profile_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `rights`
+--
+ALTER TABLE `rights`
+  ADD CONSTRAINT `rights_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

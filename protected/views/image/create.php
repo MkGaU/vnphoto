@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Image</h1>
+<h1>Upload Image</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
