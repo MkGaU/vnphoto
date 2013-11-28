@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2013 at 11:18 AM
+-- Generation Time: Nov 28, 2013 at 09:17 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -94,7 +94,9 @@ CREATE TABLE IF NOT EXISTS `image` (
   `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Author` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Category` int(11) DEFAULT NULL,
+  `ageType` int(11) DEFAULT NULL,
   `tags` varchar(3000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
   `ImgLink` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `format` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `size` int(10) NOT NULL,
@@ -104,19 +106,51 @@ CREATE TABLE IF NOT EXISTS `image` (
   `CreatedTime` int(10) DEFAULT NULL,
   `UpdateTime` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=107 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=111 ;
 
 --
 -- Dumping data for table `image`
 --
 
-INSERT INTO `image` (`id`, `Title`, `filename`, `Author`, `Category`, `tags`, `ImgLink`, `format`, `size`, `width`, `height`, `thumbnails`, `CreatedTime`, `UpdateTime`) VALUES
-(101, 'dfdsfdsg', '10003.jpg', NULL, NULL, 'beautiful girl', '/images/2013/11/18/8f22b2d138a798b504cb01da952095b7.jpg', 'jpg', 124643, 2560, 1440, '/images/2013/11/18/thumbs/8f22b2d138a798b504cb01da952095b7.jpg', 1384761302, 1384761302),
-(102, 'jjjjjjjjjjjjjjjjjjjjjj', '9623.jpg', NULL, NULL, 'beautiful girl', '/images/2013/11/18/01672308d6a19878f31193f54ab7e424.jpg', 'jpg', 366740, 2560, 1440, '/images/2013/11/18/thumbs/01672308d6a19878f31193f54ab7e424.jpg', 1384761401, 1384761401),
-(103, 'sfjnsdfsknvkjsnf', 'Babes8676.jpg', NULL, NULL, 'babes', '/images/2013/11/18/0be44826e329c812ee7fafc990a8a7f0.jpg', 'jpg', 168076, 2560, 1440, '/images/2013/11/18/thumbs/ea22436a33ab497722cba4745eef50d5.jpg', 1384762218, 1384762218),
-(104, 'panorama', 'Untitled_Panorama2.jpg', NULL, NULL, '', '/images/2013/11/18/b99789e6a742704dd7fc9d6478a51f4b.jpg', 'jpg', 4033506, 4499, 3474, '/images/2013/11/18/thumbs/eed6700d3b87739182d1dd2e4254d5a8.jpg', 1384764526, 1384764526),
-(105, 'tgf', 'DSC_4568.JPG', NULL, NULL, '', '/images/2013/11/18/4f80df520270cfb63976705b186b2ddd.JPG', 'JPG', 3439296, 4928, 3264, '/images/2013/11/18/thumbs/4ce7fbb0299d30627261a9bf0cf93f38.JPG', 1384764733, 1384764733),
-(106, 'dsfgfdg', 'IMG_0252.JPG', NULL, NULL, '', '/images/2013/11/19/39eab2616d1933e86e26d4eb881efa2d.JPG', 'JPG', 3120477, 3888, 2592, '/images/2013/11/19/thumbs/099b8eeb64c1f8da0a7d9613da98d15f.JPG', 1384846271, 1384846271);
+INSERT INTO `image` (`id`, `Title`, `filename`, `Author`, `Category`, `ageType`, `tags`, `status`, `ImgLink`, `format`, `size`, `width`, `height`, `thumbnails`, `CreatedTime`, `UpdateTime`) VALUES
+(101, 'dfdsfdsg', '10003.jpg', NULL, NULL, 0, 'beautiful girl', 2, '/images/2013/11/18/8f22b2d138a798b504cb01da952095b7.jpg', 'jpg', 124643, 2560, 1440, '/images/2013/11/18/thumbs/8f22b2d138a798b504cb01da952095b7.jpg', 1384761302, 1385445879),
+(102, 'jjjjjjjjjjjjjjjjjjjjjj', '9623.jpg', NULL, NULL, 0, 'beautiful girl', 1, '/images/2013/11/18/01672308d6a19878f31193f54ab7e424.jpg', 'jpg', 366740, 2560, 1440, '/images/2013/11/18/thumbs/01672308d6a19878f31193f54ab7e424.jpg', 1384761401, 1384761401),
+(103, 'sfjnsdfsknvkjsnf', 'Babes8676.jpg', NULL, NULL, 0, 'babes', 1, '/images/2013/11/18/0be44826e329c812ee7fafc990a8a7f0.jpg', 'jpg', 168076, 2560, 1440, '/images/2013/11/18/thumbs/ea22436a33ab497722cba4745eef50d5.jpg', 1384762218, 1384762218),
+(104, 'panorama', 'Untitled_Panorama2.jpg', NULL, NULL, 0, '', 1, '/images/2013/11/18/b99789e6a742704dd7fc9d6478a51f4b.jpg', 'jpg', 4033506, 4499, 3474, '/images/2013/11/18/thumbs/eed6700d3b87739182d1dd2e4254d5a8.jpg', 1384764526, 1384764526),
+(105, 'tgf', 'DSC_4568.JPG', NULL, NULL, 0, '', 1, '/images/2013/11/18/4f80df520270cfb63976705b186b2ddd.JPG', 'JPG', 3439296, 4928, 3264, '/images/2013/11/18/thumbs/4ce7fbb0299d30627261a9bf0cf93f38.JPG', 1384764733, 1384764733),
+(106, 'dsfgfdg', 'IMG_0252.JPG', NULL, NULL, 4, 'sida', 2, '/images/2013/11/19/39eab2616d1933e86e26d4eb881efa2d.JPG', 'JPG', 3120477, 3888, 2592, '/images/2013/11/19/thumbs/099b8eeb64c1f8da0a7d9613da98d15f.JPG', 1384846271, 1385054752),
+(107, 'sdsfsd', 'IMG_0018.JPG', '1', NULL, 3, 'phuot, hotel, team, smile, s', 2, '/images/2013/11/21/92d894acdc3724c5b02d727800c20eaf.JPG', 'JPG', 3754613, 3888, 2592, '/images/2013/11/21/thumbs/5ffd6b74da5486741dac1c355c6fa9ad.JPG', 1385022974, 1385053165),
+(108, 'fdghdfdhdgsdg', 'IMG_0191.JPG', '1', NULL, 2, 'hero, superman', 2, '/images/2013/11/21/4fcfb93ad6a0d6137bd0b8f7750404cb.JPG', 'JPG', 2137051, 3888, 2592, '/images/2013/11/21/thumbs/e3a7d6f9362b9da5372482486af5c891.JPG', 1385026483, 1385030090),
+(109, 'dfdgdfhdfg', 'IMG_0015.JPG', '1', NULL, 1, 'ha giang, phuot, travel', 2, '/images/2013/11/21/5a023dcb979ae90dbcf84e7623597526.JPG', 'JPG', 3564371, 3888, 2592, '/images/2013/11/21/thumbs/20e7672d7e58295155b2bf991da25755.JPG', 1385031184, 1385047978),
+(110, 'sdsd', 'IMG_0011.JPG', '1', NULL, NULL, '', 1, '/images/2013/11/22/9bc3c7bd7c5b7e0d6ad2801a8199f066.JPG', 'JPG', 2917870, 3888, 2592, '/images/2013/11/22/thumbs/3eedaf3e513bd0a13c209b43920f4043.JPG', 1385110295, 1385110295);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lookup`
+--
+
+CREATE TABLE IF NOT EXISTS `lookup` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `code` int(11) NOT NULL,
+  `type` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `position` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `lookup`
+--
+
+INSERT INTO `lookup` (`id`, `name`, `code`, `type`, `position`) VALUES
+(1, 'Draft', 1, 'ImageStatus', 1),
+(2, 'Published', 2, 'ImageStatus', 2),
+(3, 'Archived', 3, 'ImageStatus', 3),
+(4, 'Under_16', 1, 'age', 1),
+(5, '16-25', 2, 'age', 2),
+(6, '25-50', 3, 'age', 3),
+(7, 'Upper_50', 4, 'age', 4);
 
 -- --------------------------------------------------------
 
@@ -199,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `tag` (
   `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `frequency` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `tag`
@@ -217,7 +251,17 @@ INSERT INTO `tag` (`id`, `name`, `frequency`) VALUES
 (15, 'rock', 1),
 (16, 'mydinh', 1),
 (17, 'beautiful girl', 3),
-(18, 'babes', 1);
+(18, 'babes', 1),
+(20, 'hero', 1),
+(21, 'superman', 1),
+(22, 'ha giang', 1),
+(23, 'phuot', 2),
+(24, 'travel', 1),
+(25, 'hotel', 1),
+(26, 'team', 1),
+(27, 'smile', 1),
+(28, 's', 1),
+(29, 'sida', 1);
 
 -- --------------------------------------------------------
 
@@ -247,9 +291,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `create_at`, `lastvisit_at`, `superuser`, `status`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', '2013-11-19 08:25:56', '2013-11-19 04:01:32', 1, 1),
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', '2013-11-19 08:25:56', '2013-11-26 12:50:20', 1, 1),
 (2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo@example.com', '099f825543f7850cc038b90aaff39fac', '2013-11-19 08:25:56', '2013-11-19 02:45:47', 0, 1),
-(3, 'user', '81dc9bdb52d04dc20036dbd8313ed055', 'user@gmail.com', '9851627579fd331bf6ffeb7ac1688190', '2013-11-19 09:19:21', '2013-11-19 03:56:05', 0, 1);
+(3, 'user', '81dc9bdb52d04dc20036dbd8313ed055', 'user@gmail.com', '9851627579fd331bf6ffeb7ac1688190', '2013-11-19 09:19:21', '2013-11-22 01:19:50', 0, 1);
 
 --
 -- Constraints for dumped tables

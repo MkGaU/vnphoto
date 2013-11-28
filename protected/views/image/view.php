@@ -78,11 +78,7 @@ $this->menu = array(
             'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
         ));
         ?>       
-       <?php 
-        
-       $img = new imagick(Yii::app()->basePath.'/..'.$model->ImgLink);
-        print_r($img->getImageResolution());
-       ?>
+     
         <div class="well">
             <form class="form-control-static" role="form" action="index.html" method="post" accept-charset="UTF-8">
                 <div class="form-group">

@@ -12,8 +12,8 @@
         'method' => 'get',
     ));
     ?>
-       
-       
+
+
 
 </div><!-- search-form -->
 <div class="well col-lg-3">
@@ -21,21 +21,17 @@
         <div class="form-group">
             <div class="input-group">
                 <?php
-                $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
-                    'model'=>$model,
-                    'attribute'=>'Title',
-                    'source'=>$this->createUrl('image/SuggestImages'),
-                    'htmlOptions'=>array('size'=>60,'maxlength' => 255,'class'=>'form-control','placeholder'=>'search'),
-                ));
-//                echo $form->textField($model, 'Title', array('size' => 60, 'maxlength' => 255,
-//                    'class' => 'form-control', 'placeholder' => 'search'));
-                //echo $form->textField($model, 'Title', array('size' => 60, 'maxlength' => 150),
-                    //array('class'=>'form-control', 'placeholder' => 'search'));
+                $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+                    'model' => $model,
+                    'attribute' => 'Title',
+                    'source' => $this->createUrl('image/SuggestImages'),
+                    'htmlOptions' => array('size' => 60, 'maxlength' => 255, 'class' => 'form-control', 'placeholder' => 'search'),
+                )); //              
                 ?>
+            
                 <span class="input-group-btn">
                     <?php
-                    echo CHtml::tag('button', array('class' => 'btn btn-primary'),
-                            '<span class="glyphicon glyphicon-search"></span>');
+                    echo CHtml::tag('button', array('class' => 'btn btn-primary'), '<span class="glyphicon glyphicon-search"></span>');
                     ?>
                 </span> </div>
             <!-- /input-group --> 
@@ -46,12 +42,13 @@
         <!-- form group -->
 
         <div class="form-group">
+
             <label class="checkbox-inline">
                 <input type="checkbox"  id="inlineCheckbox1" value="horizontal">
                 horizontal </label>
             <label class="checkbox-inline">
                 <input type="checkbox" id="inlineCheckbox2" value="vertical" >
-                vector </label>
+                vertical </label>
         </div>
 
         <!--form group-->
@@ -99,13 +96,9 @@
 
         <!--Age-->
         <div class="form-group">
-            <select id="selectPeopleAge" class="form-control">
-                <option>Age</option>
-                <option>Under 16</option>
-                <option>16 -25</option>
-                <option>25 - 50</option>
-                <option>Upper 50</option>
-            </select>
+            <?php
+            echo $form->dropDownList($model, 'ageType', Lookup::items('age'), array('class' => 'form-control'));
+            ?>
         </div>
 
         <!--form group-->

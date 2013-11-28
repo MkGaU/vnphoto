@@ -19,8 +19,8 @@ class SiteController extends Controller {
             ),
             'upload' => array(
                 'class' => 'xupload.actions.XUploadAction',
-                'path' => Yii::app()->getBasePath() . "/../uploads",
-                'publicPath' => Yii::app()->getBaseUrl() . "/uploads",
+                'path' => Yii::app()->getBasePath() . "/../images",
+                'publicPath' => Yii::app()->getBaseUrl() . "/images",
             ),
             'widget'=>array(
                                 'class'=>'CViewAction',

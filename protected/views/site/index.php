@@ -10,9 +10,12 @@
 	<li>Layout file: <tt><?php echo $this->getLayoutFile('main'); ?></tt></li>
 </ul>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
-
+<?php
+		$this->widget('xupload.XUpload', array(
+			'url' => Yii::app()->createUrl("site/upload", array("parent_id" => 1)),
+			'model' => $model,
+			'attribute' => 'file',
+			'multiple' => true,
+		));
+		?>
 

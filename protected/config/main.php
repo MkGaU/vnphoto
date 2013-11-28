@@ -7,7 +7,7 @@
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/../extensions/bootstrap');
 
 return array(
-    'theme' => 'blackboot', // requires you to copy the theme under your themes directory
+    'theme' => 'vnphoto', // requires you to copy the theme under your themes directory
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => "VietNam's Photo",
     // preloading 'log' component
@@ -17,70 +17,60 @@ return array(
         'application.models.*',
         'application.components.*',
         'bootstrap.helpers.TbHtml',
-         'application.modules.user.models.*',
-          'application.modules.user.components.*',
-          'application.modules.rights.*',
-           'application.modules.rights.components.*',
+        'application.modules.user.models.*',
+        'application.modules.user.components.*',
+        'application.modules.rights.*',
+        'application.modules.rights.components.*',
+        'application.widgets.Bootstrap.*',
     ),
     'aliases' => array(
-        'xupload' => 'ext.xupload',      
+        'xupload' => 'ext.xupload',
     ),
-    'defaultController'=>'image',
+    'defaultController' => 'image',
     'modules' => array(
-         'user'=>array(
-                'tableUsers' => 'users',
-                'tableProfiles' => 'profiles',
-                'tableProfileFields' => 'profiles_fields',
-                     # encrypting method (php hash function)
-                'hash' => 'md5',
- 
-                # send activation email
-                'sendActivationMail' => true,
- 
-                # allow access for non-activated users
-                'loginNotActiv' => false,
- 
-                # activate user on registration (only sendActivationMail = false)
-                'activeAfterRegister' => false,
- 
-                # automatically login from registration
-                'autoLogin' => true,
- 
-                 # registrationLogin path
-                'registrationloginUrl' => array('/user/Registerb'),
-                # registration path
-                'registrationUrl' => array('/user/registration'),
- 
-                # recovery password path
-                'recoveryUrl' => array('/user/recovery'),
- 
-                # login form path
-                'loginUrl' => array('/user/login'),
- 
-                # page after login
-                'returnUrl' => array('/user/profile'),
- 
-                # page after logout
-                'returnLogoutUrl' => array('/user/login'),
-            ),
-        'rights'=>array(
-                
-                'superuserName'=>'Admin', // Name of the role with super user privileges. 
-               'authenticatedName'=>'Authenticated',  // Name of the authenticated user role. 
-               'userIdColumn'=>'id', // Name of the user id column in the database. 
-               'userNameColumn'=>'username',  // Name of the user name column in the database. 
-               'enableBizRule'=>true,  // Whether to enable authorization item business rules. 
-               'enableBizRuleData'=>true,   // Whether to enable data for business rules. 
-               'displayDescription'=>true,  // Whether to use item description instead of name. 
-               'flashSuccessKey'=>'RightsSuccess', // Key to use for setting success flash messages. 
-               'flashErrorKey'=>'RightsError', // Key to use for setting error flash messages. 
- 
-               'baseUrl'=>'/rights', // Base URL for Rights. Change if module is nested. 
-               'layout'=>'rights.views.layouts.main',  // Layout to use for displaying Rights. 
-               'appLayout'=>'application.views.layouts.main', // Application layout. 
-               'cssFile'=>'rights.css', // Style sheet file to use for Rights. 
-               'install'=>false,  // Whether to enable installer. 
-               'debug'=>false, 
+        'user' => array(
+            'tableUsers' => 'users',
+            'tableProfiles' => 'profiles',
+            'tableProfileFields' => 'profiles_fields',
+            # encrypting method (php hash function)
+            'hash' => 'md5',
+            # send activation email
+            'sendActivationMail' => true,
+            # allow access for non-activated users
+            'loginNotActiv' => false,
+            # activate user on registration (only sendActivationMail = false)
+            'activeAfterRegister' => false,
+            # automatically login from registration
+            'autoLogin' => true,
+            # registrationLogin path
+            'registrationloginUrl' => array('/user/Registerb'),
+            # registration path
+            'registrationUrl' => array('/user/registration'),
+            # recovery password path
+            'recoveryUrl' => array('/user/recovery'),
+            # login form path
+            'loginUrl' => array('/user/login'),
+            # page after login
+            'returnUrl' => array('/user/profile'),
+            # page after logout
+            'returnLogoutUrl' => array('/user/login'),
+        ),
+        'rights' => array(
+            'superuserName' => 'Admin', // Name of the role with super user privileges. 
+            'authenticatedName' => 'Authenticated', // Name of the authenticated user role. 
+            'userIdColumn' => 'id', // Name of the user id column in the database. 
+            'userNameColumn' => 'username', // Name of the user name column in the database. 
+            'enableBizRule' => true, // Whether to enable authorization item business rules. 
+            'enableBizRuleData' => true, // Whether to enable data for business rules. 
+            'displayDescription' => true, // Whether to use item description instead of name. 
+            'flashSuccessKey' => 'RightsSuccess', // Key to use for setting success flash messages. 
+            'flashErrorKey' => 'RightsError', // Key to use for setting error flash messages. 
+            'baseUrl' => '/rights', // Base URL for Rights. Change if module is nested. 
+            'layout' => 'rights.views.layouts.main', // Layout to use for displaying Rights. 
+            'appLayout' => 'application.views.layouts.main', // Application layout. 
+            'cssFile' => 'rights.css', // Style sheet file to use for Rights. 
+            'install' => false, // Whether to enable installer. 
+            'debug' => false,
         ),
         'gii' => array(
             'generatorPaths' => array('bootstrap.gii',),
@@ -90,33 +80,28 @@ return array(
             'ipFilters' => array('127.0.0.1', '::1'),
         ),
     ),
-   
     // application components
     'components' => array(
-        
-        'db'=>array(
+        'db' => array(
             #...
-                'tablePrefix' => 'tbl_',
-            #...
-            ),
-            #...
-            
-        'user'=>array(
-                'class'=>'RWebUser',
-                // enable cookie-based authentication
-                'allowAutoLogin'=>true,
-                'loginUrl'=>array('/user/login'),
+            'tablePrefix' => 'tbl_',
+        #...
         ),
-        'authManager'=>array(
-                'class'=>'RDbAuthManager',
-                'connectionID'=>'db',
-                'defaultRoles'=>array('Authenticated', 'Guest'),
+        #...
+        'user' => array(
+            'class' => 'RWebUser',
+            // enable cookie-based authentication
+            'allowAutoLogin' => true,
+            'loginUrl' => array('/user/login'),
+        ),
+        'authManager' => array(
+            'class' => 'RDbAuthManager',
+            'connectionID' => 'db',
+            'defaultRoles' => array('Authenticated', 'Guest'),
         ),
         'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',
         ),
-        
-        
         'search' => array(
             'class' => 'application.components.DGSphinxSearch',
             'server' => '127.0.0.1',
@@ -130,16 +115,14 @@ return array(
             ),
         ),
         // uncomment the following to enable URLs in path-format
-        
-          'urlManager'=>array(
-          'urlFormat'=>'path',          
-          'rules'=>array(
-          '<controller:\w+>/<id:\d+>'=>'<controller>/view',
-          '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-          '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-          ),
-          ),
-        
+        'urlManager' => array(
+            'urlFormat' => 'path',
+            'rules' => array(
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            ),
+        ),
         'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=vietnamphoto',
             'emulatePrepare' => true,
@@ -152,7 +135,6 @@ return array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',
         ),
-       
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(

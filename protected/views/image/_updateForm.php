@@ -39,14 +39,13 @@ $form = $this->beginWidget('CActiveForm', array(
     </div>
 
 
-    <?php echo CHtml::image(Yii::app()->request->baseUrl .$model->thumbnails, "thumb", array('class' => "img-thumbnail"));
+    <?php echo CHtml::image(Yii::app()->request->baseUrl . $model->thumbnails, "thumb", array('class' => "img-thumbnail"));
     ?> 
-
+    
     <div class="panel">
-        <ul class="pager">
-
-            <li class="previous"><?php echo CHtml::link('previous', 'index.php?r=image/update&id=' . $model->getPreviousId()) ?></li>
-            <li class="next"><?php echo CHtml::link('Next', 'index.php?r=image/update&id=' . $model->getNextId()) ?></li>
+        <ul class="pager">            
+            <li class="previous"><?php echo CHtml::link('previous', array('update','id'=>$model->getPreviousId())) ?></li>
+            <li class="next"><?php echo CHtml::link('Next', array('update','id'=>$model->getNextId())) ?></li>
         </ul>
     </div>
 </div>
@@ -56,8 +55,7 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="form-group">
 
     <!--      <p class="note">Fields with <span class="required">*</span> are required.</p>       -->
-            <?php echo $form->errorSummary($model); ?>
-            <?php ?>
+            <?php echo $form->errorSummary($model); ?>       
             <div class="row">
                 <?php echo $form->labelEx($model, 'Title', array('class' => 'text-muted')); ?>
                 <?php echo $form->textField($model, 'Title', array('size' => 60, 'maxlength' => 150, 'class' => 'form-control')); ?>
@@ -81,14 +79,14 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="form-group">      
             <?php echo $form->labelEx($model, 'tags', array('class' => 'text-muted')); ?>
             <?php
-            $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
-                'model'=>$model,
-                'attribute'=>'tags',
-                'source'=>$this->createUrl('image/SuggestTags'),                
-                'htmlOptions'=>array(
-                    'size'=>50,
-                    'data-role'=>'tagsinput'
-                    ),
+            $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+                'model' => $model,
+                'attribute' => 'tags',
+                'source' => $this->createUrl('image/SuggestTags'),
+                'htmlOptions' => array(
+                    'size' => 50,
+                    'data-role' => 'tagsinput'
+                ),
             ));
             ?>
 
@@ -125,6 +123,12 @@ $form = $this->beginWidget('CActiveForm', array(
                 <option>25 - 50</option>
                 <option>after 50</option>
             </select>
+        </div>
+        <div class="form-group">
+            <?php
+            echo $form->label($model, 'status', array('class' => 'text-muted'));
+            echo $form->dropDownList($model, 'status', Lookup::items('ImageStatus'), array('class' => 'form-control'));
+            ?>
         </div>
         <div class="form-group">
             <div class="btn-group">
