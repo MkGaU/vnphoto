@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2013 at 09:34 AM
+-- Generation Time: Dec 04, 2013 at 09:38 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -19,6 +19,68 @@ SET time_zone = "+00:00";
 --
 -- Database: `vietnamphoto`
 --
+CREATE DATABASE IF NOT EXISTS `vietnamphoto` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `vietnamphoto`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `authassignment`
+--
+
+CREATE TABLE IF NOT EXISTS `authassignment` (
+  `itemname` varchar(64) NOT NULL,
+  `userid` varchar(64) NOT NULL,
+  `bizrule` text,
+  `data` text,
+  PRIMARY KEY (`itemname`,`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `authassignment`
+--
+
+INSERT INTO `authassignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES
+('Admin', '1', NULL, 'N;'),
+('Uploader', '3', NULL, 'N;');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `authitem`
+--
+
+CREATE TABLE IF NOT EXISTS `authitem` (
+  `name` varchar(64) NOT NULL,
+  `type` int(11) NOT NULL,
+  `description` text,
+  `bizrule` text,
+  `data` text,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `authitem`
+--
+
+INSERT INTO `authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
+('Admin', 2, NULL, NULL, 'N;'),
+('Authenticated', 2, NULL, NULL, 'N;'),
+('Guest', 2, NULL, NULL, 'N;'),
+('Uploader', 2, 'Upload Images', NULL, 'N;');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `authitemchild`
+--
+
+CREATE TABLE IF NOT EXISTS `authitemchild` (
+  `parent` varchar(64) NOT NULL,
+  `child` varchar(64) NOT NULL,
+  PRIMARY KEY (`parent`,`child`),
+  KEY `child` (`child`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -78,6 +140,235 @@ INSERT INTO `image` (`id`, `Title`, `filename`, `Author`, `Category`, `sex`, `ag
 (234, '', '9468.jpg', 'admin', NULL, NULL, NULL, '', 1, NULL, '/images/2013/12/04/59b80d6bf442efb786de186ef8224723.jpg', 'jpg', 658709, 2560, 1440, 'vertical', '/images/2013/12/04/thumbs/72937d10bf7b229dcc425b8bf0fe5482.jpg', 1386139016, 1386139016),
 (235, '', '9699.jpg', 'admin', NULL, NULL, NULL, '', 1, NULL, '/images/2013/12/04/c4aa7c75555f2f28131a4304d85911d0.jpg', 'jpg', 677884, 2560, 1440, 'vertical', '/images/2013/12/04/thumbs/486df7a68f10f5f7a8162c2b1346e7dd.jpg', 1386139017, 1386139017),
 (236, '', '9996.jpg', 'admin', NULL, NULL, NULL, '', 1, NULL, '/images/2013/12/04/9b12afb90e08c68c8d478d030d41ef43.jpg', 'jpg', 233981, 2560, 1440, 'vertical', '/images/2013/12/04/thumbs/99c1191aed7648211b375e4475f566b4.jpg', 1386139018, 1386139018);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lookup`
+--
+
+CREATE TABLE IF NOT EXISTS `lookup` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `code` int(11) NOT NULL,
+  `type` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `position` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `lookup`
+--
+
+INSERT INTO `lookup` (`id`, `name`, `code`, `type`, `position`) VALUES
+(1, 'Draft', 1, 'ImageStatus', 1),
+(2, 'Published', 2, 'ImageStatus', 2),
+(3, 'Archived', 3, 'ImageStatus', 3),
+(4, 'Under_16', 1, 'age', 1),
+(5, '16-25', 2, 'age', 2),
+(6, '25-50', 3, 'age', 3),
+(7, 'Upper_50', 4, 'age', 4),
+(8, 'Male', 1, 'sex', 1),
+(9, 'Female', 2, 'sex', 2),
+(10, 'Male and Female', 3, 'sex', 3),
+(11, 'Food and Drink', 1, 'Category', 1),
+(12, 'Healthcare/Medical', 2, 'Category', 2),
+(13, 'Holidays', 3, 'Category', 3),
+(14, 'Illustration/Clips-Art', 4, 'Category', 4),
+(15, 'Nature', 5, 'Category', 5),
+(16, 'Objects', 6, 'Category', 6),
+(17, 'Parks/Outdoor', 7, 'Category', 7),
+(18, 'People', 8, 'Category', 8),
+(19, 'Religion', 9, 'Category', 9),
+(20, 'Science', 10, 'Category', 10),
+(21, 'Technology', 13, 'Category', 13),
+(22, 'Transportation', 14, 'Category', 14),
+(23, 'Education', 15, 'Category', 15),
+(24, 'Sports/Recreation', 12, 'Category', 12),
+(25, 'Signs/Symbols', 11, 'Category', 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profiles`
+--
+
+CREATE TABLE IF NOT EXISTS `profiles` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `lastname` varchar(50) NOT NULL DEFAULT '',
+  `firstname` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `profiles`
+--
+
+INSERT INTO `profiles` (`user_id`, `lastname`, `firstname`) VALUES
+(1, 'Admin', 'Administrator'),
+(2, 'Demo', 'Demo'),
+(3, '1234567', '1234567');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profiles_fields`
+--
+
+CREATE TABLE IF NOT EXISTS `profiles_fields` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `varname` varchar(50) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `field_type` varchar(50) NOT NULL,
+  `field_size` varchar(15) NOT NULL DEFAULT '0',
+  `field_size_min` varchar(15) NOT NULL DEFAULT '0',
+  `required` int(1) NOT NULL DEFAULT '0',
+  `match` varchar(255) NOT NULL DEFAULT '',
+  `range` varchar(255) NOT NULL DEFAULT '',
+  `error_message` varchar(255) NOT NULL DEFAULT '',
+  `other_validator` varchar(5000) NOT NULL DEFAULT '',
+  `default` varchar(255) NOT NULL DEFAULT '',
+  `widget` varchar(255) NOT NULL DEFAULT '',
+  `widgetparams` varchar(5000) NOT NULL DEFAULT '',
+  `position` int(3) NOT NULL DEFAULT '0',
+  `visible` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `varname` (`varname`,`widget`,`visible`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `profiles_fields`
+--
+
+INSERT INTO `profiles_fields` (`id`, `varname`, `title`, `field_type`, `field_size`, `field_size_min`, `required`, `match`, `range`, `error_message`, `other_validator`, `default`, `widget`, `widgetparams`, `position`, `visible`) VALUES
+(1, 'lastname', 'Last Name', 'VARCHAR', '50', '3', 1, '', '', 'Incorrect Last Name (length between 3 and 50 characters).', '', '', '', '', 1, 3),
+(2, 'firstname', 'First Name', 'VARCHAR', '50', '3', 1, '', '', 'Incorrect First Name (length between 3 and 50 characters).', '', '', '', '', 0, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rights`
+--
+
+CREATE TABLE IF NOT EXISTS `rights` (
+  `itemname` varchar(64) NOT NULL,
+  `type` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  PRIMARY KEY (`itemname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tag`
+--
+
+CREATE TABLE IF NOT EXISTS `tag` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `frequency` int(11) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=67 ;
+
+--
+-- Dumping data for table `tag`
+--
+
+INSERT INTO `tag` (`id`, `name`, `frequency`) VALUES
+(7, 'sf se', 1),
+(8, 'ad', 1),
+(9, 'sd', 2),
+(10, 'fs', 1),
+(11, 'df', 1),
+(12, 'troll', 2),
+(13, 'jav', 1),
+(14, 'storm', 2),
+(15, 'rock', 1),
+(16, 'mydinh', 1),
+(17, 'beautiful girl', 3),
+(18, 'babes', 1),
+(20, 'hero', 1),
+(21, 'superman', 1),
+(22, 'ha giang', 1),
+(23, 'phuot', 2),
+(24, 'travel', 1),
+(25, 'hotel', 1),
+(26, 'team', 1),
+(27, 'smile', 1),
+(28, 's', 2),
+(30, 'couple', 2),
+(33, 'd', 1),
+(34, 'as', 1),
+(35, 'fd', 1),
+(36, 'v', 1),
+(37, 'sdf', 1),
+(38, 'ds', 1),
+(39, 'f', 1),
+(40, 'a', 1),
+(59, 'campodia', 1),
+(65, 'valley', 1),
+(66, 'hill', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `activkey` varchar(128) NOT NULL DEFAULT '',
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastvisit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `superuser` int(1) NOT NULL DEFAULT '0',
+  `status` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  KEY `status` (`status`),
+  KEY `superuser` (`superuser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `create_at`, `lastvisit_at`, `superuser`, `status`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', '2013-11-19 08:25:56', '2013-12-03 20:14:54', 1, 1),
+(2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo@example.com', '099f825543f7850cc038b90aaff39fac', '2013-11-19 08:25:56', '2013-12-02 23:04:21', 0, 1),
+(3, 'user', '81dc9bdb52d04dc20036dbd8313ed055', 'user@gmail.com', '9851627579fd331bf6ffeb7ac1688190', '2013-11-19 09:19:21', '2013-12-03 10:55:55', 0, 1);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `authassignment`
+--
+ALTER TABLE `authassignment`
+  ADD CONSTRAINT `authassignment_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `authitemchild`
+--
+ALTER TABLE `authitemchild`
+  ADD CONSTRAINT `authitemchild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `authitemchild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD CONSTRAINT `user_profile_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `rights`
+--
+ALTER TABLE `rights`
+  ADD CONSTRAINT `rights_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `authitem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
