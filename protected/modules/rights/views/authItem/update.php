@@ -23,7 +23,8 @@
 
 				<h4><?php echo Rights::t('core', 'Parents'); ?></h4>
 
-				<?php $this->widget('zii.widgets.grid.CGridView', array(
+				<?php $this->widget('bootstrap.widgets.TbGridView', array(
+	'type'=>'striped bordered condensed',
 					'dataProvider'=>$parentDataProvider,
 					'template'=>'{items}',
 					'hideHeader'=>true,

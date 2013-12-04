@@ -1,3 +1,4 @@
+
 <?php
 $this->breadcrumbs=array(
 	UserModule::t('Users')=>array('/user'),
@@ -25,7 +26,16 @@ $('.search-form form').submit(function(){
 ");
 
 ?>
-<h1><?php echo UserModule::t("Manage Users"); ?></h1>
+<ul class="nav nav-tabs">
+    <li class="active"><?php echo CHtml::link('Mange Users',array('//user/admin')) ?></li>
+    <li><?php echo CHtml::link('List User',array('//user')) ?></li>
+    <li><?php echo CHtml::link('Create User',array('//user/admin/create')) ?></li>
+      <li><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
+    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+   
+</ul>
+<h3 class="col-lg-offset-4">Manage Users</h3>
+<h1><?php //echo UserModule::t("Manage Users"); ?></h1>
 
 <p><?php echo UserModule::t("You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done."); ?></p>
 
@@ -36,8 +46,11 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'user-grid',
+        'type'=>'striped bordered condensed',
+        //'dataProvider'=>$gridDataProvider,
+        'template'=>"{items}",
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
@@ -70,6 +83,7 @@ $('.search-form form').submit(function(){
 		),
 		array(
 			'class'=>'CButtonColumn',
+                    
 		),
 	),
 )); ?>

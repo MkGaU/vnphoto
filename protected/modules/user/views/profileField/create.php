@@ -1,3 +1,10 @@
+<ul class="nav nav-tabs">
+    <li ><?php echo CHtml::link('Mange Users',array('//user/admin')) ?></li>
+    <li><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
+    <li class="active"><?php echo CHtml::link('Create ProfileField',array('//user/profileField/create')) ?></li>
+    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+   
+</ul>
 <?php
 $this->breadcrumbs=array(
 	UserModule::t('Profile Fields')=>array('admin'),

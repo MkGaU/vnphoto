@@ -1,3 +1,11 @@
+<ul class="nav nav-tabs">
+    <li ><?php echo CHtml::link('Mange Users',array('//user/admin')) ?></li>
+    <li><?php echo CHtml::link('List User',array('//user')) ?></li>
+    <li><?php echo CHtml::link('Create User',array('//user/admin/create')) ?></li>
+      <li ><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
+    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+   
+</ul>
 <?php
 $this->breadcrumbs=array(
 	UserModule::t('Users')=>array('admin'),
@@ -51,7 +59,8 @@ $this->menu=array(
 		)
 	);
 	
-	$this->widget('zii.widgets.CDetailView', array(
+ $this->widget('bootstrap.widgets.TbDetailView', array(
+        'type'=>'striped condensed condensed',
 		'data'=>$model,
 		'attributes'=>$attributes,
 	));

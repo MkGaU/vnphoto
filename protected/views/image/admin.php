@@ -39,8 +39,8 @@ $this->menu = array(
     ?>
 </div><!-- search-form -->
 
-<?php
-$this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(	
+    'type'=>'striped bordered condensed',
     'id' => 'image-grid',
     'dataProvider' => $model->searchadmin(),
     'filter' => $model,

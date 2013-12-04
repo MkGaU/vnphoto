@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1><?php echo UserModule::t("Change Password"); ?></h1>
+<h3 class="col-lg-offset-4"><?php echo UserModule::t("Change Password"); ?></h3>
 
 
 <div class="form">
@@ -14,22 +14,22 @@ $this->breadcrumbs=array(
 	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 	<?php echo CHtml::errorSummary($form); ?>
 	
-	<div class="row">
+	<div class="form-group">
 	<?php echo CHtml::activeLabelEx($form,'password'); ?>
-	<?php echo CHtml::activePasswordField($form,'password'); ?>
+	<?php echo CHtml::activePasswordField($form,'password',array('class'=>'form-control','style'=>'width:250px')); ?>
 	<p class="hint">
 	<?php echo UserModule::t("Minimal password length 4 symbols."); ?>
 	</p>
 	</div>
 	
-	<div class="row">
+	<div class="form-group">
 	<?php echo CHtml::activeLabelEx($form,'verifyPassword'); ?>
-	<?php echo CHtml::activePasswordField($form,'verifyPassword'); ?>
+	<?php echo CHtml::activePasswordField($form,'verifyPassword',array('class'=>'form-control','style'=>'width:250px')); ?>
 	</div>
 	
 	
-	<div class="row submit">
-	<?php echo CHtml::submitButton(UserModule::t("Save")); ?>
+	<div class="form-group submit">
+            <button class="btn btn-success" type="submit">Save</button>
 	</div>
 
 <?php echo CHtml::endForm(); ?>

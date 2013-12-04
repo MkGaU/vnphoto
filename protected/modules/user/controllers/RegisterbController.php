@@ -29,11 +29,17 @@ class RegisterbController extends Controller
 				// validate user input and redirect to previous page if valid
 				if($model_l->validate()) {
 					$this->lastViset();
-                                        
-					if (Yii::app()->user->returnUrl=='application/views/image/index.php')
-						$this->redirect(Yii::app()->controller->module->returnUrl);
-					else
-						$this->redirect(Yii::app()->user->returnUrl);
+                                         if(Yii::app()->user->getIsSuperuser()){
+                                          $this->redirect(Yii::app()->user->returnUrl=='application/views/image/index.php'); 
+                                        }
+                                        else {
+                                            $this->redirect(Yii::app()->user->returnUrl);
+                                            
+                                      }
+//					if (Yii::app()->user->returnUrl=='application/views/image/index.php')
+//						$this->redirect(Yii::app()->controller->module->returnUrl);
+//					else
+//						$this->redirect(Yii::app()->user->returnUrl);
 				}
 
                 /* ..... */

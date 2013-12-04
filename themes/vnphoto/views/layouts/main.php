@@ -29,7 +29,14 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <?php echo CHtml::link('Home',array('image/index'),array('class'=>'navbar-brand'))?>
+      <?php if (Yii::app()->user->getIsSuperuser()){
+          echo CHtml::link('Home',array('//site/Administrator'),array('class'=>'navbar-brand'));
+          
+      } else {
+           echo CHtml::link('Home',array('//image/index'),array('class'=>'navbar-brand'));
+      }
+      
+      ?>
       <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
     
     </div>
@@ -39,20 +46,22 @@
         
         <!--sign in -->
         
-        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php echo 'Hello <strong>' . Yii::app()->session->get('admin') . '</strong>'?></span> <strong class="caret"></strong></a>
+        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php If(!Yii::app()->user->isGuest){ echo 'Hello <strong>' . Yii::app()->session->get('admin') . '</strong>'?></span> <strong class="caret"></strong></a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><?php echo CHtml::link('Upload',array('create'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
+              <li role="presentation"><?php echo CHtml::link('Upload',array('//image/create'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
-            <li role="presentation"><?php echo CHtml::link('Invidvidual profile',array('user/profile'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
+            <li role="presentation"><?php echo CHtml::link('Invidvidual profile',array('//user/profile'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
             <li role="presentation" class="divider"></li>
-            <li role="presentation"><?php echo CHtml::link('Logout',array('user/logout'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
+            <li role="presentation"><?php echo CHtml::link('Logout',array('//user/logout'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
           </ul>
+              <?php } ?>
         </li>
         <li><a href="https://www.google.com.vn">Xem hình thức thanh toán <span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
+        <li> <?php if(Yii::app()->user->isGuest) echo CHtml::link('Sign In',array('//user/Registerb'));?> </li>
       </ul>
     </div>
   </div>
-  
+      
   <!-- /.navbar-collapse --> 
   
 </div>
@@ -124,6 +133,7 @@
 
 
 <!--jPikercolor-->
+
 <script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jPicker/jPicker-1.1.6.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jPicker/jPicker-1.1.6.min.js" type="text/javascript"></script>
 <!--jscolor-->

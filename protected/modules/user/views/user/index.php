@@ -1,3 +1,11 @@
+<ul class="nav nav-tabs">
+    <li ><?php echo CHtml::link('Mange Users',array('//user/admin')) ?></li>
+    <li class="active"><?php echo CHtml::link('List User',array('//user')) ?></li>
+    <li><?php echo CHtml::link('Create User',array('//user/admin/create')) ?></li>
+      <li ><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
+    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+   
+</ul>
 <?php
 $this->breadcrumbs=array(
 	UserModule::t("Users"),
@@ -11,9 +19,10 @@ if(UserModule::isAdmin()) {
 }
 ?>
 
-<h1><?php echo UserModule::t("List User"); ?></h1>
+<h3 class="col-lg-offset-4"><?php echo UserModule::t("List User"); ?></h3>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
+       'type'=>'striped bordered condensed',
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(
 		array(

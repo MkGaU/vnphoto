@@ -52,9 +52,9 @@ return array(
             # login form path
             'loginUrl' => array('/user/login'),
             # page after login
-            'returnUrl' => array('/user/profile'),
+            'returnUrl' => array('/site/Administrator'),
             # page after logout
-            'returnLogoutUrl' => array('/user/login'),
+            'returnLogoutUrl' => array('/image/index'),
         ),
         'rights' => array(
             'superuserName' => 'Admin', // Name of the role with super user privileges. 

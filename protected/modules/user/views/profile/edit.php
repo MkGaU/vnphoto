@@ -1,3 +1,10 @@
+<ul class="nav nav-tabs">
+    <li class="active"><?php echo CHtml::link('Edit Profile',array('//user/profile/edit')) ?></li>
+    <li><?php echo CHtml::link('Change Password',array('//user/profile/changepassword')) ?></li>
+    <li><?php echo CHtml::link('Profile',array('//user/profile')) ?></li>
+    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+   
+</ul>
 <?php $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Profile");
 $this->breadcrumbs=array(
 	UserModule::t("Profile")=>array('profile'),
@@ -12,14 +19,14 @@ $this->menu=array(
     array('label'=>UserModule::t('Change password'), 'url'=>array('changepassword')),
     array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
 );
-?><h1><?php echo UserModule::t('Edit profile'); ?></h1>
+?><h1 class="col-lg-offset-4"><?php echo UserModule::t('Edit profile'); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('profileMessage')): ?>
 <div class="success">
 <?php echo Yii::app()->user->getFlash('profileMessage'); ?>
 </div>
 <?php endif; ?>
-<div class="form">
+<div class="form col-lg-offset-4">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'profile-form',
 	'enableAjaxValidation'=>true,
@@ -35,7 +42,7 @@ $this->menu=array(
 		if ($profileFields) {
 			foreach($profileFields as $field) {
 			?>
-	<div class="row">
+	<div class="form-group">
 		<?php echo $form->labelEx($profile,$field->varname);
 		
 		if ($widgetEdit = $field->widgetEdit($profile)) {
@@ -45,7 +52,7 @@ $this->menu=array(
 		} elseif ($field->field_type=="TEXT") {
 			echo $form->textArea($profile,$field->varname,array('rows'=>6, 'cols'=>50));
 		} else {
-			echo $form->textField($profile,$field->varname,array('size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
+			echo $form->textField($profile,$field->varname,array('class'=>'form-control','style'=>'width:250px','size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
 		}
 		echo $form->error($profile,$field->varname); ?>
 	</div>	
@@ -53,20 +60,21 @@ $this->menu=array(
 			}
 		}
 ?>
-	<div class="row">
+	<div class="form-group">
 		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->textField($model,'username',array('class'=>'form-control','style'=>'width:250px','size'=>20,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
-	<div class="row">
+	<div class="form-group">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->textField($model,'email',array('class'=>'form-control','style'=>'width:250px','size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? UserModule::t('Create') : UserModule::t('Save')); ?>
+	<div class="form-group buttons">
+            <button class='btn btn-success' type='submit'> Save</button>
+            <?php //echo CHtml::submitButton($model->isNewRecord ? UserModule::t('Create') : UserModule::t('Save')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

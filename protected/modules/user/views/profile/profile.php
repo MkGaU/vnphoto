@@ -1,3 +1,10 @@
+<ul class="nav nav-tabs">
+    <li><?php echo CHtml::link('Edit Profile',array('//user/profile/edit')) ?></li>
+    <li><?php echo CHtml::link('Change Password',array('//user/profile/changepassword')) ?></li>
+    <li class="active"><?php echo CHtml::link('Profile',array('//user/profile')) ?></li>
+    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+   
+</ul>
 <?php $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Profile");
 $this->breadcrumbs=array(
 	UserModule::t("Profile"),
@@ -11,18 +18,21 @@ $this->menu=array(
     array('label'=>UserModule::t('Change password'), 'url'=>array('changepassword')),
     array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
 );
-?><h1><?php echo UserModule::t('Your profile'); ?></h1>
+?><h3 class="col-lg-offset-4">Your profile</h3>
 
 <?php if(Yii::app()->user->hasFlash('profileMessage')): ?>
 <div class="success">
 	<?php echo Yii::app()->user->getFlash('profileMessage'); ?>
 </div>
 <?php endif; ?>
-<table class="dataGrid">
+
+<table class="dataGrid col-lg-offset-4">
 	<tr>
+            <td> Username:</td>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('username')); ?></th>
 	    <td><?php echo CHtml::encode($model->username); ?></td>
 	</tr>
+        
 	<?php 
 		$profileFields=ProfileField::model()->forOwner()->sort()->findAll();
 		if ($profileFields) {
@@ -30,6 +40,7 @@ $this->menu=array(
 				//echo "<pre>"; print_r($profile); die();
 			?>
 	<tr>
+            <td>Var Name:</td>
 		<th class="label"><?php echo CHtml::encode(UserModule::t($field->title)); ?></th>
     	<td><?php echo (($field->widgetView($profile))?$field->widgetView($profile):CHtml::encode((($field->range)?Profile::range($field->range,$profile->getAttribute($field->varname)):$profile->getAttribute($field->varname)))); ?></td>
 	</tr>
@@ -38,18 +49,24 @@ $this->menu=array(
 		}
 	?>
 	<tr>
-		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('email')); ?></th>
+            <td>Email address:</td>
+           
+		<th class="label">   <?php echo CHtml::encode($model->getAttributeLabel('email')); ?></th>
+                
     	<td><?php echo CHtml::encode($model->email); ?></td>
 	</tr>
 	<tr>
-		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('create_at')); ?></th>
+            <td>Create at:</td>
+		<th class="label"> <?php echo CHtml::encode($model->getAttributeLabel('create_at')); ?></th>
     	<td><?php echo $model->create_at; ?></td>
 	</tr>
 	<tr>
+            <td>Last visit:</td>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('lastvisit_at')); ?></th>
     	<td><?php echo $model->lastvisit_at; ?></td>
 	</tr>
 	<tr>
+            <td>Status:</td>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('status')); ?></th>
     	<td><?php echo CHtml::encode(User::itemAlias("UserStatus",$model->status)); ?></td>
 	</tr>

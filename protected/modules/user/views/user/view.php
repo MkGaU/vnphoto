@@ -35,7 +35,8 @@ $this->menu=array(
 		)
 	);
 			
-	$this->widget('zii.widgets.CDetailView', array(
+     $this->widget('bootstrap.widgets.TbDetailView', array(
+        'type'=>'striped condensed condensed',
 		'data'=>$model,
 		'attributes'=>$attributes,
 	));

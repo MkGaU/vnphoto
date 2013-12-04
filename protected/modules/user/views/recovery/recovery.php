@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1><?php echo UserModule::t("Restore"); ?></h1>
+<h3 class="col-lg-offset-4"><?php echo UserModule::t("Restore"); ?></h3>
 
 <?php if(Yii::app()->user->hasFlash('recoveryMessage')): ?>
 <div class="success">
@@ -18,14 +18,14 @@ $this->breadcrumbs=array(
 
 	<?php echo CHtml::errorSummary($form); ?>
 	
-	<div class="row">
+	<div class="form-group">
 		<?php echo CHtml::activeLabel($form,'login_or_email'); ?>
-		<?php echo CHtml::activeTextField($form,'login_or_email') ?>
+		<?php echo CHtml::activeTextField($form,'login_or_email',array('class'=>'form-control','style'=>'width:250px')) ?>
 		<p class="hint"><?php echo UserModule::t("Please enter your login or email addres."); ?></p>
 	</div>
 	
-	<div class="row submit">
-		<?php echo CHtml::submitButton(UserModule::t("Restore")); ?>
+	<div class="form-group submit">
+		<button class="btn btn-success" type="submit">Restore</button>
 	</div>
 
 <?php echo CHtml::endForm(); ?>
