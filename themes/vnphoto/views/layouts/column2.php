@@ -3,9 +3,10 @@
         <div class="span3">
          <?php
 			$this->beginWidget('zii.widgets.CPortlet', array(
-				'title'=>'Operations',
+				
 			));
-			$this->widget('zii.widgets.CMenu', array(
+			$this->widget('bootstrap.widgets.TbMenu', array(
+                                'type'=>'pills',
 				'items'=>$this->menu,
 				'htmlOptions'=>array('class'=>'sidebar'),
 			));

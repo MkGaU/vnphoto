@@ -7,12 +7,10 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Image', 'url'=>array('index')),
-	array('label'=>'Manage Image', 'url'=>array('admin')),
-);
 ?>
-
-<h1>Upload Image</h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php    
+       
+    $this->menu =  array(array('label'=>'Manage Image','url'=>array('admin')));
+   
+ ?>
+<?php $this->renderPartial('_uploadForm', array('model'=>$model)); ?>

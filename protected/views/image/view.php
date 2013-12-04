@@ -6,16 +6,17 @@ $this->breadcrumbs = array(
     'Images' => array('index'),
     $model->Title,
 );
-$this->menu = array(
-    array('label' => 'List Image', 'url' => array('index')),
-    array('label' => 'Create Image', 'url' => array('create')),
-    array('label' => 'Update Image', 'url' => array('update', 'id' => $model->id)),
-    array('label' => 'Manage Image', 'url' => array('admin')),
-);
+
 ?>
+    <?php
+        $this->menu = array(        
+            array('label'=>'Upload', 'url'=>array('create')),
+            array('label'=>'Update', 'url'=>array('update','id'=>$model->id)),
+            array('label'=>'Manage Image','url'=>array('admin')),
+    );
+ ?>
 
-
-<div class="row">
+<div class="row" style="margin-top: 20px">
     <div class="col-lg-5">
         <div class="thumbnail text-center"> 
             <?php
@@ -69,7 +70,7 @@ $this->menu = array(
                     'type' => 'text',
                     'value' => $model->Author,
                 ),
-               array(
+                array(
                     'label' => CHtml::label('Posted on : ', 'id', array('class' => 'text-muted')),
                     'type' => 'text',
                     'value' => date('M j, Y', $model->UpdateTime),
@@ -78,31 +79,20 @@ $this->menu = array(
             'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
         ));
         ?>       
-     
+
         <div class="well">
             <form class="form-control-static" role="form" action="index.html" method="post" accept-charset="UTF-8">
                 <div class="form-group">
                     <p>Format : <span id="format"><?php echo $model->format ?></span></p>
                 </div>
                 <div class="form-group">
-                    <p>Dimensions : <?php echo $model->width.' x '.$model->height ; ?></span></p>
+                    <p>Dimensions : <?php echo $model->width . ' x ' . $model->height; ?></span></p>
                 </div>
                 <div class="form-group">
-                    <p>Size : <?php echo number_format($model->size/1048576,2);?> MB</p>
-                    <?php
-                    $this->widget('bootstrap.widgets.TbButtonGroup', array(
-                        'type' => 'primary',
-                        'toggle' => 'radio', // 'checkbox' or 'radio'
-                        'buttonType' => 'button',
-                        'buttons' => array(
-                            array('label' => 'small'),
-                            array('label' => 'medium'),
-                            array('label' => 'large'),
-                        ),
-                    ));
-                    ?>                 
+                    <p>Size : <?php echo number_format($model->size / 1048576, 2); ?> MB</p>
+                             
                 </div>
-                 
+
                 <div class="form-group ">
                     <?php
                     $this->widget('bootstrap.widgets.TbDetailView', array(
@@ -115,8 +105,7 @@ $this->menu = array(
                                     return CHtml::link('Download', array('Image/DownloadFile',
                                                 'id' => $data->id,
                                                 'file_name' => $data->ImgLink,
-                                                'file_field' => 'ImgLink'), 
-                                            array('class' => 'btn btn-default')
+                                                'file_field' => 'ImgLink'), array('class' => 'btn btn-default')
                                     );
                                 }),
                         ),
@@ -138,13 +127,14 @@ $this->menu = array(
                     array(
                         'label' => CHtml::label('Tags : ', 'id', array('class' => 'text-muted')),
                         'type' => 'html',
-                        'value' => implode(' ',$model->tagLinks),
+                        'value' => implode(' ', $model->tagLinks),
                     ),
                 ),
                 'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
             ));
             ?>
-            
+
+
         </div>
     </div>
 

@@ -94,7 +94,7 @@ class Tags extends CActiveRecord
 	{
 		$tags=$this->findAll(array(
 			'condition'=>'name LIKE :keyword',
-			'order'=>'frequency DESC, name',
+			'order'=>'frequency DESC, Name',
 			'limit'=>$limit,
 			'params'=>array(
 				':keyword'=>'%'.strtr($keyword,array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%',
@@ -102,8 +102,8 @@ class Tags extends CActiveRecord
 		));
 		$names=array();
 		foreach($tags as $tag)
-			$names[]=$tag->name;     // return values from autocomplete
-                       
+			$names[]=$tag->name;
+                        
 		return $names;
 	}
 

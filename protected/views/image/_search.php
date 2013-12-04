@@ -23,12 +23,12 @@
                 <?php
                 $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                     'model' => $model,
-                    'attribute' => 'Title',
+                    'attribute' => 'tags',
                     'source' => $this->createUrl('image/SuggestImages'),
                     'htmlOptions' => array('size' => 60, 'maxlength' => 255, 'class' => 'form-control', 'placeholder' => 'search'),
                 )); //              
                 ?>
-            
+
                 <span class="input-group-btn">
                     <?php
                     echo CHtml::tag('button', array('class' => 'btn btn-primary'), '<span class="glyphicon glyphicon-search"></span>');
@@ -43,27 +43,21 @@
 
         <div class="form-group">
 
-            <label class="checkbox-inline">
-                <input type="checkbox"  id="inlineCheckbox1" value="horizontal">
-                horizontal </label>
-            <label class="checkbox-inline">
-                <input type="checkbox" id="inlineCheckbox2" value="vertical" >
-                vertical </label>
+
+            <?php
+            echo $form->checkBoxList($model, 'dimension', array('Horizontal' => 'horizontal', 'Vertical' => 'vertical'), array('class' => 'row')
+            );
+            ?>
+
+
         </div>
 
         <!--form group-->
 
         <div class="form-group">
-            <div class="control-group">
-                <div class="controls">
-                    <select id="selectCatergory" class="form-control">
-                        <option>Type</option>
-                        <option> People </option>
-                        <option>Animal</option>
-                        <option>Landscape</option>
-                    </select>
-                </div>
-            </div>
+            <?php
+            echo $form->dropDownlist($model, 'Category', Lookup::items('Category'), array('empty' => 'Category', 'class' => 'form-control'));
+            ?>
         </div>
 
         <!--End Catergory--> 
@@ -85,11 +79,9 @@
 
         <!--Sex-->
         <div class="form-group">
-            <select id="selectPeopleSex" class="form-control">
-                <option>Sex</option>
-                <option>Male</option>
-                <option>Female</option>
-            </select>
+            <?php
+            echo $form->dropDownList($model, 'sex', Lookup::items('sex'), array('empty' => 'Sex', 'class' => 'form-control'));
+            ?>
         </div>
 
         <!--form group--> 
@@ -97,15 +89,54 @@
         <!--Age-->
         <div class="form-group">
             <?php
-            echo $form->dropDownList($model, 'ageType', Lookup::items('age'), array('class' => 'form-control'));
+            echo $form->dropDownList($model, 'ageType', Lookup::items('age'), array('empty' => 'Age', 'class' => 'form-control'));
             ?>
         </div>
+        <div>
 
+
+            <?php
+//            Yii::app()->clientScript->registerScript('colorPicker','
+//                    $(document).ready(
+//		function()
+//		{
+//			$("#Binded").jPicker();
+//		});
+//                ');
+            //echo $form->textField($model,'imageColor',array('id'=>'Binded','class'=>'form-control'));
+            ?>
+            <div class="form-group">
+           <?php
+            Yii::app()->clientScript->registerScript('colorPicker', '
+                var myPicker = new jscolor.color(document.getElementById("myField1"), {required:false,hash:true,caps:false})
+                ');
+            echo $form->textField($model, 'imageColor', array('id' => 'myField1', 'class' => 'form-control','placeholder'=>'Color'));
+            ?>
+            </div>
+            <?php
+//            echo $form->labelEx($model,'imageColor');
+//            $this->widget('ext.colorpicker.ColorPicker', array(
+//                'model' => $model,
+//                'attribute' => 'imageColor',             
+//                //'name'=>'color1',
+//               
+//            ));
+            ?>
+
+
+
+        </div>
+<!--        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+    $('#color1').colorPicker();
+  });
+        </script>-->
         <!--form group-->
         <div class="form-group text-center">
             <div class="btn-group">
                 <button type="submit" class="btn btn-primary ">Search</button>
                 <button type="reset" class="btn btn-default ">Clear</button>
+                <?php //echo CHtml::resetButton('Clear',array('class'=>'btn btn-default'))?>
             </div>
         </div>
     </form>

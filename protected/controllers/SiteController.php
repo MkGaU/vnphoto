@@ -17,11 +17,8 @@ class SiteController extends Controller {
             'page' => array(
                 'class' => 'CViewAction',
             ),
-            'upload' => array(
-                'class' => 'xupload.actions.XUploadAction',
-                'path' => Yii::app()->getBasePath() . "/../images",
-                'publicPath' => Yii::app()->getBaseUrl() . "/images",
-            ),
+             'upload'=>'application.controllers.upload.UploadFileAction',
+            
             'widget'=>array(
                                 'class'=>'CViewAction',
                                 'basePath'=>'widgets',
@@ -51,8 +48,6 @@ class SiteController extends Controller {
      * when an action is not explicitly requested by users.
      */
     public function actionIndex() {
-        // renders the view file 'protected/views/site/index.php'
-        // using the default layout 'protected/views/layouts/main.php'
         Yii::import("xupload.models.XUploadForm");
         $model = new XUploadForm;
         $this -> render('index', array('model' => $model, ));

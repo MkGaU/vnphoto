@@ -20,6 +20,11 @@ class ImageController extends Controller {
         );
     }
 
+    public function actions() {
+        return array(
+        );
+    }
+
     /**
      * Specifies the access control rules.
      * This method is used by the 'accessControl' filter.
@@ -32,8 +37,8 @@ class ImageController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'DownloadFile', 'Upload', 'SuggestImages', 'SuggestTags'),
-                'roles' => array('uploader'),
+                'actions' => array('create', 'update', 'DownloadFile', 'Upload', 'SuggestImages', 'SuggestTags', 'Form', 'upload'),
+                'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
                 'actions' => array('admin', 'delete'),
@@ -55,10 +60,32 @@ class ImageController extends Controller {
         ));
     }
 
+    // Note: $image is an Imagick object, not a filename! See example use below.
+    function autoRotateImage($image) {
+        $orientation = $image->getImageOrientation();
+
+        switch ($orientation) {
+            case imagick::ORIENTATION_BOTTOMRIGHT:
+                $image->rotateimage("#000", 180); // rotate 180 degrees
+                break;
+
+            case imagick::ORIENTATION_RIGHTTOP:
+                $image->rotateimage("#000", 90); // rotate 90 degrees CW
+                break;
+
+            case imagick::ORIENTATION_LEFTBOTTOM:
+                $image->rotateimage("#000", -90); // rotate 90 degrees CCW
+                break;
+        }
+
+        // Now that it's auto-rotated, make sure the EXIF data is correct in case the EXIF gets saved with the image!
+        $image->setImageOrientation(imagick::ORIENTATION_TOPLEFT);
+    }
+
     public function createThumbnail($imagePath, $imageThumbPath) {
         $im = new Imagick();
         $im->readImage(Yii::app()->basePath . '/..' . $imagePath);
-
+        $this->autoRotateImage($im);
         $watermark = new Imagick();
         $watermark->readimage(Yii::app()->basePath . '/../watermark/w3-fix.png');
 
@@ -80,7 +107,7 @@ class ImageController extends Controller {
         // calculate the position
         $x = ($iWidth - $wWidth) / 2;
         $y = ($iHeight - $wHeight) / 2;
-
+        
         $im->compositeimage($watermark, Imagick::COMPOSITE_OVER, $x, $y);
 
         /*         * * thumbnail the image ** */
@@ -99,118 +126,18 @@ class ImageController extends Controller {
         return $path;
     }
 
-    public function actionForm() {
-        $model = new Image();
-        Yii::import("xupload.models.XUploadForm");
-        $photos = new XUploadForm();
-        if (isset($_POST['Image'])) {
-            //Assign our safe attributes
-            $model->attributes = $_POST['Image'];
-            //Start a transaction in case something goes wrong
-            $transaction = Yii::app()->db->beginTransaction();
-            try {
-                //Save the model to the database
-                if ($model->save()) {
-                    $transaction->commit();
-                }
-            } catch (Exception $e) {
-                $transaction->rollback();
-                Yii::app()->handleException($e);
-            }
-        }
-        $this->render('_form', array(
-            'model' => $model,
-            'photos' => $photos,
-        ));
-    }
-
-    public function actionUpload() {
-        Yii::import("xupload.models.XUploadForm");
-        //Here we define the paths where the files will be stored temporarily
-        $path = realpath(Yii::app()->getBasePath() . "/../images/uploads/tmp/") . "/";
-        $publicPath = Yii::app()->getBaseUrl() . "/images/uploads/tmp/";
-
-        //This is for IE which doens't handle 'Content-type: application/json' correctly
-        header('Vary: Accept');
-        if (isset($_SERVER['HTTP_ACCEPT']) && (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)) {
-            header('Content-type: application/json');
+    public function defineDimension($path) {
+        $dimension = new Imagick();
+        $dimension->readimage($path);
+        $this->autoRotateImage($dimension);
+        $w = $dimension->getimagewidth();
+        $h = $dimension->getimageheight();
+        if ($w > $h) {
+            $type = 'vertical';
         } else {
-            header('Content-type: text/plain');
+            $type = 'horizontal';
         }
-
-        //Here we check if we are deleting and uploaded file
-        if (isset($_GET["_method"])) {
-            if ($_GET["_method"] == "delete") {
-                if ($_GET["file"][0] !== '.') {
-                    $file = $path . $_GET["file"];
-                    if (is_file($file)) {
-                        unlink($file);
-                    }
-                }
-                echo json_encode(true);
-            }
-        } else {
-            $model = new XUploadForm;
-            $model->file = CUploadedFile::getInstance($model, 'file');
-            //We check that the file was successfully uploaded
-            if ($model->file !== null) {
-                //Grab some data
-                $model->mime_type = $model->file->getType();
-                $model->size = $model->file->getSize();
-                $model->name = $model->file->getName();
-                //(optional) Generate a random name for our file
-                $filename = md5(Yii::app()->user->id . microtime() . $model->name);
-                $filename .= "." . $model->file->getExtensionName();
-                if ($model->validate()) {
-                    //Move our file to our temporary dir
-                    $model->file->saveAs($path . $filename);
-                    chmod($path . $filename, 0777);
-                    //here you can also generate the image versions you need 
-                    //using something like PHPThumb
-                    //Now we need to save this path to the user's session
-                    if (Yii::app()->user->hasState('images')) {
-                        $userImages = Yii::app()->user->getState('images');
-                    } else {
-                        $userImages = array();
-                    }
-                    $userImages[] = array(
-                        "path" => $path . $filename,
-                        //the same file or a thumb version that you generated
-                        "thumb" => $path . $filename,
-                        "filename" => $filename,
-                        'size' => $model->size,
-                        'mime' => $model->mime_type,
-                        'name' => $model->name,
-                    );
-                    Yii::app()->user->setState('images', $userImages);
-
-                    //Now we need to tell our widget that the upload was succesfull
-                    //We do so, using the json structure defined in
-                    // https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
-                    echo json_encode(array(array(
-                            "name" => $model->name,
-                            "type" => $model->mime_type,
-                            "size" => $model->size,
-                            "url" => $publicPath . $filename,
-                            "thumbnail_url" => $publicPath . "thumbs/$filename",
-                            "delete_url" => $this->createUrl("upload", array(
-                                "_method" => "delete",
-                                "file" => $filename
-                            )),
-                            "delete_type" => "POST"
-                )));
-                } else {
-                    //If the upload failed for some reason we log some data and let the widget know
-                    echo json_encode(array(
-                        array("error" => $model->getErrors('file'),
-                )));
-                    Yii::log("XUploadAction: " . CVarDumper::dumpAsString($model->getErrors()), CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction"
-                    );
-                }
-            } else {
-                throw new CHttpException(500, "Could not upload file");
-            }
-        }
+        return array($w, $h, $type);
     }
 
     /**
@@ -218,31 +145,48 @@ class ImageController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new Image();
+        $model = new Image;
+        // Uncomment the following line if AJAX validation is needed
+        //$this->performAjaxValidation($model);
 
         if (isset($_POST['Image'])) {
             $model->attributes = $_POST['Image'];
-            $model->filename = CUploadedFile::getInstance($model, 'filename');
-            //Get image extension
-            $model->format = $model->filename->getExtensionName();
-            //Get image size in bytes
-            $model->size = $model->filename->getSize();
-            //Get path of the uploaded file on the server
-            $path = $model->filename->getTempName();
-            //Get dimension of image that uploaded
-            $dimension = new Imagick();
-            $dimension->readimage($path);
-            $model->width = $dimension->getimagewidth();
-            $model->height = $dimension->getimageheight();
-            // Encrypt name of image by md5
-            $thumbName = md5(date('dmy') . time() . rand());
-            $imageName = md5(date('YMD') . time() . rand());
-            $model->ImgLink = $this->createMkdir(date('Y', time()), date('m', time()), date('d', time())) . '/' . $imageName . '.' . $model->format;
-            $model->thumbnails = $this->createMkdir(date('Y', time()), date('m', time()), date('d', time())) . '/thumbs/' . $thumbName . '.' . $model->format;
-            if ($model->save()) {
-                $model->filename->saveAs(Yii::app()->basePath . '/..' . $model->ImgLink);
-                $this->createThumbnail($model->ImgLink, $model->thumbnails);
-                $this->redirect(array('view', 'id' => $model->id));
+            $images = CUploadedFile::getInstancesByName('Image');
+
+            if (isset($images) && count($images) > 0) {
+                foreach ($images as $image => $pic) {
+                    $model->filename = $pic->name;
+                    //Get image extension
+                    $model->format = $pic->getExtensionName();
+                    //Get image size in bytes
+                    $model->size = $pic->getSize();
+                    //Get path of the uploaded file on the server
+                    $path = $pic->getTempName();
+                    //Get dimension of image that uploaded
+                    $r = $this->defineDimension($path);
+                    $model->width = $r[0];
+                    $model->height = $r[1];
+                    $model->dimension = $r[2];
+                    // Encrypt name of image by md5
+                    $thumbName = md5(date('dmy') . time() . rand());
+                    $imageName = md5(date('YMD') . time() . rand());
+
+
+                    $model->ImgLink = $this->createMkdir(date('Y', time()), date('m', time()), date('d', time())) . '/' . $imageName . '.' . $model->format;
+                    $model->thumbnails = $this->createMkdir(date('Y', time()), date('m', time()), date('d', time())) . '/thumbs/' . $thumbName . '.' . $model->format;
+                    if ($pic->saveAs(Yii::app()->basePath . '/..' . $model->ImgLink)) {
+                        $model->setIsNewRecord(true);
+                        $this->createThumbnail($model->ImgLink, $model->thumbnails);
+                        $model->save();
+                        $model->id+=1;
+                        Yii::app()->user->setFlash('success', "Upload Successful");
+                    }
+                    else
+                        Yii::app()->user->setFlash('failure', "Upload Failure");
+                }
+                $this->redirect(array('create'));
+            }else {
+                Yii::app()->user->setFlash('failure', "Upload Failure");
             }
         }
 
@@ -270,7 +214,7 @@ class ImageController extends Controller {
 //                $imagePath = Yii::app()->basePath . '/../images/';
 //                $uploadedFile->saveAs($imagePath . $uploadedFile);  // image will uplode to rootDirectory
 //                $this->createThumbnail($imagePath, $uploadedFile);
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('update', 'id' => $model->id));
             }
         }
 
@@ -285,8 +229,10 @@ class ImageController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        $this->loadModel($id)->delete();
-
+        $delete = $this->loadModel($id);
+        $delete->delete();
+        unlink(getcwd() . $delete->ImgLink);
+        unlink(getcwd() . $delete->thumbnails);
 // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -349,23 +295,16 @@ class ImageController extends Controller {
      * This is called via AJAX when the user is entering the tags input.
      */
     public function actionSuggestTags() {
-        $criteria = new CDbCriteria;
-        $criteria->alias = "image";
-        $criteria->condition = "image.tags like '" . $_GET['term'] . "%'";
-
-        $dataProvider = new CActiveDataProvider(get_class(Image::model()), array(
-            'criteria' => $criteria, 'pagination' => false,
-        ));
-        $tags = $dataProvider->getData();
-
-        $return_array = array();
-        foreach ($tags as $tag) {
-            $return_array[] = array(
-                'label' => $tag->tags,
-                'value' => $tag->tags,
-            );
+        if (isset($_GET['q']) && ($keyword = trim($_GET['q'])) !== '') {
+            $tags = Tags::model()->suggestTags($keyword);
+            if ($tags !== array())
+                echo implode("\n", $tags);
         }
-        echo CJSON::encode($return_array);
+//        if(isset($_GET['term'])&&($keyword=trim($_GET['term']))!=='')
+//                {
+//                        $suggest=  Tags::model()->suggestTags($keyword);
+//                        echo CJSON::encode($suggest);
+//                }
     }
 
     public function actionSuggestImages() {
@@ -427,8 +366,122 @@ class ImageController extends Controller {
         }
     }
 
-    public function actionSimilarImage() {
-        
+    public function actionForm() {
+        $model = new Image;
+        Yii::import("xupload.models.XUploadForm");
+        $photos = new XUploadForm;
+        //Check if the form has been submitted
+        if (isset($_POST['Image'])) {
+            //Assign our safe attributes
+            $model->attributes = $_POST['Image'];
+            //Start a transaction in case something goes wrong
+            $transaction = Yii::app()->db->beginTransaction();
+            try {
+                //Save the model to the database
+                if ($model->save()) {
+                    $transaction->commit();
+                }
+            } catch (Exception $e) {
+                $transaction->rollback();
+                Yii::app()->handleException($e);
+            }
+        }
+        $this->render('upload', array(
+            'model' => $model,
+            'photos' => $photos,
+        ));
+    }
+
+    public function actionUpload1() {
+        Yii::import("xupload.models.XUploadForm");
+        //Here we define the paths where the files will be stored temporarily
+        $path = realpath(Yii::app()->getBasePath() . "/../images/uploads/tmp/") . "/";
+        //$publicPath = Yii::app()->getBaseUrl() . "/images/uploads/tmp/";
+        //This is for IE which doens't handle 'Content-type: application/json' correctly
+        //Here we check if we are deleting and uploaded file
+        if (isset($_GET["_method"])) {
+            if ($_GET["_method"] == "delete") {
+                if ($_GET["file"][0] !== '.') {
+                    $file = $path . $_GET["file"];
+                    if (is_file($file)) {
+                        unlink($file);
+                    }
+                }
+                echo json_encode(true);
+            }
+        } else {
+            $model = new XUploadForm;
+            $image = new Image;
+            $model->file = CUploadedFile::getInstance($model, 'file');
+            //We check that the file was successfully uploaded
+            if ($model->file !== null) {
+                //Grab some data
+                $model->mime_type = $model->file->getType();
+                $image->size = $model->file->getSize();
+                $image->filename = $model->file->getName();
+                $image->format = $model->file->getExtensionName();
+                //Get path of the uploaded file on the server
+                $paths = $model->file->getTempName();
+                //Get dimension of image that uploaded
+                $r = $this->defineDimension($paths);
+                $image->width = $r[0];
+                $image->height = $r[1];
+                $image->dimension = $r[2];
+                $thumbName = md5(date('dmy') . time() . rand());
+                $imageName = md5(date('YMD') . time() . rand());
+
+                $image->ImgLink = $this->createMkdir(date('Y', time()), date('m', time()), date('d', time())) . '/' . $imageName . '.' . $model->format;
+                $image->thumbnails = $this->createMkdir(date('Y', time()), date('m', time()), date('d', time())) . '/thumbs/' . $thumbName . '.' . $model->format;
+                if ($model->validate()) {
+                    //Move our file to our temporary dir
+                    $model->file->saveAs(Yii::app()->basePath . '/..' . $model->ImgLink);
+                    //chmod($path . $filename, 0777);
+                    //here you can also generate the image versions you need 
+                    //using something like PHPThumb
+                    //Now we need to save this path to the user's session
+                    if (Yii::app()->user->hasState('images')) {
+                        $userImages = Yii::app()->user->getState('images');
+                    } else {
+                        $userImages = array();
+                    }
+                    $userImages[] = array(
+                        "path" => Yii::app()->basePath . '/..' . $image->ImgLink,
+                        //the same file or a thumb version that you generated
+                        "thumb" => Yii::app()->basePath . '/..' . $image->thumbnails,
+                        "filename" => $imageName . $image->format,
+                        'size' => $image->size,
+                        'mime' => $image->format,
+                        'name' => $image->name,
+                    );
+                    Yii::app()->user->setState('images', $userImages);
+
+                    //Now we need to tell our widget that the upload was succesfull
+                    //We do so, using the json structure defined in
+                    // https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
+                    echo json_encode(array(array(
+                            "name" => $model->name,
+                            "type" => $model->mime_type,
+                            "size" => $model->size,
+                            "url" => Yii::app()->basePath . '/..' . $image->ImgLink,
+                            "thumbnail_url" => Yii::app()->basePath . '/..' . $image->thumbnails,
+                            "delete_url" => $this->createUrl("upload", array(
+                                "_method" => "delete",
+                                "file" => $imageName . $image->format,
+                            )),
+                            "delete_type" => "POST"
+                    )));
+                } else {
+                    //If the upload failed for some reason we log some data and let the widget know
+                    echo json_encode(array(
+                        array("error" => $model->getErrors('file'),
+                    )));
+                    Yii::log("XUploadAction: " . CVarDumper::dumpAsString($model->getErrors()), CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction"
+                    );
+                }
+            } else {
+                throw new CHttpException(500, "Could not upload file");
+            }
+        }
     }
 
 }

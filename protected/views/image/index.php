@@ -35,7 +35,7 @@ $this->renderPartial('_search', array(
             'dataProvider' => $dataProvider,
             'itemView' => '_view',
             'id' => 'imageslistview', // must have id corresponding to js above
-            'template' => "{sorter}\n{pager}\n{summary}</br></br></br>{items}\n{sorter}",
+            'template' => "{sorter}{pager}\n{summary}\n{items}",
             'pager' => array(
                 'cssFile' => Yii::app()->baseUrl . '/css/.css',
                 'header' => false,
@@ -44,10 +44,8 @@ $this->renderPartial('_search', array(
                 'nextPageLabel' => 'Next',
                 'lastPageLabel' => 'Last',
             ),
+            
         ));
         ?> 
-
- 
     </div>
 </div>
-

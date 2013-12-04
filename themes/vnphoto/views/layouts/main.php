@@ -13,6 +13,10 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-theme.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/ImageColorPicker/dist/ImageColorPicker.css"  media="screen" charset="utf-8"/>
+<link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/css/jpicker-1.1.6.min.css" />
+<link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/jPicker.css" />
+
 <!-- Le fav and touch icons -->
 </head>
 
@@ -25,7 +29,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="http://localhost/vietnamphoto/index.php?r=image">Home</a>
+      <?php echo CHtml::link('Home',array('image/index'),array('class'=>'navbar-brand'))?>
       <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
     
     </div>
@@ -75,25 +79,14 @@
       </form>
     </div>
   </div>
-</div>
-<!--End logo --> 
 
-<!-- Main Container -->
-<div class="container"> 
   
   <!-- row main content-->
   <div class="row"> 
-    <!--Side bar-->
     
-    
-    <!--end collum sidebar -->     
-    <!--start collum primary-->     
-      
 
 	<?php echo $content; ?>
  
-    
-    <!--end primary--> 
     
   </div>
   <!-- end main row --> 
@@ -128,10 +121,18 @@
   </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js">
-</script> 
+
+
+<!--jPikercolor-->
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jPicker/jPicker-1.1.6.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jPicker/jPicker-1.1.6.min.js" type="text/javascript"></script>
+<!--jscolor-->
+<script  src="<?php echo Yii::app()->theme->baseUrl;?>/js/jscolor/jscolor.js" type="text/javascript"></script>
+<!--colorPicker-->
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.min" type="text/javascript"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 </body>
 </html>

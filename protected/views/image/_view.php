@@ -12,8 +12,17 @@
     <div class="col-sm-6 col-md-3" style="margin-bottom: 10px">
 
         <?php
+        if($data->dimension == 'horizontal'){
         echo CHtml::link(
-                CHtml::image(Yii::app()->request->baseUrl . $data->thumbnails, " ", array('class' => 'img-responsive imageBlock')), array('view', 'id' => $data->id), array('class' => 'thumbnail'));
+                CHtml::image(Yii::app()->request->baseUrl . $data->thumbnails, " ", 
+                        array('class' => 'img-responsive imageBlock','style'=>'height:120px;')), 
+                        array('view', 'id' => $data->id), array('class' => 'thumbnail'));
+        }else{
+            echo CHtml::link(
+                CHtml::image(Yii::app()->request->baseUrl . $data->thumbnails, " ", 
+                        array('class' => 'img-responsive imageBlock')), 
+                        array('view', 'id' => $data->id), array('class' => 'thumbnail'));
+        }
         ?>            
     </div>
 </div>

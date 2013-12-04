@@ -46,6 +46,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'filter' => $model,
     'columns' => array(
         array(
+            'name'=>'id',
+            'type'=>'raw',
+            'value'=>$model->id,
+        ),
+        array(
             'name' => 'Title',
             'type' => 'raw',
             'value' => 'CHtml::link(CHtml::encode($data->Title),$data->url)',
@@ -67,6 +72,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         ),
         array(
             'class' => 'CButtonColumn',
+            
         ),
     ),
 ));

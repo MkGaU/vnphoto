@@ -22,6 +22,7 @@ return array(
         'application.modules.rights.*',
         'application.modules.rights.components.*',
         'application.widgets.Bootstrap.*',
+        'application.extensions.EAjaxUpload.*',
     ),
     'aliases' => array(
         'xupload' => 'ext.xupload',
@@ -82,6 +83,7 @@ return array(
     ),
     // application components
     'components' => array(
+      
         'db' => array(
             #...
             'tablePrefix' => 'tbl_',

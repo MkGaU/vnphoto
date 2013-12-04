@@ -9,12 +9,15 @@
  * @property String $filename
  * @property string $Author
  * @property integer $Category
+ * @property string $sex
  * @property string $tags
  * @property string $ImgLink
+ * @property String $imageColor
  * @property integer $format
  * @property integer $size
  * @property integer $width
  * @property integer $height
+ * @property string $dimension
  * @property string $thumbnails
  * @property integer $CreatedTime
  * @property integer $UpdateTime
@@ -52,12 +55,13 @@ class Image extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('Title, filename, status', 'required'),
-            array('status', 'in', 'range' => array(1, 2, 3), 'allowEmpty' => true, 'on' => 'update'),
+            array('filename, status', 'required'),            
+            array('status', 'in', 'range' => array(1, 2, 3), 'allowEmpty' => true, 'on' => 'update'),            
             array('filename', 'file', 'allowEmpty' => true, 'types' => 'jpg,png', 'on' => 'update', 'maxSize' => 1024 * 1024 * 15, 'tooLarge' => 'File has to smaller than 15MB'),
-            array('Category, CreatedTime, UpdateTime', 'numerical', 'integerOnly' => true),
+            array('Category, ageType, status, size, width, height, CreatedTime, UpdateTime', 'numerical', 'integerOnly'=>true),
             array('Title, ImgLink, thumbnails, filename', 'length', 'max' => 255),
             array('Author, ageType', 'length', 'max' => 11),
+            array('dimension, sex, imageColor', 'length', 'max'=>25),
             array('tags', 'match', 'pattern' => '/^[\w\s,]+$/', 'message' => 'Tags can only contain word characters.'),
             array('tags', 'normalizeTags'),
             array('format, size, width, height', 'length', 'max' => 10),
@@ -87,14 +91,17 @@ class Image extends CActiveRecord {
             'Title' => 'Title',
             'Author' => 'Author',
             'Category' => 'Category',
+            'sex'=>'Sex',
             'ageType' => 'AgeType',
             'tags' => 'Tags',
             'status' => 'Status',
             'ImgLink' => 'Img Link',
             'format' => 'Format',
             'size' => 'Size',
+            'imageColor'=>'ImageColor',
             'width' => 'Width',
             'height' => 'Height',
+            'dimension' => 'Dimension',
             'thumbnails' => 'Thumbnails',
             'CreatedTime' => 'Created Time',
             'UpdateTime' => 'Update Time',
@@ -160,9 +167,13 @@ class Image extends CActiveRecord {
         $criteria->compare('Title', $this->Title, true);
         $criteria->compare('Author', $this->Author, true);
         $criteria->compare('Category', $this->Category);
+        $criteria->compare('sex', $this->sex);
         $criteria->compare('ageType', $this->ageType);
         $criteria->compare('tags', $this->tags, true);
+        $criteria->compare('imageColor', $this->imageColor,true);
         $criteria->compare('status', $this->status);
+        $criteria->compare('format',$this->format,true);
+        $criteria->compare('dimension', $this->dimension,true);
         $criteria->compare('ImgLink', $this->ImgLink, true);
         $criteria->compare('format', $this->format, true);
         $criteria->compare('thumbnails', $this->thumbnails, true);
@@ -176,7 +187,8 @@ class Image extends CActiveRecord {
 
     public function searchadmin() {
         $criteria = new CDbCriteria;
-
+        
+        $criteria->compare('id', $this->id);
         $criteria->compare('title', $this->Title, true);
 
         $criteria->compare('status', $this->status);
@@ -237,7 +249,7 @@ class Image extends CActiveRecord {
         if (parent::beforeSave()) {
             if ($this->isNewRecord) {
                 $this->CreatedTime = $this->UpdateTime = time();
-                $this->Author = Yii::app()->user->id;
+                $this->Author = Yii::app()->user->name;
             }
             else
                 $this->UpdateTime = time();
@@ -246,7 +258,7 @@ class Image extends CActiveRecord {
         else
             return false;
     }
-
+    
     /**
      * This is invoked after the record is saved.
      */
