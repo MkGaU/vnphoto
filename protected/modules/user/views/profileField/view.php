@@ -11,7 +11,7 @@ $this->menu=array(
     array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin')),
 );
 ?>
-<h1><?php echo UserModule::t('View Profile Field #').$model->varname; ?></h1>
+<h3 class="col-lg-offset-4"><?php echo UserModule::t('View Profile Field #').$model->varname; ?></h3>
 
 <?php $this->widget('bootstrap.widgets.TbDetailView', array(
         'type'=>'striped condensed condensed',

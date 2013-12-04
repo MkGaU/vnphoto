@@ -25765,3 +25765,29 @@ REQUEST_URI=/vnphoto/index.php/image/create
 in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (130)
 in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (166)
 in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/04 11:11:20 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "/_menu".' in G:\xampp\yii\framework\web\CController.php:878
+Stack trace:
+#0 G:\xampp\htdocs\vietnamphoto\themes\vnphoto\views\layouts\main.php(107): CController->renderPartial('/_menu')
+#1 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#2 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#3 G:\xampp\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#4 G:\xampp\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('      <div clas...')
+#5 G:\xampp\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('      <div clas...')
+#6 G:\xampp\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#7 G:\xampp\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#8 G:\xampp\htdocs\vietnamphoto\themes\vnphoto\views\layouts\column2.php(23): CBaseController->endContent()
+#9 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#10 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#11 G:\xampp\yii\framework\web\CController.php(784): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#12 G:\xampp\htdocs\vietnamphoto\protected\controllers\SiteController.php(136): CController->render('//site/Administ...')
+#13 G:\xampp\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAdministrator()
+#14 G:\xampp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 G:\xampp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 G:\xampp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('Administrator')
+#18 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Administra...')
+#19 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 G:\xampp\htdocs\vietnamphoto\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/vietnamphoto/index.php/site/Administrator
+---

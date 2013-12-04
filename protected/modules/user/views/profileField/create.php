@@ -15,5 +15,5 @@ $this->menu=array(
     array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin')),
 );
 ?>
-<h1><?php echo UserModule::t('Create Profile Field'); ?></h1>
+<h3 class="col-lg-offset-4"><?php echo UserModule::t('Create Profile Field'); ?></h3>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

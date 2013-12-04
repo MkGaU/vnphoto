@@ -15,6 +15,10 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-theme.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/ImageColorPicker/dist/ImageColorPicker.css"  media="screen" charset="utf-8"/>
+<link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/css/jpicker-1.1.6.min.css" />
+<link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/jPicker.css" />
+
 <!-- Le fav and touch icons -->
 </head>
 
@@ -139,10 +143,22 @@
   </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js">
-</script> 
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+
+
+<!--jPikercolor-->
+
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jPicker/jPicker-1.1.6.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jPicker/jPicker-1.1.6.min.js" type="text/javascript"></script>
+<!--jscolor-->
+<script  src="<?php echo Yii::app()->theme->baseUrl;?>/js/jscolor/jscolor.js" type="text/javascript"></script>
+<!--colorPicker-->
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.min" type="text/javascript"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 </body>
 </html>

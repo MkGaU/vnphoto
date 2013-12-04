@@ -39,17 +39,11 @@
             <!-- /input-group --> 
 
         </div>
-        <!-- form group -->
-
-        <div class="form-group">
-
-
+         <div class="form-group">
             <?php
             echo $form->checkBoxList($model, 'dimension', array('Horizontal' => 'horizontal', 'Vertical' => 'vertical'), array('class' => 'row')
             );
             ?>
-
-
         </div>
 
         <!--form group-->
@@ -63,6 +57,7 @@
         <!--End Catergory--> 
 
         <!--People-->
+
         <div class="form-group">
             <label class="label label-info">People</label>
         </div>

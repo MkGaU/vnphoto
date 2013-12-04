@@ -1,11 +1,13 @@
-<div class="form col-lg-offset-3">
+
+
 
 <?php echo CHtml::beginForm(); ?>
 
 	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 
 	<?php echo CHtml::errorSummary($model); ?>
-	
+        <div class="rơw">
+        <div class="col-lg-6">	
 	<div class="form-group varname">
 		<?php echo CHtml::activeLabelEx($model,'varname'); ?>
 		<?php echo (($model->id)?CHtml::activeTextField($model,'varname',array('class'=>'form-control','size'=>60,'maxlength'=>50,'readonly'=>true)):CHtml::activeTextField($model,'varname',array('class'=>'form-control','style'=>'width:250px','size'=>60,'maxlength'=>50))); ?>
@@ -47,7 +49,8 @@
 		<?php echo CHtml::error($model,'required'); ?>
 		<p class="hint"><?php echo UserModule::t('Required field (form validator).'); ?></p>
 	</div>
-
+</div>
+        <div class="col-lg-6">
 	<div class="form-group match">
 		<?php echo CHtml::activeLabelEx($model,'match'); ?>
 		<?php echo CHtml::activeTextField($model,'match',array('class'=>'form-control','style'=>'width:250px','size'=>60,'maxlength'=>255)); ?>
@@ -112,15 +115,18 @@
 		<?php echo CHtml::activeDropDownList($model,'visible',ProfileField::itemAlias('visible'),array('class'=>'form-control','style'=>'width:250px')); ?>
 		<?php echo CHtml::error($model,'visible'); ?>
 	</div>
-
-	<div class="form-group buttons">
+            </div>
+</div>
+	<div class="rơw">
+            <div class="col-lg-1">
 		<?php //echo CHtml::submitButton($model->isNewRecord ? UserModule::t('Create') : UserModule::t('Save')); ?>
             <Button class="btn btn-success" type="submit">Create</Button>
+            </div>
 	</div>
 
 <?php echo CHtml::endForm(); ?>
 
-</div><!-- form -->
+<!-- form -->
 <div id="dialog-form" title="<?php echo UserModule::t('Widget parametrs'); ?>">
 	<form>
 	<fieldset>
