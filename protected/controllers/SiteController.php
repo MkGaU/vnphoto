@@ -136,5 +136,32 @@ class SiteController extends Controller {
         $this->render('//site/Administrator');
 	
     }
+     public function actionPricing(){
+        $this->render('//site/pricing');
+	
+    }
+      public function actionPaypalButton()
+        {
+
+                $paypalButtonName = 'Buy Now';
+
+                $buttonManager = Yii::app()->getModule('payPal')->buttonManager;
+                $myPaypalButton = $buttonManager->getButton($paypalButtonName);
+
+                if(!$myPaypalButton)
+                {
+                    $nvp = array(
+                        'BUTTONTYPE'=>'BUYNOW',
+                        'L_BUTTONVAR0'=>'currency_code=GBP',
+                        'L_BUTTONVAR1'=>'item_name=My Item Name',
+                        'L_BUTTONVAR2'=>'amount=100.00', //amount must be to two decimal places
+                    );
+                    $myPaypalButton = $buttonManager->createButton($paypalButtonName, $nvp);
+
+                }
+                        $this->render('//site/paypalbutton',array(
+                                'paypalButton'=>$myPaypalButton,
+                ));
+        }
 
 }

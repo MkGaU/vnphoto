@@ -1,7 +1,5 @@
 <?php
 /*
- * Copyright 2010 Stian Liknes <stianlik@gmail.com>. All rights reserved.
- *
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
  *
@@ -29,9 +27,6 @@
 
 /**
  * PPExt - PayPal extension
- *
- * CREATED: 2010-10-23
- * UPDATED: 2010-10-28
  *
  * This is a thin, event based wrapper for PayPal PDT, IPN- and button manager
  * APIs.
@@ -106,7 +101,7 @@
  *				PPDbButton.php - PayPal button model (database)
  *				PPPhpTransaction.php - PayPal transaction model (for examples and testing only)
  *
- * @author Stian Liknes <stianlik@gmail.com>
+ 
  */
 class PayPalModule extends CWebModule
 {

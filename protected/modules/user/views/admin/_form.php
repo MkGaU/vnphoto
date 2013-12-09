@@ -65,7 +65,7 @@
 		}
 ?>
 	<div class="form-group buttons">
-            <button class="btn btn-success" type="submit">Create</button>
+            <button class="btn btn-success" type="submit">Save</button>
         </div>
 
 <?php $this->endWidget(); ?>

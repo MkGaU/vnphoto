@@ -1,3 +1,11 @@
+<ul class="nav nav-tabs">
+    <li ><?php echo CHtml::link('Assignments',array('//rights/assignment/view')) ?></li>
+    <li ><?php echo CHtml::link('Permissions',array('//rights/authItem/permissions')) ?></li>
+    <li ><?php echo CHtml::link('Roles',array('//rights/authItem/roles')) ?></li>
+    <li ><?php echo Chtml::link('Tasks',array('//rights/authItem/tasks')) ?></li>
+    <li class="active"><?php echo Chtml::link('Operations',array('//rights/authItem/operations')) ?></li>
+   
+</ul>
 <?php $this->breadcrumbs = array(
 	'Rights'=>Rights::getBaseUrl(),
 	Rights::t('core', 'Operations'),
@@ -5,7 +13,7 @@
 
 <div id="operations">
 
-	<h2><?php echo Rights::t('core', 'Operations'); ?></h2>
+	<h3 class="col-lg-offset-4"><?php echo Rights::t('core', 'Operations'); ?></h3>
 
 	<p>
 		<?php echo Rights::t('core', 'An operation is a permission to perform a single operation, for example accessing a certain controller action.'); ?><br />

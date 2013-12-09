@@ -1,11 +1,5 @@
 <?php
-/**
-* Rights filter class file.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @since 0.7
-*/
+
 class RightsFilter extends CFilter
 {
 	protected $_allowedActions = array();

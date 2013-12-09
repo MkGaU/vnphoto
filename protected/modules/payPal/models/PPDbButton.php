@@ -2,10 +2,7 @@
 
 /**
  * This is the model class for table "{{ppbutton}}".
- *
- * CREATED: 2010-10-29
- * UPDATED: 2010-10-29
- *
+
  * The followings are the available columns in table '{{ppbutton}}':
  * @property string $name
  * @property string $web_site_code
@@ -19,8 +16,7 @@
  *
  * The followings are the available model relations:
  *
- * @author Stian Liknes <stianlik@gmail.com>
- */
+*/
 class PPDbButton extends CActiveRecord
 {
 	/**
@@ -37,7 +33,7 @@ class PPDbButton extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{ppbutton}}';
+		return 'ppbutton';
 	}
 
 	/**

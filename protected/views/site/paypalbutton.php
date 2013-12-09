@@ -1,0 +1,1 @@
+   <?php   $buttonManager->getButton('My button');?>

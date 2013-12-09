@@ -1,3 +1,4 @@
+
 <?php $this->breadcrumbs = array(
 	'Rights'=>Rights::getBaseUrl(),
 	Rights::t('core', 'Generate items'),

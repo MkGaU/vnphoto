@@ -1,136 +1,158 @@
 <?php
+/*
+ * Copyright 2010 Stian Liknes <stianlik@gmail.com>. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are
+ * permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this list of
+ * conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list
+ * of conditions and the following disclaimer in the documentation and/or other materials
+ * provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY Stian Liknes <stianlik@gmail.com> ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * The views and conclusions contained in the software and documentation are those of the
+ * authors and should not be interpreted as representing official policies, either expressed
+ * or implied, of Stian Liknes <stianlik@gmail.com>.
+ */
 
-class PaypalController extends Controller
+/**
+ * @todo Testing (Nothing done yet)
+ *
+ * This is just a copy of PPDefaultController where methods have been changed
+ * from anonymous into public class methods.
+ *
+ * Example controller for IPN and PDT events for PHP versions that do
+ * not support anonymous functions.
+ *
+ * CREATED: 2010-10-29
+ * UPDATED: 2010-10-29
+ *
+ * @author Stian Liknes <stianlik@gmail.com>
+ */
+class PPDefaultLegacyController extends Controller
 {
-	public function actionBuy(){
-               
-		  $paymentInfo['Order']['theTotal'] = 15.00;
-        $paymentInfo['Order']['description'] = "Some payment description here";
-        $paymentInfo['Order']['quantity'] = '1';
- 
-        // call paypal 
-        $result = Yii::app()->Paypal->SetExpressCheckout($paymentInfo); 
-        //Detect Errors 
-        if(!Yii::app()->Paypal->isCallSucceeded($result)){ 
-            if(Yii::app()->Paypal->apiLive === true){
-                //Live mode basic error message
-                $error = 'We were unable to process your request. Please try again later';
-            }else{
-                //Sandbox output the actual error message to dive in.
-                $error = $result['L_LONGMESSAGE0'];
-            }
-            echo $error;
-            Yii::app()->end();
- 
-        }else { 
-            // send user to paypal 
-            $token = urldecode($result["TOKEN"]); 
- 
-            $payPalURL = Yii::app()->Paypal->payPalUrl.$token; 
-            $this->redirect($payPalURL); 
-        }
-
-	}
-public function actionConfirm()
-    {
-        $token = trim($_GET['token']);
-        $payerId = trim($_GET['PayerID']);
- 
-        $result = Yii::app()->Paypal->GetExpressCheckoutDetails($token);
- 
-        $result['PAYERID'] = $payerId; 
-        $result['TOKEN'] = $token; 
-        $result['ORDERTOTAL'] = 0.00;
- 
-        //Detect errors 
-        if(!Yii::app()->Paypal->isCallSucceeded($result)){ 
-            if(Yii::app()->Paypal->apiLive === true){
-                //Live mode basic error message
-                $error = 'We were unable to process your request. Please try again later';
-            }else{
-                //Sandbox output the actual error message to dive in.
-                $error = $result['L_LONGMESSAGE0'];
-            }
-            echo $error;
-            Yii::app()->end();
-        }else{ 
- 
-            $paymentResult = Yii::app()->Paypal->DoExpressCheckoutPayment($result);
-            //Detect errors  
-            if(!Yii::app()->Paypal->isCallSucceeded($paymentResult)){
-                if(Yii::app()->Paypal->apiLive === true){
-                    //Live mode basic error message
-                    $error = 'We were unable to process your request. Please try again later';
-                }else{
-                    //Sandbox output the actual error message to dive in.
-                    $error = $paymentResult['L_LONGMESSAGE0'];
-                }
-                echo $error;
-                Yii::app()->end();
-            }else{
-                //payment was completed successfully
- 
-                $this->render('confirm');
-            }
-        }
-    }       
-    public function actionCancel()
+	public function actionIndex()
 	{
-		//The token of the cancelled payment typically used to cancel the payment within your application
-		$token = $_GET['token'];
-		
-		$this->render('cancel');
+		$this->renderText("PayPal example controller");
 	}
-	
-	public function actionDirectPayment(){ 
-		$paymentInfo = array('Member'=> 
-			array( 
-				'first_name'=>'name_here', 
-				'last_name'=>'lastName_here', 
-				'billing_address'=>'address_here', 
-				'billing_address2'=>'address2_here', 
-				'billing_country'=>'country_here', 
-				'billing_city'=>'city_here', 
-				'billing_state'=>'state_here', 
-				'billing_zip'=>'zip_here' 
-			), 
-			'CreditCard'=> 
-			array( 
-				'card_number'=>'number_here', 
-				'expiration_month'=>'month_here', 
-				'expiration_year'=>'year_here', 
-				'cv_code'=>'code_here' 
-			), 
-			'Order'=> 
-			array('theTotal'=>1.00) 
-		); 
 
-	   /* 
-		* On Success, $result contains [AMT] [CURRENCYCODE] [AVSCODE] [CVV2MATCH]  
-		* [TRANSACTIONID] [TIMESTAMP] [CORRELATIONID] [ACK] [VERSION] [BUILD] 
-		*  
-		* On Fail, $ result contains [AMT] [CURRENCYCODE] [TIMESTAMP] [CORRELATIONID]  
-		* [ACK] [VERSION] [BUILD] [L_ERRORCODE0] [L_SHORTMESSAGE0] [L_LONGMESSAGE0]  
-		* [L_SEVERITYCODE0]  
-		*/ 
-	  
-		$result = Yii::app()->Paypal->DoDirectPayment($paymentInfo); 
+	/**
+	 * Show payment details to customer when PDT is received.
+	 */
+	public function actionPdt() {
+		$pdt = new PPPdtAction($this, "pdt");
+
+		// Just invoking a success event, processing done by IPN listener
+		$pdt->onRequest = array($this, "pdtRequest");
+
+		// Notify user about successfull payment
+		$pdt->onSuccess = array($this, "pdtSuccess");
+
+		// Notify user about failed payment
+		$pdt->onFailure = array($this, "pdtFailure");
+
+		$pdt->run();
+	}
+
+	/**
+	 * Process payment and notify user if IPN is received.
+	 */
+	public function actionIpn() {
+		$ipn = new PPIpnAction($this,"ipn");
+
+		/*
+		 * Process payment
+		 *
+		 * See PPPhpTransaction for validation details, important values:
+		 * - PPPhpTransaction::currency = Valid currency (default: USD)
+		 * - PPPhpTransaction::amount = Minumum payment amount (default: 5.00)
+		 *
+		 * I recommend using an active record for storage / validation.
+		 */
+		$ipn->onRequest = array($this, "ipnRequest");
+
+		// Ignoring failures
+		$ipn->onFailure = array($this, "ipnFailure");
+
+		// Send confirmation mail to customer
+		$ipn->onSuccess = array($this, "ipnSuccess");
+
+		$ipn->run();
+	}
+
+	public function pdtRequest($event) {
+		$event->sender->onSuccess($event);
+	}
+
+	public function pdtSuccess ($event) {
+		$str = "Success<br />";
+		foreach ($event->details as $k => $v)
+			$str.="$k => $v<br />";
+		$event->sender->controller->renderText($str);
+	}
+
+	public function pdtFailure($event) {
+		$event->sender->controller->renderText("Failure");
+	}
+
+	public function ipnRequest($event) {
+		// Check if this is a transaction
+		if (!isset($event->details["txn_id"])) {
+			$event->msg = "Missing txn_id";
+			Yii::log($event->msg,"warning","payPal.controllers.DefaultController");
+			$event->sender->onFailure($event);
+			return;
+		}
 		
-		//Detect Errors 
-		if(!Yii::app()->Paypal->isCallSucceeded($result)){ 
-			if(Yii::app()->Paypal->apiLive === true){
-				//Live mode basic error message
-				$error = 'We were unable to process your request. Please try again later';
-			}else{
-				//Sandbox output the actual error message to dive in.
-				$error = $result['L_LONGMESSAGE0'];
-			}
-			echo $error;
-			
-		}else { 
-			//Payment was completed successfully, do the rest of your stuff
+		// Put payment details into a transaction model
+		$transaction = new PPPhpTransaction;
+		$transaction->paymentStatus = $event->details["payment_status"];
+		$transaction->mcCurrency = $event->details["mc_currency"];
+		$transaction->mcGross = $event->details["mc_gross"];
+		$transaction->receiverEmail = $event->details["receiver_email"];
+		$transaction->txnId = $event->details["txn_id"];
+
+		// Failed to process payment: Log and invoke failure event
+		if (!$transaction->save()) {
+			$event->msg = "Could not process payment";
+			Yii::log("{$event->msg}\nTransaction ID: {$event->details["txn_id"]}", "error",
+					"payPal.controllers.DefaultController");
+			$event->sender->onFailure($event);
 		}
 
-		Yii::app()->end();
-	} 
+		// Successfully processed payment: Log and invoke success event
+		else if ($transaction->save()) {
+			$event->msg = "Successfully processed payment";
+			Yii::log("{$event->msg}\nTransaction ID: {$event->details["txn_id"]}", "info",
+					"payPal.controllers.DefaultController");
+			$event->sender->onSuccess($event);
+		}
+	}
+
+	public function ipnSuccess($event) {
+		$to = $event->details["payer_email"];
+		$from = $event->details["receiver_email"];
+		$subject = "Payment received";
+		$body = "Your payment has been processed.\n" .
+			"Receiver: $from\n" .
+			"Amount: {$event->details["mc_gross"]} {$event->details["mc_amount"]}\n";
+		$headers="From: $from\r\nReply-To: $from";
+		mail($to,$subject,$body,$headers);
+	}
+
+	function ipnFailure($event) {
+		// Could e.g. send a notification mail on certain events
+	}
 }

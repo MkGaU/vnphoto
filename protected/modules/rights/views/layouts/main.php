@@ -49,7 +49,7 @@
         
         <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php if(!Yii::app()->user->isGuest){echo 'Hello <strong>' . Yii::app()->session->get('admin') . '</strong>'?></span> <strong class="caret"></strong></a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><?php echo CHtml::link('Upload',array('//image/create'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
+             <li role="presentation"><?php echo CHtml::link('Upload',array('//image/create'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
             <li role="presentation"><?php echo CHtml::link('Invidvidual profile',array('//user/profile'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
             <li role="presentation" class="divider"></li>
@@ -57,7 +57,7 @@
           </ul>
         </li>
         <?php }?>
-        <li><a href="https://www.google.com.vn">View Plans & Pricing <span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
+        <li><?php echo CHtml::link('View Plans & Pricing',array('//site/pricing')).' <span class="glyphicon glyphicon-circle-arrow-right"></span>'?> </li>
         <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
         <?php } ?> 
       </ul>
@@ -104,7 +104,7 @@
     <!--end collum sidebar -->     
     <!--start collum primary-->     
       
-<?php $this->renderPartial('/_menu'); ?>
+<?php //$this->renderPartial('/_menu'); ?>
 	<?php echo $content; ?>
  
     

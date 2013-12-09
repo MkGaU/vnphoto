@@ -29,6 +29,7 @@ class Image extends CActiveRecord {
     const STATUS_ARCHIVED = 3;
 
     private $_oldTags;
+    public $iduser;
 
     /**
      * @return string the associated database table name
@@ -250,6 +251,7 @@ class Image extends CActiveRecord {
             if ($this->isNewRecord) {
                 $this->CreatedTime = $this->UpdateTime = time();
                 $this->Author = Yii::app()->user->name;
+               
             }
             else
                 $this->UpdateTime = time();
@@ -263,6 +265,7 @@ class Image extends CActiveRecord {
      * This is invoked after the record is saved.
      */
     protected function afterSave() {
+         $this->iduser= Yii::app()->user->id;
         $this->addImages();
         parent::afterSave();
         Tags::model()->updateFrequency($this->_oldTags, $this->tags);

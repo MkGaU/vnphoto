@@ -1,11 +1,5 @@
 <?php
-/**
-* Authorization item form class file.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @since 0.5
-*/
+
 class AuthItemForm extends CFormModel
 {
 	public $name;

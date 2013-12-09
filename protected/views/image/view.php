@@ -67,8 +67,9 @@ $this->breadcrumbs = array(
                 ),
                 array(
                     'label' => CHtml::label('Author : ', 'id', array('class' => 'text-muted')),
-                    'type' => 'text',
-                    'value' => $model->Author,
+                    'type' => 'html',
+                    'value'=>  CHtml::link(CHtml::encode($model->Author),array("/user/user/view","id"=>$model->iduser)),
+                    //'value' =>$model->Author,
                 ),
                 array(
                     'label' => CHtml::label('Posted on : ', 'id', array('class' => 'text-muted')),

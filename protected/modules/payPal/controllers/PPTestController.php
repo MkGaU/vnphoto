@@ -2,11 +2,7 @@
 
 /**
  * Test controller for PPButtonManager.
- *
- * CREATED: 2010-10-24
- * UPDATED: 2010-10-28
- *
- * @author Stian Liknes <stianlik@gmail.com>
+
  */
 class PPTestController extends Controller
 {

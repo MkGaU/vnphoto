@@ -1,11 +1,5 @@
 <?php
-/**
-* Rights installation controller class file.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @since 0.9.8
-*/
+
 class InstallController extends RController
 {
 	/**

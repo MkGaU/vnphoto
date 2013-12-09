@@ -1,3 +1,8 @@
+<ul class="nav nav-tabs">
+     <li ><?php echo CHtml::link('List Image',array('//image/index')) ?></li>
+    <li class="active"><?php echo CHtml::link('Mange Image',array('//image/admin')) ?></li>
+    <li><?php echo CHtml::link('Create Image',array('//image/create')) ?></li>
+</ul>
 <?php
 /* @var $this ImageController */
 /* @var $model Image */

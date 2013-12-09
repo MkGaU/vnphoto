@@ -1,11 +1,5 @@
 <?php
-/**
-* Rights assignment controller class file.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @since 0.9.1
-*/
+
 class AssignmentController extends RController
 {
 	/**
