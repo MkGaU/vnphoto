@@ -26,7 +26,7 @@ $this->menu = array(
 //");
 ?>
 
-<h1>Manage Images</h1>
+<h1>Manage Photos</h1>
 
 
 
@@ -48,7 +48,7 @@ $this->menu = array(
         array(
             'name'=>'id',
             'type'=>'raw',
-            'value'=>$model->id,
+            'value'=>'$data->id',
         ),
         array(
             'name' => 'Title',

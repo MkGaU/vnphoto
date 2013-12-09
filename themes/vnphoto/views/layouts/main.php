@@ -78,17 +78,7 @@
     <div class="col-lg-3">
       <p class="h1">Vietnam<span class="text-danger">Photos</span></p>
     </div>
-    <div class="col-lg-5">
-      <form role="form" action="index.html" method="post" accept-charset="UTF-8">
-        <div class="form-group">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-btn">
-            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
-            </span> </div>  
-        </div>
-      </form>
-    </div>
+    
   </div>
 </div>
 <!--End logo --> 

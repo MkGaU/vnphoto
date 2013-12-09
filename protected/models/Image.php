@@ -11,6 +11,7 @@
  * @property integer $Category
  * @property string $sex
  * @property string $tags
+ * @property string $description
  * @property string $ImgLink
  * @property String $imageColor
  * @property integer $format
@@ -59,7 +60,7 @@ class Image extends CActiveRecord {
             array('status', 'in', 'range' => array(1, 2, 3), 'allowEmpty' => true, 'on' => 'update'),            
             array('filename', 'file', 'allowEmpty' => true, 'types' => 'jpg,png', 'on' => 'update', 'maxSize' => 1024 * 1024 * 15, 'tooLarge' => 'File has to smaller than 15MB'),
             array('Category, ageType, status, size, width, height, CreatedTime, UpdateTime', 'numerical', 'integerOnly'=>true),
-            array('Title, ImgLink, thumbnails, filename', 'length', 'max' => 255),
+            array('Title, ImgLink, thumbnails, filename, description', 'length', 'max' => 255),
             array('Author, ageType', 'length', 'max' => 11),
             array('dimension, sex, imageColor', 'length', 'max'=>25),
             array('tags', 'match', 'pattern' => '/^[\w\s,]+$/', 'message' => 'Tags can only contain word characters.'),
@@ -95,6 +96,7 @@ class Image extends CActiveRecord {
             'ageType' => 'AgeType',
             'tags' => 'Tags',
             'status' => 'Status',
+            'description'=>'Description',
             'ImgLink' => 'Img Link',
             'format' => 'Format',
             'size' => 'Size',
@@ -172,6 +174,7 @@ class Image extends CActiveRecord {
         $criteria->compare('tags', $this->tags, true);
         $criteria->compare('imageColor', $this->imageColor,true);
         $criteria->compare('status', $this->status);
+        $criteria->compare('description', $this->description,true);
         $criteria->compare('format',$this->format,true);
         $criteria->compare('dimension', $this->dimension,true);
         $criteria->compare('ImgLink', $this->ImgLink, true);
