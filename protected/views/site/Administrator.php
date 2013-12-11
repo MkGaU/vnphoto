@@ -50,14 +50,6 @@
                                
 			</div>
                     
-                      <div class="col-lg-3">
-                             <?php $image = CHtml::image(Yii::app()->baseUrl.'/images/Backend/new.png');?>
-                              <a><?php echo CHtml::link($image,array('/image/index'))?> </a>
-                               <br>
-                               <span class="h4 text-default">New Photos Confirmation</span>
-                               </button>
-                            </form>
-			</div>
                	</div>
 		 <!--end button group -->
 		

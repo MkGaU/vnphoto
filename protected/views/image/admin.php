@@ -12,10 +12,10 @@ $this->breadcrumbs = array(
     'Manage',
 );
 
-$this->menu = array(
-    array('label' => 'List Image', 'url' => array('index')),
-    array('label' => 'Create Image', 'url' => array('create')),
-);
+//$this->menu = array(
+//    array('label' => 'List Image', 'url' => array('index')),
+//    array('label' => 'Create Image', 'url' => array('create')),
+//);
 
 //Yii::app()->clientScript->registerScript('search', "
 //$('.search-button').click(function(){

@@ -12,11 +12,11 @@ $this->breadcrumbs = array(
     UserModule::t('Create'),
 );
 
-$this->menu = array(
-    array('label' => UserModule::t('Manage Users'), 'url' => array('admin')),
-    array('label' => UserModule::t('Manage Profile Field'), 'url' => array('profileField/admin')),
-    array('label' => UserModule::t('List User'), 'url' => array('/user')),
-);
+//$this->menu = array(
+//    array('label' => UserModule::t('Manage Users'), 'url' => array('admin')),
+//    array('label' => UserModule::t('Manage Profile Field'), 'url' => array('profileField/admin')),
+//    array('label' => UserModule::t('List User'), 'url' => array('/user')),
+//);
 ?>
 <h3 class="col-lg-offset-4">Create User</h3>
 <h1><?php // echo UserModule::t("Create User"); ?></h1>
