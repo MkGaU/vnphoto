@@ -12,13 +12,13 @@ $this->breadcrumbs=array(
 	$model->username=>array('view','id'=>$model->id),
 	(UserModule::t('Update')),
 );
-$this->menu=array(
-    array('label'=>UserModule::t('Create User'), 'url'=>array('create')),
-    array('label'=>UserModule::t('View User'), 'url'=>array('view','id'=>$model->id)),
-    array('label'=>UserModule::t('Manage Users'), 'url'=>array('admin')),
-    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
-    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
-);
+//$this->menu=array(
+//    array('label'=>UserModule::t('Create User'), 'url'=>array('create')),
+//    array('label'=>UserModule::t('View User'), 'url'=>array('view','id'=>$model->id)),
+//    array('label'=>UserModule::t('Manage Users'), 'url'=>array('admin')),
+//    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
+//    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
+//);
 ?>
 
 <h3 class="col-lg-offset-4"><?php echo  UserModule::t('Update User')." ".$model->id; ?></h3>

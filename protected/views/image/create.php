@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
 ?>
 <?php    
        
-    $this->menu =  array(array('label'=>'Manage Image','url'=>array('admin')));
+//    $this->menu =  array(array('label'=>'Manage Image','url'=>array('admin')));
    
  ?>
 <?php $this->renderPartial('_uploadForm', array('model'=>$model)); ?>

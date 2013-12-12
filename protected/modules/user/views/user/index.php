@@ -10,13 +10,13 @@
 $this->breadcrumbs=array(
 	UserModule::t("Users"),
 );
-if(UserModule::isAdmin()) {
-	$this->layout='//layouts/column2';
-	$this->menu=array(
-	    array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin')),
-	    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
-	);
-}
+//if(UserModule::isAdmin()) {
+//	$this->layout='//layouts/column2';
+//	$this->menu=array(
+//	    array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin')),
+//	    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
+//	);
+//}
 ?>
 
 <h3 class="col-lg-offset-4"><?php echo UserModule::t("List User"); ?></h3>

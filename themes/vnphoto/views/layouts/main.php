@@ -59,7 +59,10 @@
           </ul>
         </li>
         <?php }?>
+
         <li><?php echo CHtml::link('View Plans & Pricing <span class="glyphicon glyphicon-circle-arrow-right"></span>',array('//site/pricing'))?></li>
+
+
         <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
         <?php } ?> 
       </ul>
@@ -81,7 +84,19 @@
       <p class="h1">Vietnam<span class="text-danger">Photos</span></p>
       
     </div>
-    
+
+    <div class="col-lg-5">
+      <form role="form" action="index.html" method="post" accept-charset="UTF-8">
+        <div class="form-group">
+<!--          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-btn">
+            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </span> </div>  -->
+        </div>
+      </form>
+    </div>
+
   </div>
 </div>
 <!--End logo --> 
@@ -117,7 +132,7 @@
       <div class="col-xs-2"></div>
       <div class="col-xs-2">
         <p class="text-muted"> <strong>Vietnamphotos.com</strong></p>
-        <a href="http://google.com" class="text-muted">Trang chủ</a><br>
+        <a  class="text-muted"><?php echo CHtml::link('Home',array('//site/index')) ?></a><br>
         <a href="http://google.com" class="text-muted">Thông tin</a><br>
       </div>
       <div class="col-xs-2" >

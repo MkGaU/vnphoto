@@ -6,6 +6,8 @@
             <!--Main content -->
             
             <h3 class="text-center">Royalty-Free Photos. Simple Pricing</h3>
+
+            <?php if (Yii::app()->user->isGuest){ ?>
             <div class="panel panel-default">
                 <div class="panel-body">
                     
@@ -16,7 +18,7 @@
               
                
             </div><!--End register-->
-            
+            <?php } ?>
             
             <!-- Subcriptions-->
             <div class="panel panel-default">
@@ -31,7 +33,7 @@
                     
                     <div class="col-lg-offset-2 col-lg-2 text-center " style="border-left : 1px solid #CCC">
                        
-                        <p class="price">   <strong> $00 </strong> <span class="text-muted">USD</span></p>
+                        <p class="price">   <strong> $20 </strong> <span class="text-muted">USD</span></p>
                         <p>1 month</p> 
                         <input type="radio" checked>
                         
@@ -44,7 +46,10 @@
             
             </div><!-- end  Subcriptions -->
             
-            
+            <div>
+                <a target="_blank" href="https://www.nganluong.vn/button_payment.php?receiver=nhaqueonline_24h@yahoo.com.vn&product_name=vietnam photo&price=2000&return_url=http://localhost:1080/vnphoto/index.php/site/pricing&comments=Không" ><img src="https://www.nganluong.vn/data/images/buttons/3.gif"  border="0" /></a> 
+            </div>
+>>>>>>> branch 'master' of https://github.com/vietnamphoto/vnphoto.git
             
             <!--Continued Form-->
             <div class="pull-right">

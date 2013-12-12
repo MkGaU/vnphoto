@@ -10,15 +10,15 @@ $this->breadcrumbs=array(
 	UserModule::t("Profile")=>array('profile'),
 	UserModule::t("Edit"),
 );
-$this->menu=array(
-	((UserModule::isAdmin())
-		?array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin'))
-		:array()),
-    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
-    array('label'=>UserModule::t('Profile'), 'url'=>array('/user/profile')),
-    array('label'=>UserModule::t('Change password'), 'url'=>array('changepassword')),
-    array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
-);
+//$this->menu=array(
+//	((UserModule::isAdmin())
+//		?array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin'))
+//		:array()),
+//    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
+//    array('label'=>UserModule::t('Profile'), 'url'=>array('/user/profile')),
+//    array('label'=>UserModule::t('Change password'), 'url'=>array('changepassword')),
+//    array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
+//);
 ?><h1 class="col-lg-offset-4"><?php echo UserModule::t('Edit profile'); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('profileMessage')): ?>

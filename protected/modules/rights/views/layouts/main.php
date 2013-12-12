@@ -57,7 +57,11 @@
           </ul>
         </li>
         <?php }?>
+
         <li><?php echo CHtml::link('View Plans & Pricing',array('//site/pricing')).' <span class="glyphicon glyphicon-circle-arrow-right"></span>'?> </li>
+
+        
+
         <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
         <?php } ?> 
       </ul>

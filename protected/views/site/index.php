@@ -1,3 +1,4 @@
+
  <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick-subscriptions">
 
@@ -23,3 +24,6 @@
                 <input type="hidden" name="src" value="1">
                 <input type="hidden" name="sra" value="1">
         </form>
+
+<form action="https://www.baokim.vn/payment/product/version11" method="get"><input type="hidden" name="business" value="nhaqueonline_24h@yahoo.com.vn"><input type="hidden" name="product_name" value="vietnam photo"><input type="hidden" name="product_price" value="400000"><input type="hidden" name="product_quantity" value="1"><input type="hidden" name="total_amount" value="400000"><input type="hidden" name="url_detail" value="http://localhost:1080/vnphoto/index.php/image/210"><input type="hidden" name="url_success" value="http://localhost:1080/vnphoto/index.php/site/Administrator"><input type="hidden" name="url_cancel" value="http://localhost:1080/vnphoto/index.php/image/index"><input type="hidden" name="order_description" value="download anh ca thang voi 400000d"><input type="hidden" name="id" value=""><input type="image" src="http://developer.baokim.vn/uploads/baokim_btn/thanhtoan-l.png" border="0" name="submit" alt="Thanh toán an toàn với Bảo Kim !" title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn"></form>
+

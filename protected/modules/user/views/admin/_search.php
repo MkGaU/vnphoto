@@ -30,6 +30,7 @@
         <?php echo $form->textField($model,'create_at',array('class'=>'form-control','style'=>'width:250px')); ?>
     </div>
 
+    
     <div class="form-group">
         <?php echo $form->label($model,'lastvisit_at'); ?>
         <?php echo $form->textField($model,'lastvisit_at',array('class'=>'form-control','style'=>'width:250px')); ?>

@@ -86,7 +86,7 @@ class ImageController extends Controller {
     }
 
     public function createThumbnail($imagePath, $imageThumbPath) {
-        $im = new Imagick();
+        $im = new Imagick();        
         $im->readImage(Yii::app()->basePath . '/..' . $imagePath);
         $this->autoRotateImage($im);
         $watermark = new Imagick();
@@ -132,7 +132,7 @@ class ImageController extends Controller {
     }
 
     public function defineDimension($path) {
-        $dimension = new Imagick;
+        $dimension = new Imagick();
         $dimension->readimage($path);
         $this->autoRotateImage($dimension);
         $w = $dimension->getimagewidth();

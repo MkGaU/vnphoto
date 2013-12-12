@@ -1,16 +1,35 @@
 
+
+<?php
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+    $('.search-form').toggle();
+    return false;
+});	
+$('.search-form form').submit(function(){
+    $.fn.yiiGridView.update('user-grid', {
+        data: $(this).serialize()
+    });
+    return false;
+});
+");
+
+?>
+
+
 <?php
 $this->breadcrumbs=array(
 	UserModule::t('Users')=>array('/user'),
 	UserModule::t('Manage'),
 );
 
-$this->menu=array(
-    array('label'=>UserModule::t('Create User'), 'url'=>array('create')),
-    array('label'=>UserModule::t('Manage Users'), 'url'=>array('admin')),
-    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
-    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
-);
+//$this->menu=array(
+//    array('label'=>UserModule::t('Create User'), 'url'=>array('create')),
+//    array('label'=>UserModule::t('Manage Users'), 'url'=>array('admin')),
+//    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
+//    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
+//);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -36,7 +55,6 @@ $('.search-form form').submit(function(){
 </ul>
 <h3 class="col-lg-offset-4">Manage Users</h3>
 <h1><?php //echo UserModule::t("Manage Users"); ?></h1>
-
 
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'user-grid',
@@ -79,3 +97,4 @@ $('.search-form form').submit(function(){
 		),
 	),
 )); ?>
+
