@@ -2,7 +2,9 @@
     <li ><?php echo CHtml::link('Mange Users',array('//user/admin')) ?></li>
     <li><?php echo CHtml::link('List User',array('//user')) ?></li>
     <li><?php echo CHtml::link('Create User',array('//user/admin/create')) ?></li>
-      <li ><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
+    <li class="active"><?php echo CHtml::link('View Users') ?></li>
+    <li><?php echo CHtml::link('Update Inform User',array('update','id'=>$model->id)) ?></li>
+    <li ><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
     <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
    
 </ul>

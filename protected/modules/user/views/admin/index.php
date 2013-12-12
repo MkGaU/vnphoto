@@ -38,7 +38,6 @@ $('.search-form form').submit(function(){
 <h1><?php //echo UserModule::t("Manage Users"); ?></h1>
 
 
-
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'user-grid',
         'type'=>'striped bordered condensed',

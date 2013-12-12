@@ -29,6 +29,22 @@ return array(
     ),
     'defaultController' => 'image',
     'modules' => array(
+        'payPal'=>array(
+        'env'=>'sandbox',
+        'account'=>array(
+            'username'=>'nhaqueonline_24h_api1.yahoo.com.vn',
+            'password'=>'RHUCKFYAYCHBJQXT',
+            'signature'=>'AiPC9BjkCyDFQXbSkoZcgqH3hpacATCzrIdq66SJEQONBSQhSVAYAVgJ',
+            'email'=>'nhaqueonline_24h@yahoo.com.vn',
+            'identityToken'=>'W2EEGSPLCNPHE',
+        ),
+        'components'=>array(
+            'buttonManager'=>array(
+                'class'=>'payPal.components.PPDbButtonManager',
+                //'class'=>'payPal.components.PPPhpButtonManager',
+             ),
+        ),
+    ),
         'user' => array(
             'tableUsers' => 'users',
             'tableProfiles' => 'profiles',
@@ -83,7 +99,6 @@ return array(
     ),
     // application components
     'components' => array(
-      
         'db' => array(
             #...
             'tablePrefix' => 'tbl_',
@@ -151,6 +166,53 @@ return array(
               ),
              */
             ),
+        ),
+//        'Paypal' => array(
+//    'class'=>'application.components.Paypal',
+//    'apiUsername' => 'admin',
+//    'apiPassword' => 'admin',
+//    'apiSignature' => 'admin',
+//    'apiLive' => false,
+// 
+//    'returnUrl' => 'paypal/confirm/', //regardless of url management component
+//    'cancelUrl' => 'paypal/cancel/', //regardless of url management component
+// 
+//    // Default currency to use, if not set USD is the default
+//    'currency' => 'USD',
+// 
+//    // Default description to use, defaults to an empty string
+//    //'defaultDescription' => '',
+// 
+//    // Default Quantity to use, defaults to 1
+//    //'defaultQuantity' => '1',
+// 
+//    //The version of the paypal api to use, defaults to '3.0' (review PayPal documentation to include a valid API version)
+//    //'version' => '3.0',
+//),
+        'curl' => array(
+            'class' => 'application.extensions.curl.Curl',
+            'options' => array(
+                'timeout' => 0,
+                'cookie' => array(
+                    'set' => 'cookie'
+                ),
+                'login' => array(
+                    'username' => 'myuser',
+                    'password' => 'mypass'
+                ),
+                'proxy' => array(
+                    'url' => 'someproxy.com',
+                    'port' => 80
+                ),
+                'proxylogin' => array(
+                    'username' => 'someuser',
+                    'password' => 'somepasswords'
+                ),
+                'setOptions' => array(
+                    CURLOPT_UPLOAD => true,
+                    CURLOPT_USERAGENT => Yii::app()->params['agent']
+                ),
+            )
         ),
     ),
     // application-level parameters that can be accessed

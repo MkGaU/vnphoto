@@ -1,11 +1,7 @@
 <?php
 /**
 * Rights module class file.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @version 1.3.0
-* 
+
 * DO NOT CHANGE THE DEFAULT CONFIGURATION VALUES!
 * 
 * You may overload the module configuration values in your rights-module 

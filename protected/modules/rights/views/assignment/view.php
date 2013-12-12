@@ -1,3 +1,11 @@
+<ul class="nav nav-tabs">
+    <li class="active"><?php echo CHtml::link('Assignments',array('//rights/assignment/view')) ?></li>
+    <li ><?php echo CHtml::link('Permissions',array('//rights/authItem/permissions')) ?></li>
+    <li><?php echo CHtml::link('Roles',array('//rights/authItem/roles')) ?></li>
+    <li ><?php echo Chtml::link('Tasks',array('//rights/authItem/tasks')) ?></li>
+    <li><?php echo Chtml::link('Operations',array('//rights/authItem/operations')) ?></li>
+   
+</ul>
 <?php $this->breadcrumbs = array(
 	'Rights'=>Rights::getBaseUrl(),
 	Rights::t('core', 'Assignments'),
@@ -5,7 +13,7 @@
 
 <div id="assignments">
 
-	<h2><?php echo Rights::t('core', 'Assignments'); ?></h2>
+	<h3 class="col-lg-offset-4"><?php echo Rights::t('core', 'Assignments'); ?></h3>
 
 	<p>
 		<?php echo Rights::t('core', 'Here you can view which permissions has been assigned to each user.'); ?>

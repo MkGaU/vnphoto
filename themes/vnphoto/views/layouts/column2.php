@@ -1,7 +1,7 @@
 <?php $this->beginContent('//layouts/main'); ?>
       <div class="row-fluid">
         <div class="span3">
-         <?php
+         <?php if(Yii::app()->user->getIsSuperuser()){
 			$this->beginWidget('zii.widgets.CPortlet', array(
 				
 			));
@@ -10,7 +10,9 @@
 				'items'=>$this->menu,
 				'htmlOptions'=>array('class'=>'sidebar'),
 			));
-			$this->endWidget();
+                         $this->endWidget();
+         
+         }
 		?>
 		</div><!-- sidebar span3 -->
 

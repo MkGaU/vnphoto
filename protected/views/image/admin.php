@@ -1,3 +1,8 @@
+<ul class="nav nav-tabs">
+     <li ><?php echo CHtml::link('List Image',array('//image/index')) ?></li>
+    <li class="active"><?php echo CHtml::link('Mange Image',array('//image/admin')) ?></li>
+    <li><?php echo CHtml::link('Create Image',array('//image/create')) ?></li>
+</ul>
 <?php
 /* @var $this ImageController */
 /* @var $model Image */
@@ -7,10 +12,10 @@ $this->breadcrumbs = array(
     'Manage',
 );
 
-$this->menu = array(
-    array('label' => 'List Image', 'url' => array('index')),
-    array('label' => 'Create Image', 'url' => array('create')),
-);
+//$this->menu = array(
+//    array('label' => 'List Image', 'url' => array('index')),
+//    array('label' => 'Create Image', 'url' => array('create')),
+//);
 
 //Yii::app()->clientScript->registerScript('search', "
 //$('.search-button').click(function(){
@@ -31,19 +36,22 @@ $this->menu = array(
 
 
 <?php //echo CHtml::link('Advanced Search', '#', array('class' => 'search-button')); ?>
-<div class="search-form" style="display:none">
+
     <?php
 //    $this->renderPartial('_search', array(
 //        'model' => $model,
 //    ));
     ?>
-</div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView', array(	
-    'type'=>'striped bordered condensed',
+<?php $this->widget('zii.widgets.grid.CGridView', array(    
     'id' => 'image-grid',
     'dataProvider' => $model->searchadmin(),
     'filter' => $model,
+    'template'=>'{summary}{pager}{items}{pager}',
+    'pager' => array(
+                'cssFile' => Yii::app()->baseUrl . '/css/.css',
+                'header' => false,
+        ),
     'columns' => array(
         array(
             'name'=>'id',

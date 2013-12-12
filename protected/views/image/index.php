@@ -5,47 +5,52 @@
 //echo phpinfo();
 ?>
 
-<?php
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-    $('.search-form').toggle();
-    return false;
-});
-$('.search-form form').submit(function(){
-    $.fn.yiiListView.update('imageslistview', { 
-        //this entire js section is taken from admin.php. w/only this line diff
-        data: $(this).serialize()
-    });
-    return false;
-});
-");
-?>
 
-<?php
-$this->renderPartial('_search', array(
-    'model' => $model,
-));
-?>
 
-<div class="col-lg-9">
-    <div class="list-image">
 
-        <?php
-        $this->widget('zii.widgets.CListView', array(
-            'dataProvider' => $dataProvider,
-            'itemView' => '_view',
-            'id' => 'imageslistview', // must have id corresponding to js above
-            'template' => "{sorter}{pager}\n{summary}\n{items}",
-            'pager' => array(
-                'cssFile' => Yii::app()->baseUrl . '/css/.css',
-                'header' => false,
-                'firstPageLabel' => 'First',
-                'prevPageLabel' => 'Previous',
-                'nextPageLabel' => 'Next',
-                'lastPageLabel' => 'Last',
-            ),
-            
-        ));
-        ?> 
+<div class="container">
+  <div class="row" style="height:400px; margin-top:100px;">
+    <div class="col-lg-3"></div>
+    <div class="col-xs-4" >
+      
+    
+           <?php $form = $this->beginWidget('CActiveForm', array(
+        'action' => Yii::app()->createUrl('image/index'),
+        'method' => 'get',
+                ));
+           ?>
+                      
+        
+            <div class="form-group">
+            <div class="input-group">
+                <?php 
+            //echo CHtml::textField('search_key','',array('size' => 60,'placeholder'=>'search','class'=>'form-control'));
+                    $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+                    'model' => $model,
+                    'name'=>'search_key',                      
+                    'attribute' => 'Title',
+                    'source' => $this->createUrl('image/SuggestImages'),
+                    'htmlOptions' => array('size' => 60, 'maxlength' => 255, 'class' => 'form-control', 'placeholder' => 'search'),
+                ));
+                    ?> 
+
+                <span class="input-group-btn">
+                    <?php
+                    echo CHtml::tag('button', array('class' => 'btn btn-danger'), '<span class="glyphicon glyphicon-search"></span>');
+                    
+                    ?>
+                </span> </div>
+          <!-- /input-group --> 
+           <?php $this->endWidget(); ?>
+        </div>
+        <!-- form group -->
+        
+        
     </div>
+    <!-- collum content --> 
+    
+  </div>
+  <!-- row --> 
 </div>
+
+        

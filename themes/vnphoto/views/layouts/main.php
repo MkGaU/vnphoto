@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/gridview.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-theme.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/ImageColorPicker/dist/ImageColorPicker.css"  media="screen" charset="utf-8"/>
 <link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/css/jpicker-1.1.6.min.css" />
 <link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/jPicker.css" />
@@ -41,13 +41,15 @@
       <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
     
     </div>
+    
     <div class="navbar-collapse collapse"> 
+        
       <!-- Collect the nav links, forms, and other content for toggling -->
       <ul class="nav navbar-nav navbar-right">
         
         <!--sign in -->
         
-        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php if(!Yii::app()->user->isGuest){echo 'Hello <strong>' . Yii::app()->session->get('admin') . '</strong>'?></span> <strong class="caret"></strong></a>
+        <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php if(!Yii::app()->user->isGuest){echo 'Hello <strong class="text-danger">' . Yii::app()->session->get('admin') . '</strong>'?> <strong class="caret"></strong></a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <li role="presentation"><?php echo CHtml::link('Upload',array('//image/create'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
@@ -57,7 +59,7 @@
           </ul>
         </li>
         <?php }?>
-        <li><a href="https://www.google.com.vn">View Plans & Pricing <span class="glyphicon glyphicon-circle-arrow-right"></span></a> </li>
+        <li><?php echo CHtml::link('View Plans & Pricing <span class="glyphicon glyphicon-circle-arrow-right"></span>',array('//site/pricing'))?></li>
         <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
         <?php } ?> 
       </ul>
@@ -75,8 +77,9 @@
 <!--Logo-->
 <div class="container">
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-12">
       <p class="h1">Vietnam<span class="text-danger">Photos</span></p>
+      
     </div>
     
   </div>
@@ -144,9 +147,11 @@
 <script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jPicker/jPicker-1.1.6.min.js" type="text/javascript"></script>
 <!--jscolor-->
 <script  src="<?php echo Yii::app()->theme->baseUrl;?>/js/jscolor/jscolor.js" type="text/javascript"></script>
+
 <!--colorPicker-->
+
 <script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.min" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.min.js" type="text/javascript"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>

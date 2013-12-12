@@ -17,20 +17,19 @@
                 'enctype' => 'multipart/form-data',),
         ));
         ?>
-      
-    
+
+
         <?php
         $cs = Yii::app()->clientScript;
-            /* @var $theme CTheme */
-            $theme = Yii::app()->theme;
-            $cs->registerPackage('jquery');            
-            //$cs->registerScriptFile($theme->baseUrl . '/js/ImageColorPicker/dist/jquery-1.4.4.min.js');
-            $cs->registerScriptFile($theme->baseUrl . '/js/ImageColorPicker/dist/jquery-ui-1.8.9.custom.min.js');
-            $cs->registerScriptFile($theme->baseUrl . '/js/ImageColorPicker/dist/jquery.ImageColorPicker.js');
-           
-      
-            $cs->registerScript('colorPicker', 
-                    '$(document).ready(function() {
+        /* @var $theme CTheme */
+        $theme = Yii::app()->theme;
+        $cs->registerPackage('jquery');
+        //$cs->registerScriptFile($theme->baseUrl . '/js/ImageColorPicker/dist/jquery-1.4.4.min.js');
+        $cs->registerScriptFile($theme->baseUrl . '/js/ImageColorPicker/dist/jquery-ui-1.8.9.custom.min.js');
+        $cs->registerScriptFile($theme->baseUrl . '/js/ImageColorPicker/dist/jquery.ImageColorPicker.js');
+
+
+        $cs->registerScript('colorPicker', '$(document).ready(function() {
                 $("#pic").ImageColorPicker({
                     afterColorSelected: function(event, color) {
                         $("#result1").val(color);
@@ -39,7 +38,7 @@
 
             });');
         ?>
-  
+
     </head>
     <body>
         <div class="col-lg-5">   
@@ -55,36 +54,59 @@
                 </ul>
             </div>
         </div>
-        <div class="col-lg-4" style="margin-top:20px;">
-            <form role="form" action="" method="post">
+        <div class="col-lg-5" >           
+            <div class="form-group">
                 
-                <div class="form-group">
-                    <p><span class="text-muted">Image Id: </span><span><?php echo $model->id ?></span></p>
-    <!--      <p class="note">Fields with <span class="required">*</span> are required.</p>       -->
-                    <?php echo $form->errorSummary($model); ?>       
-                  
-                        <?php echo $form->labelEx($model, 'Title', array('class' => 'text-muted')); ?>
-                        <?php echo $form->textField($model, 'Title', array('size' => 60, 'maxlength' => 150, 'class' => 'form-control')); ?>
-                        <?php echo $form->error($model, 'Title'); ?>
-                  
-                </div>
-                <div class="form-group">
-                    <p class="text-muted">Description</p>
-                    <textarea class="form-control" rows="4"> It's been more than a decade since we have been operating in the realm of tourism with a literally wide range of packages for every of your Vietnam travel and tours.</textarea>
-                </div>
-                <div class="form-group">
-                    <p class="text-muted">Catergory</p>
-                    <select id="selectCatergory" class="form-control">
-                        <option>Nature</option>
-                        <option>people</option>
-                        <option>Culture</option>
-                        <option>Economy</option>
-                        <option>Fashion</option>
-                    </select>
-                </div>
-                <div class="form-group">      
-                    <?php echo $form->labelEx($model, 'tags', array('class' => 'text-muted')); ?>
-                    <?php
+
+                <?php
+                
+                if (Yii::app()->user->hasFlash('success'))
+                    echo '<div class="flash-success" >' . TbHtml::alert(TbHtml::ALERT_COLOR_SUCCESS, Yii::app()->user->getFlash('success')) . '</div>';
+                else
+                    echo '<div class="flash-success">' . TbHtml::alert(TbHtml::ALERT_COLOR_ERROR, Yii::app()->user->getFlash('failure')) . '</div>';
+                Yii::app()->clientScript->registerScript(
+                        'myHideEffect', '$(".flash-success").animate({opacity: 1.0}, 1100).fadeOut("slow");', CClientScript::POS_READY
+                );
+                ?>
+            </div>
+            <div class="form-group">
+                <?php
+                echo CHtml::label('ID :', '', array('class' => 'text-muted'));
+                echo $model->id;
+                ?>
+            </div>
+            <div class="form-group">
+<!--      <p class="note">Fields with <span class="required">*</span> are required.</p>       -->
+                <?php echo $form->errorSummary($model); ?>       
+
+                <?php echo $form->labelEx($model, 'Title', array('class' => 'text-muted')); ?>
+                <?php echo $form->textField($model, 'Title', array('size' => 60, 'maxlength' => 150, 'class' => 'form-control')); ?>
+                <?php echo $form->error($model, 'Title'); ?>
+
+            </div>
+            <div class='form-group'>
+
+                <?php
+//            Yii::app()->clientScript->registerScript('colorPicker', '
+//                var myPicker = new jscolor.color(document.getElementById("result1"), {required:false,hash:true,caps:false})
+//                ');
+                ?>
+                <?php
+                echo CHtml::label('Color code (hex)', '', array('class' => 'text-muted'));
+                echo $form->textField($model, 'imageColor', array('id' => 'result1', 'class' => 'form-control', 'placeholder' => 'Color code'));
+                ?>
+            </div>
+            <div class="form-group">
+                <p class="text-muted">Description</p>
+                <?php echo $form->textArea($model, 'description', array('class' => 'form-control', 'rows' => '4')); ?>
+            </div>
+            <div class="form-group">
+                <p class="text-muted">Catergory</p>
+                <?php echo $form->dropDownList($model, 'Category', Lookup::items('category'), array('class' => 'form-control', 'empty' => 'Category')); ?>
+            </div>
+            <div class="form-group">      
+                <?php echo $form->labelEx($model, 'tags', array('class' => 'text-muted')); ?>
+                <?php
 //                    $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
 //                        'model' => $model,
 //                        'attribute' => 'tags',
@@ -98,70 +120,63 @@
 //                            //'data-role' => 'tagsinput'
 //                        ),
 //                    ));
-                     $this->widget('CAutoComplete', array(
+                $this->widget('CAutoComplete', array(
                     'model' => $model,
                     'attribute' => 'tags',
-                    'url'=>array('image/SuggestTags'),
-                     'multiple'=>true,
+                    'url' => array('image/SuggestTags'),
+                    'multiple' => true,
                     'htmlOptions' => array(
-                        'class'=>'form-control',
+                        'class' => 'form-control',
                         'placeholder' => 'Add Tags',
-                        //'data-role'=>'tagsinput',
-                        ),
-                )); 
-                    ?>
+                    //'data-role'=>'tagsinput',
+                    ),
+                ));
+                ?>
 
-                    <?php echo $form->error($model, 'tags'); ?>
-                </div>
-                <p class="text-muted">People</p>
-                <div class="form-group">
-                    <select id="selectPeopleAmount" class="form-control">
-                        <option>People Amount</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                </div>
+                <?php echo $form->error($model, 'tags'); ?>
+            </div>
+            <p class="text-muted">People</p>
+            <div class="form-group">
+                <select id="selectPeopleAmount" class="form-control">
+                    <option>People Amount</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
 
-                <!--Sex-->
-                <div class="form-group">
-                    <?php
-                    echo $form->dropDownList($model, 'sex', Lookup::items('sex'), array('empty' => 'Sex', 'class' => 'form-control'));
-                    ?>
-                </div>
+            <!--Sex-->
+            <div class="form-group">
+                <?php
+                echo $form->dropDownList($model, 'sex', Lookup::items('sex'), array('empty' => 'Sex', 'class' => 'form-control'));
+                ?>
+            </div>
 
-                <!--form group--> 
+            <!--form group--> 
 
-                <!--Age-->
-                <div class="form-group">
-                    <?php
-                    echo $form->dropDownList($model, 'ageType', Lookup::items('age'), array('empty' => 'Age', 'class' => 'form-control'));
-                    ?>
-                </div>
-                <div class="form-group">
-                    <?php
-                    echo $form->label($model, 'status', array('class' => 'text-muted'));
-                    echo $form->dropDownList($model, 'status', Lookup::items('ImageStatus'), array('class' => 'form-control'));
-                    ?>
-                </div>
-                <div class='form-group'>
+            <!--Age-->
+            <div class="form-group">
+                <?php
+                echo $form->dropDownList($model, 'ageType', Lookup::items('age'), array('empty' => 'Age', 'class' => 'form-control'));
+                ?>
+            </div>
+            <div class="form-group">
+                <?php
+                echo $form->label($model, 'status', array('class' => 'text-muted'));
+                echo $form->dropDownList($model, 'status', Lookup::items('ImageStatus'), array('class' => 'form-control'));
+                ?>
+            </div>
 
-                    <div id="result"></div>
-                    <?php
-                    
-                    echo $form->textField($model, 'imageColor', array('id' => 'result1', 'class' => 'form-control'));
-                    ?>
-                </div>
-                <div class="form-group">
-                    <div class="btn-group">
-                        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-primary')); ?>
-                        <input type="reset" class="btn btn-default" value="Undo">
-                        <input type="button" class="btn btn-default" value="Cancel">
-                    </div>
+            <div class="form-group">
+                <div class="btn-group">
+                    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-primary')); ?>
+                    <input type="reset" class="btn btn-default" value="Undo">
+
                 </div>
 
-            </form>
+
+            </div>
         </div>
         <?php $this->endWidget(); ?>
 

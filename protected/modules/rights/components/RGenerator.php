@@ -1,11 +1,5 @@
 <?php
-/**
-* Rights generator component class file.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @since 0.9.8
-*/
+
 class RGenerator extends CApplicationComponent
 {
 	private $_authManager;

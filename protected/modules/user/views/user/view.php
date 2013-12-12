@@ -1,3 +1,8 @@
+<ul class="nav nav-tabs">
+    <li class="active"><?php echo CHtml::link('View Users') ?></li>
+    <li ><?php echo CHtml::link('List User',array('//user')) ?></li>
+    
+</ul>
 <?php
 $this->breadcrumbs=array(
 	UserModule::t('Users')=>array('index'),

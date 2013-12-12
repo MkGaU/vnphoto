@@ -1,11 +1,5 @@
 <?php
-/**
-* Rights installer component class file.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @since 0.9.3
-*/
+
 class RInstaller extends CApplicationComponent
 {
     const ERROR_NONE=0;

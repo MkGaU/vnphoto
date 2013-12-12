@@ -120,7 +120,7 @@
 	<div class="rơw">
             <div class="col-lg-1">
 		<?php //echo CHtml::submitButton($model->isNewRecord ? UserModule::t('Create') : UserModule::t('Save')); ?>
-            <Button class="btn btn-success" type="submit">Create</Button>
+            <Button class="btn btn-success" type="submit">Save</Button>
             </div>
 	</div>
 

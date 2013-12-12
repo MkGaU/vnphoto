@@ -1,3 +1,11 @@
+<ul class="nav nav-tabs">
+    <li ><?php echo CHtml::link('Assignments',array('//rights/assignment/view')) ?></li>
+    <li ><?php echo CHtml::link('Permissions',array('//rights/authItem/permissions')) ?></li>
+    <li class="active"><?php echo CHtml::link('Roles',array('//rights/authItem/roles')) ?></li>
+    <li ><?php echo Chtml::link('Tasks',array('//rights/authItem/tasks')) ?></li>
+    <li><?php echo Chtml::link('Operations',array('//rights/authItem/operations')) ?></li>
+   
+</ul>
 <?php $this->breadcrumbs = array(
 	'Rights'=>Rights::getBaseUrl(),
 	Rights::t('core', 'Roles'),
@@ -5,7 +13,7 @@
 
 <div id="roles">
 
-	<h2><?php echo Rights::t('core', 'Roles'); ?></h2>
+	<h3 class="col-lg-offset-4"><?php echo Rights::t('core', 'Roles'); ?></h3>
 
 	<p>
 		<?php echo Rights::t('core', 'A role is group of permissions to perform a variety of tasks and operations, for example the authenticated user.'); ?><br />

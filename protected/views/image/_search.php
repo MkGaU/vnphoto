@@ -23,7 +23,7 @@
                 <?php
                 $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                     'model' => $model,
-                    'attribute' => 'tags',
+                    'attribute' => 'Title',
                     'source' => $this->createUrl('image/SuggestImages'),
                     'htmlOptions' => array('size' => 60, 'maxlength' => 255, 'class' => 'form-control', 'placeholder' => 'search'),
                 )); //              
@@ -32,6 +32,7 @@
                 <span class="input-group-btn">
                     <?php
                     echo CHtml::tag('button', array('class' => 'btn btn-primary'), '<span class="glyphicon glyphicon-search"></span>');
+                    
                     ?>
                 </span> </div>
             <!-- /input-group --> 

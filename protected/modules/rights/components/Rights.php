@@ -1,13 +1,5 @@
 <?php
-/**
-* Rights helper class file.
-*
-* Provides static functions for interaction with Rights from outside of the module.
-*
-* @author Christoffer Niska <cniska@live.com>
-* @copyright Copyright &copy; 2010 Christoffer Niska
-* @since 0.9.1
-*/
+
 class Rights
 {
 	const PERM_NONE = 0;

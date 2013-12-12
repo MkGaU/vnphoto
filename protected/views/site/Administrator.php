@@ -1,4 +1,4 @@
-
+<script  src="<?php echo Yii::app()->theme->baseUrl;?>/js/jquery.js" type="text/javascript"></script>
 <!-- row contain main content -->
 <div class="row " style="margin-top: 20px;">
     <div class="well col-lg-2">
@@ -50,14 +50,7 @@
                                
 			</div>
                     
-                      <div class="col-lg-3">
-                             <?php $image = CHtml::image(Yii::app()->baseUrl.'/images/Backend/new.png');?>
-                              <a><?php echo CHtml::link($image,array('/image/index'))?> </a>
-                               <br>
-                               <span class="h4 text-default">New Photos Confirmation</span>
-                               </button>
-                            </form>
-			</div>
+
                	</div>
 		 <!--end button group -->
 		

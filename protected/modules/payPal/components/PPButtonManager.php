@@ -1,14 +1,5 @@
 <?php
-/**
- * Website Payments Standard Button Manager API (NVP)
- *
- * CREATED: 2010-10-24
- * UPDATED: 2010-10-28
- *
- * Every request/response is logged.
- *
- * @author Stian Liknes <stianlik@gmail.com>
- */
+
 abstract class PPButtonManager extends CApplicationComponent {
 
 	/**

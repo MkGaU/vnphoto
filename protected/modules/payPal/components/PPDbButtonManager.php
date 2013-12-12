@@ -1,7 +1,6 @@
 <?php
 /* 
- * Copyright 2010 Stian Liknes <stianlik@gmail.com>. All rights reserved.
- * 
+  
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
  * 
@@ -27,14 +26,6 @@
  * or implied, of Stian Liknes <stianlik@gmail.com>.
  */
 
-/**
- * Database implementation of PPButtonManager.
- *
- * CREATED: 2010-10-29
- * UPDATED: 2010-10-29
- *
- * @author Stian Liknes <stianlik@gmail.com>
- */
 class PPDbButtonManager extends PPButtonManager {
 	public function getButton($name) {
 		return PPDbButton::model()->findByPk($name);

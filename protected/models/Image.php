@@ -30,6 +30,7 @@ class Image extends CActiveRecord {
     const STATUS_ARCHIVED = 3;
 
     private $_oldTags;
+    public $iduser;
 
     /**
      * @return string the associated database table name
@@ -204,17 +205,7 @@ class Image extends CActiveRecord {
             ),
         ));
     }
-
-    public function similarImages($tag) {
-         $criteria = new CDbCriteria(array(
-            'condition' => 'status=' . self::STATUS_PUBLISHED,
-            'order' => 'UpdateTime DESC',
-        ));
-        $criteria->compare('tags', $tag,true);
-        return new CActiveDataProvider($this,array(
-            'criteria'=> $criteria,
-        ));
-    }
+    
 
     /*
      * Return next ID compare current ID
@@ -229,7 +220,7 @@ class Image extends CActiveRecord {
         ));
         if ($record !== null)
             return $record->id;
-        return null;
+        return $this->id;
     }
 
     /*
@@ -245,7 +236,7 @@ class Image extends CActiveRecord {
         ));
         if ($record !== null)
             return $record->id;
-        return null;
+        return $this->id;
     }
 
     protected function beforeSave() {
@@ -253,6 +244,7 @@ class Image extends CActiveRecord {
             if ($this->isNewRecord) {
                 $this->CreatedTime = $this->UpdateTime = time();
                 $this->Author = Yii::app()->user->name;
+               
             }
             else
                 $this->UpdateTime = time();
@@ -266,6 +258,7 @@ class Image extends CActiveRecord {
      * This is invoked after the record is saved.
      */
     protected function afterSave() {
+         $this->iduser= Yii::app()->user->id;
         $this->addImages();
         parent::afterSave();
         Tags::model()->updateFrequency($this->_oldTags, $this->tags);
