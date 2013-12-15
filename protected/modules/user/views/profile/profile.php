@@ -18,14 +18,23 @@ $this->breadcrumbs=array(
 //    array('label'=>UserModule::t('Change password'), 'url'=>array('changepassword')),
 //    array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
 //);
-?><h3 class="col-lg-offset-4">Your profile</h3>
+?><h3 class="col-lg-offset-4"></h3>
 
 <?php if(Yii::app()->user->hasFlash('profileMessage')): ?>
 <div class="success">
 	<?php echo Yii::app()->user->getFlash('profileMessage'); ?>
 </div>
 <?php endif; ?>
-
+<div id="container">
+    
+        <div class="col-lg-offset-3 col-lg-6">
+ <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="h3 col-lg-offset-4">Your Profile</p>
+                </div>
+                <div class="panel-body">
+                   
+                
 <table class="dataGrid col-lg-offset-4">
 	<tr>
             <td> Username:</td>
@@ -71,3 +80,7 @@ $this->breadcrumbs=array(
     	<td><?php echo CHtml::encode(User::itemAlias("UserStatus",$model->status)); ?></td>
 	</tr>
 </table>
+                </div>
+ </div>
+            </div>
+    </div>

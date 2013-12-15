@@ -21,9 +21,16 @@ $this->breadcrumbs=array(
 //    array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
 //);
 ?>
+<br>
 
-<h3 class="col-lg-offset-4">Change password</h3>
-
+<div id="container">
+    
+        <div class="col-lg-offset-3 col-lg-6">
+ <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="h3 col-lg-offset-4">Change password</p>
+                </div>
+                <div class="panel-body">
 <div class="form col-lg-offset-4" >
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'changepassword-form',
@@ -64,3 +71,7 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+</div>
+     </div>
+            </div>
+    </div>

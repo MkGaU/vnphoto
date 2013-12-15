@@ -18,7 +18,7 @@
               
             </div><!--End register-->
             <?php } ?>
-            <p>To pay by check or bank transfer, please email your bank's username and subscription choice to support@vietnamphoto.com <p>
+            <p>To pay by check or bank transfer, please email your username and subscription choice to support@vietnamphoto.com <p>
              
             <!-- Subcriptions-->
             <div class="panel panel-default">

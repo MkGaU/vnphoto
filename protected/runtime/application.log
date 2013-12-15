@@ -29735,3 +29735,23 @@ Stack trace:
 REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
 in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
 in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 13:10:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xamppp\htdocs\vnphoto\protected\modules\user\controllers\UserController.php:79
+Stack trace:
+#0 C:\xamppp\htdocs\vnphoto\protected\modules\user\controllers\UserController.php(42): UserController->loadModel()
+#1 C:\xamppp\yii\framework\web\actions\CInlineAction.php(49): UserController->actionView()
+#2 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/view/...')
+#12 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/vnphoto/index.php/user/user/view/id
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
