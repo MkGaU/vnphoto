@@ -32,7 +32,6 @@
                 <span class="input-group-btn">
                     <?php
                     echo CHtml::tag('button', array('class' => 'btn btn-primary'), '<span class="glyphicon glyphicon-search"></span>');
-                    
                     ?>
                 </span> </div>
             <!-- /input-group --> 
@@ -40,9 +39,9 @@
             <!-- /input-group --> 
 
         </div>
-         <div class="form-group">
+        <div class="form-group">
             <?php
-            echo $form->checkBoxList($model, 'dimension', array('Horizontal' => 'horizontal', 'Vertical' => 'vertical'), array('class' => 'row')
+            echo $form->checkBoxList($model, 'tendency', array('Horizontal' => 'horizontal', 'Vertical' => 'vertical'), array('class' => 'row')
             );
             ?>
         </div>
@@ -102,37 +101,45 @@
             //echo $form->textField($model,'imageColor',array('id'=>'Binded','class'=>'form-control'));
             ?>
             <div class="form-group">
-           <?php
-            Yii::app()->clientScript->registerScript('colorPicker', '
-                var myPicker = new jscolor.color(document.getElementById("myField1"), {required:false,hash:true,caps:false})
-                ');
-            echo $form->textField($model, 'imageColor', array('id' => 'myField1', 'class' => 'form-control','placeholder'=>'Color'));
-            ?>
+                <?php
+//                Yii::app()->clientScript->registerScript('colorPicker', '
+//                var myPicker = new jscolor.color(document.getElementById("myField1"), {required:false,hash:true,caps:false})
+//                ');
+                echo $form->textField($model, 'imageColor', array('id' => 'myField1', 'class' => 'form-control', 'placeholder' => 'Color'));
+                ?>
             </div>
-            <?php
-//            echo $form->labelEx($model,'imageColor');
-//            $this->widget('ext.colorpicker.ColorPicker', array(
-//                'model' => $model,
-//                'attribute' => 'imageColor',             
-//                //'name'=>'color1',
-//               
-//            ));
-            ?>
 
+            <?php
+
+            function gwsc() {
+                $cs = array('00', '33', '66', '99', 'CC', 'FF');
+
+                for ($i = 0; $i < 6; $i++) {
+                    for ($j = 0; $j < 6; $j++) {
+                        for ($k = 0; $k < 6; $k++) {
+                            $c = $cs[$i] . $cs[$j] . $cs[$k];
+                            echo "<option value=\"$c\">#$c</option>\n";
+                        }
+                    }
+                }
+            }
+            Yii::app()->clientScript->registerScript('colorpicker','jQuery("select[name="colour"]").colourPicker({
+    ico: "vietnamphoto/themes/vnphoto/js/colorpicker/jquery.colourPicker.gif", 
+    title:    false
+});');
+            ?>
+            <select name="colour"><?php gwsc(); ?></select>.
+            
 
 
         </div>
-<!--        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-    $('#color1').colorPicker();
-  });
-        </script>-->
+
         <!--form group-->
         <div class="form-group text-center">
             <div class="btn-group">
                 <button type="submit" class="btn btn-primary ">Search</button>
                 <button type="reset" class="btn btn-default ">Clear</button>
-                <?php //echo CHtml::resetButton('Clear',array('class'=>'btn btn-default'))?>
+<?php //echo CHtml::resetButton('Clear',array('class'=>'btn btn-default'))   ?>
             </div>
         </div>
     </form>

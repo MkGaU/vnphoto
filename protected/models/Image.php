@@ -18,7 +18,7 @@
  * @property integer $size
  * @property integer $width
  * @property integer $height
- * @property string $dimension
+ * @property string $tendency
  * @property string $thumbnails
  * @property integer $CreatedTime
  * @property integer $UpdateTime
@@ -29,8 +29,7 @@ class Image extends CActiveRecord {
     const STATUS_PUBLISHED = 2;
     const STATUS_ARCHIVED = 3;
 
-    private $_oldTags;
-    public $iduser;
+    private $_oldTags;   
 
     /**
      * @return string the associated database table name
@@ -63,7 +62,7 @@ class Image extends CActiveRecord {
             array('Category, ageType, status, size, width, height, CreatedTime, UpdateTime', 'numerical', 'integerOnly'=>true),
             array('Title, ImgLink, thumbnails, filename, description', 'length', 'max' => 255),
             array('Author, ageType', 'length', 'max' => 11),
-            array('dimension, sex, imageColor', 'length', 'max'=>25),
+            array('tendency, sex, imageColor', 'length', 'max'=>25),
             array('tags', 'match', 'pattern' => '/^[\w\s,]+$/', 'message' => 'Tags can only contain word characters.'),
             array('tags', 'normalizeTags'),
             array('format, size, width, height', 'length', 'max' => 10),
@@ -104,7 +103,7 @@ class Image extends CActiveRecord {
             'imageColor'=>'ImageColor',
             'width' => 'Width',
             'height' => 'Height',
-            'dimension' => 'Dimension',
+            'tendency' => 'Tendency',
             'thumbnails' => 'Thumbnails',
             'CreatedTime' => 'Created Time',
             'UpdateTime' => 'Update Time',
@@ -177,7 +176,7 @@ class Image extends CActiveRecord {
         $criteria->compare('status', $this->status);
         $criteria->compare('description', $this->description,true);
         $criteria->compare('format',$this->format,true);
-        $criteria->compare('dimension', $this->dimension,true);
+        $criteria->compare('tendency', $this->tendency,true);
         $criteria->compare('ImgLink', $this->ImgLink, true);
         $criteria->compare('format', $this->format, true);
         $criteria->compare('thumbnails', $this->thumbnails, true);
@@ -264,45 +263,6 @@ class Image extends CActiveRecord {
         Tags::model()->updateFrequency($this->_oldTags, $this->tags);
     }
 
-    public function addImages() {
-        //If we have pending images
-        if (Yii::app()->user->hasState('images')) {
-            $userImages = Yii::app()->user->getState('images');
-            //Resolve the final path for our images
-            $path = Yii::app()->getBasePath() . "/../images/uploads/{$this->id}/";
-            //Create the folder and give permissions if it doesnt exists
-            if (!is_dir($path)) {
-                mkdir($path);
-                chmod($path, 0777);
-            }
-
-            //Now lets create the corresponding models and move the files
-            foreach ($userImages as $image) {
-                if (is_file($image["path"])) {
-                    if (rename($image["path"], $path . $image["filename"])) {
-                        chmod($path . $image["filename"], 0777);
-                        $img = new Image( );
-                        $img->size = $image["size"];
-                        $img->mime = $image["mime"];
-                        $img->name = $image["name"];
-                        $img->source = "/images/uploads/{$this->id}/" . $image["filename"];
-                        $img->somemodel_id = $this->id;
-                        if (!$img->save()) {
-                            //Its always good to log something
-                            Yii::log("Could not save Image:\n" . CVarDumper::dumpAsString(
-                                            $img->getErrors()), CLogger::LEVEL_ERROR);
-                            //this exception will rollback the transaction
-                            throw new Exception('Could not save Image');
-                        }
-                    }
-                } else {
-                    //You can also throw an execption here to rollback the transaction
-                    Yii::log($image["path"] . " is not a file", CLogger::LEVEL_WARNING);
-                }
-            }
-            //Clear the user's session
-            Yii::app()->user->setState('images', null);
-        }
-    }
+    
 
 }

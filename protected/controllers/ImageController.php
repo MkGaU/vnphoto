@@ -45,6 +45,9 @@ class ImageController extends Controller {
             ),
         );
     }
+    /*
+     * the default action for the controller
+     */
     public $defaultAction = 'FirstIndex';
     /*
      * Display first page of site
@@ -138,11 +141,11 @@ class ImageController extends Controller {
         $w = $dimension->getimagewidth();
         $h = $dimension->getimageheight();
         if ($w > $h) {
-            $type = 'vertical';
+            $tendency = 'vertical';
         } else {
-            $type = 'horizontal';
+            $tendency = 'horizontal';
         }
-        return array($w, $h, $type);
+        return array($w, $h, $tendency);
     }
 
     /**
@@ -168,7 +171,7 @@ class ImageController extends Controller {
                     $r = $this->defineDimension($path);
                     $model->width = $r[0];
                     $model->height = $r[1];
-                    $model->dimension = $r[2];
+                    $model->tendency = $r[2];
                     // Encrypt name of image by md5
                     $thumbName = md5(date('dmy') . time() . rand());
                     $imageName = md5(date('YMD') . time() . rand());
@@ -263,19 +266,13 @@ class ImageController extends Controller {
                 'dataProvider' => $dataProvider,
                 'model' => $model,
             ));
-//        } else if (isset($_GET['search_key'])){          
-//        
-//            $model->Title = $_GET['search_key'];
-//
-//            $this->render('mainView', array(
-//            'model' => $model,
-//        ));
+
         }
         else {
             if (isset($_GET['Image']))
                 $model->attributes = $_GET['Image'];
 
-//send model object for search
+
             $this->render('mainView', array(
                 'dataProvider' => $model->search(),
                 'model' => $model,
@@ -324,16 +321,16 @@ class ImageController extends Controller {
         ));
         $images = $dataProvider->getData();
 
-        $return_array = array();
+        $suggest = array();
         foreach ($images as $image) {
-            $return_array[] = array(
+            $suggest[] = array(
                 'label' => $image->Title,
                 'value' => $image->Title,
                 'id' => $image->id,
             );
         }
 
-        echo CJSON::encode($return_array);
+        echo CJSON::encode($suggest);
     }
 
     /*
@@ -342,10 +339,14 @@ class ImageController extends Controller {
      */
 
     public function actionDownloadFile($id, $file_name) {
-        $model = $this->loadModel($id);
+        if(Yii::app()->user->getIsSuperuser()){
+            $model = $this->loadModel($id);
         EDownloadHelper::download(Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . $file_name);
-
-        echo stream_get_contents($model->$file_field, -1, 0);
+        echo stream_get_contents($model->$file_field, -1, 0);       
+        }else{
+            echo Chtml::link('Home',array('//image/FirstIndex'));
+        }
+        
     }
 
     /**

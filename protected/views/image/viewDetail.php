@@ -31,15 +31,26 @@ $this->menu = array(
                 'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
             ));
             ?>
-           
-           
+
+
         </div>
         <div class="navbar text-center">
+            <div id="fb-root"></div>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id))
+                        return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
             <ul class="nav navbar-nav">
-                
+
                 <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Chia sẻ			<strong class="caret"></strong></a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Facebook</a></li>
+                        <li role="presentation"><div class="fb-share-button" data-href="http://www.shutterstock.com/pic-141205420" data-type="icon_link"></div></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Zing me</a></li>
                     </ul>
                 </li>

@@ -1,0 +1,352 @@
+2013/12/12 15:08:45 [error] [exception.CException] exception 'CException' with message 'Property "Image.dimension" is not defined.' in G:\xampp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 G:\xampp\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('dimension')
+#1 G:\xampp\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('dimension')
+#2 G:\xampp\yii\framework\web\helpers\CHtml.php(1905): CHtml::resolveValue(Object(Image), 'dimension')
+#3 G:\xampp\yii\framework\web\widgets\CActiveForm.php(879): CHtml::activeCheckBoxList(Object(Image), 'dimension', Array, Array)
+#4 G:\xampp\htdocs\vietnamphoto\protected\views\image\_search.php(46): CActiveForm->checkBoxList(Object(Image), 'dimension', Array, Array)
+#5 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#6 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#7 G:\xampp\yii\framework\web\CController.php(869): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#8 G:\xampp\htdocs\vietnamphoto\protected\views\image\mainView.php(21): CController->renderPartial('_search', Array)
+#9 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#10 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#11 G:\xampp\yii\framework\web\CController.php(869): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#12 G:\xampp\yii\framework\web\CController.php(782): CController->renderPartial('mainView', Array, true)
+#13 G:\xampp\htdocs\vietnamphoto\protected\controllers\ImageController.php(282): CController->render('mainView', Array)
+#14 G:\xampp\yii\framework\web\actions\CInlineAction.php(49): ImageController->actionIndex()
+#15 G:\xampp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 G:\xampp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 G:\xampp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 G:\xampp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 G:\xampp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 G:\xampp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 G:\xampp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 G:\xampp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#24 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/index')
+#25 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/index?Image%5BTitle%5D=wihte+bikini
+HTTP_REFERER=http://localhost/vietnamphoto/index.php
+---
+2013/12/12 15:09:33 [error] [exception.CException] exception 'CException' with message 'Property "Image.dimension" is not defined.' in G:\xampp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 G:\xampp\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('dimension')
+#1 G:\xampp\htdocs\vietnamphoto\protected\views\image\_view.php(15): CActiveRecord->__get('dimension')
+#2 G:\xampp\yii\framework\web\CBaseController.php(130): require('G:\xampp\htdocs...')
+#3 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, false)
+#4 G:\xampp\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('G:\xampp\htdocs...', Array)
+#5 G:\xampp\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 G:\xampp\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{sorter}{pager}...')
+#8 G:\xampp\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 G:\xampp\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 G:\xampp\htdocs\vietnamphoto\protected\views\image\mainView.php(42): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#12 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#13 G:\xampp\yii\framework\web\CController.php(869): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#14 G:\xampp\yii\framework\web\CController.php(782): CController->renderPartial('mainView', Array, true)
+#15 G:\xampp\htdocs\vietnamphoto\protected\controllers\ImageController.php(282): CController->render('mainView', Array)
+#16 G:\xampp\yii\framework\web\actions\CInlineAction.php(49): ImageController->actionIndex()
+#17 G:\xampp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 G:\xampp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 G:\xampp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 G:\xampp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 G:\xampp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 G:\xampp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 G:\xampp\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 G:\xampp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#26 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/index')
+#27 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#29 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/index?Image%5BTitle%5D=wihte+bikini
+HTTP_REFERER=http://localhost/vietnamphoto/index.php
+---
+2013/12/12 15:09:40 [error] [exception.CException] exception 'CException' with message 'Property "Image.tedency" is not defined.' in G:\xampp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 G:\xampp\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('tedency')
+#1 G:\xampp\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('tedency')
+#2 G:\xampp\yii\framework\web\helpers\CHtml.php(1905): CHtml::resolveValue(Object(Image), 'tedency')
+#3 G:\xampp\yii\framework\web\widgets\CActiveForm.php(879): CHtml::activeCheckBoxList(Object(Image), 'tedency', Array, Array)
+#4 G:\xampp\htdocs\vietnamphoto\protected\views\image\_search.php(46): CActiveForm->checkBoxList(Object(Image), 'tedency', Array, Array)
+#5 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#6 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#7 G:\xampp\yii\framework\web\CController.php(869): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#8 G:\xampp\htdocs\vietnamphoto\protected\views\image\mainView.php(21): CController->renderPartial('_search', Array)
+#9 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#10 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#11 G:\xampp\yii\framework\web\CController.php(869): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#12 G:\xampp\yii\framework\web\CController.php(782): CController->renderPartial('mainView', Array, true)
+#13 G:\xampp\htdocs\vietnamphoto\protected\controllers\ImageController.php(282): CController->render('mainView', Array)
+#14 G:\xampp\yii\framework\web\actions\CInlineAction.php(49): ImageController->actionIndex()
+#15 G:\xampp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 G:\xampp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 G:\xampp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 G:\xampp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 G:\xampp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 G:\xampp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 G:\xampp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 G:\xampp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#24 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/index')
+#25 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/index?Image%5BTitle%5D=wihte+bikini
+HTTP_REFERER=http://localhost/vietnamphoto/index.php
+---
+2013/12/12 15:10:03 [error] [exception.CException] exception 'CException' with message 'Property "Image.dimension" is not defined.' in G:\xampp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 G:\xampp\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('dimension')
+#1 G:\xampp\htdocs\vietnamphoto\protected\views\image\_view.php(15): CActiveRecord->__get('dimension')
+#2 G:\xampp\yii\framework\web\CBaseController.php(130): require('G:\xampp\htdocs...')
+#3 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, false)
+#4 G:\xampp\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('G:\xampp\htdocs...', Array)
+#5 G:\xampp\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 G:\xampp\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{sorter}{pager}...')
+#8 G:\xampp\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 G:\xampp\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 G:\xampp\htdocs\vietnamphoto\protected\views\image\mainView.php(42): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#12 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#13 G:\xampp\yii\framework\web\CController.php(869): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#14 G:\xampp\yii\framework\web\CController.php(782): CController->renderPartial('mainView', Array, true)
+#15 G:\xampp\htdocs\vietnamphoto\protected\controllers\ImageController.php(282): CController->render('mainView', Array)
+#16 G:\xampp\yii\framework\web\actions\CInlineAction.php(49): ImageController->actionIndex()
+#17 G:\xampp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 G:\xampp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 G:\xampp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 G:\xampp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 G:\xampp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 G:\xampp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 G:\xampp\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 G:\xampp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#26 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/index')
+#27 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#29 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/index?Image%5BTitle%5D=wihte+bikini
+HTTP_REFERER=http://localhost/vietnamphoto/index.php
+---
+2013/12/12 15:21:05 [error] [exception.CException] exception 'CException' with message 'Property "TbTypeahead.source" is not defined.' in G:\xampp\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 G:\xampp\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('source', Array)
+#1 G:\xampp\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ImageController), 'bootstrap.widge...', Array)
+#2 G:\xampp\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 G:\xampp\htdocs\vietnamphoto\protected\views\image\index.php(15): CBaseController->widget('bootstrap.widge...', Array)
+#4 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#5 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#6 G:\xampp\yii\framework\web\CController.php(869): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#7 G:\xampp\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 G:\xampp\htdocs\vietnamphoto\protected\controllers\ImageController.php(54): CController->render('index', Array)
+#9 G:\xampp\yii\framework\web\actions\CInlineAction.php(49): ImageController->actionFirstIndex()
+#10 G:\xampp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 G:\xampp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 G:\xampp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 G:\xampp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 G:\xampp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 G:\xampp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 G:\xampp\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 G:\xampp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/vietnamphoto/index.php
+---
+2013/12/15 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "image".' in G:\xampp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/vietnamphoto/index.php
+---
+2013/12/15 06:06:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "photos".' in G:\xampp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/vietnamphoto/index.php
+---
+2013/12/15 06:06:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "imnage".' in G:\xampp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#1 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/vietnamphoto/index.php
+---
+2013/12/15 06:47:43 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "getIsUser".' in G:\xampp\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 G:\xampp\htdocs\vietnamphoto\themes\vnphoto\views\layouts\main.php(37): CComponent->__call('getIsUser', Array)
+#1 G:\xampp\htdocs\vietnamphoto\themes\vnphoto\views\layouts\main.php(37): RWebUser->getIsUser()
+#2 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#3 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#4 G:\xampp\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#5 G:\xampp\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('      <div clas...')
+#6 G:\xampp\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('      <div clas...')
+#7 G:\xampp\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 G:\xampp\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 G:\xampp\htdocs\vietnamphoto\themes\vnphoto\views\layouts\column2.php(25): CBaseController->endContent()
+#10 G:\xampp\yii\framework\web\CBaseController.php(126): require('G:\xampp\htdocs...')
+#11 G:\xampp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('G:\xampp\htdocs...', Array, true)
+#12 G:\xampp\yii\framework\web\CController.php(784): CBaseController->renderFile('G:\xampp\htdocs...', Array, true)
+#13 G:\xampp\htdocs\vietnamphoto\protected\controllers\ImageController.php(279): CController->render('mainView', Array)
+#14 G:\xampp\yii\framework\web\actions\CInlineAction.php(49): ImageController->actionIndex()
+#15 G:\xampp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 G:\xampp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 G:\xampp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 G:\xampp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 G:\xampp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 G:\xampp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 G:\xampp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 G:\xampp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#24 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/index')
+#25 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/index
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index
+---
+2013/12/15 06:50:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Registerb".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('Registerb')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('Registerb')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/Regis...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/user/user/Registerb
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/user/login
+---
+2013/12/15 06:50:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Registerb".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('Registerb')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('Registerb')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/Regis...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/user/user/Registerb
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/user/login
+---
+2013/12/15 07:51:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Registerb".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('Registerb')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('Registerb')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/Regis...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/user/user/Registerb
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/user/login
+---
+2013/12/15 10:20:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/v5...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/v5-twitter-icon-25x25px.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:20:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/wo...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/worldmap_sm.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:20:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/gp...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/gplusicon-25x25.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:20:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/fa...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/facebook-icon25x25.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:20:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/Vi...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/Vietnam%20icon.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:21:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/Vi...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/Vietnam%20icon.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:21:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/wo...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/worldmap_sm.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:23:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/Vi...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/Vietnam%20icon.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---
+2013/12/15 10:23:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in G:\xampp\yii\framework\web\CController.php:483
+Stack trace:
+#0 G:\xampp\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 G:\xampp\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 G:\xampp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/images/wo...')
+#3 G:\xampp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 G:\xampp\htdocs\vietnamphoto\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/vietnamphoto/index.php/image/images/worldmap_sm.png
+HTTP_REFERER=http://localhost/vietnamphoto/index.php/image/index?Image%5BTitle%5D=
+---

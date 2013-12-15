@@ -18,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/ImageColorPicker/dist/ImageColorPicker.css"  media="screen" charset="utf-8"/>
 <link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/css/jpicker-1.1.6.min.css" />
 <link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/jPicker.css" />
+<link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/colorpicker/jquery.colourPicker.css" />
 
 <!-- Le fav and touch icons -->
 </head>
@@ -33,9 +34,9 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
        <p class="navbar-brand"> <?php 
         if(Yii::app()->user->getIsSuperuser()){
-            echo Chtml::link('Home',array('//site/Administrator'));
+            echo Chtml::link('Home',array('//site/Administrator'));       
         }else{
-            echo Chtml::link('Home',array('//image/index'));
+            echo Chtml::link('Home',array('//image/FirstIndex'));
         }
       ?></p>
       <p class="navbar-text"> <span class="glyphicon glyphicon-earphone"> 0163-255-7717</span> </p>
@@ -63,7 +64,7 @@
         <li><?php echo CHtml::link('View Plans & Pricing <span class="glyphicon glyphicon-circle-arrow-right"></span>',array('//site/pricing'))?></li>
 
 
-        <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
+        <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('//user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
         <?php } ?> 
       </ul>
     </div>
@@ -73,7 +74,7 @@
   
 </div>
 <!-- container -->
-</div>
+
 
 <!-- end navbar row--> 
 
@@ -128,28 +129,62 @@
 
 <div class="footer">
   <div class="panel-footer">
-    <div class="row">
-      <div class="col-xs-2"></div>
-      <div class="col-xs-2">
-        <p class="text-muted"> <strong>Vietnamphotos.com</strong></p>
-        <a  class="text-muted"><?php echo CHtml::link('Home',array('//site/index')) ?></a><br>
-        <a href="http://google.com" class="text-muted">Thông tin</a><br>
-      </div>
-      <div class="col-xs-2" >
-        <p class="text-muted"><strong>Liên hệ và hỗ trợ</strong></p>
-        <a href="http://google.com" class="text-muted">Liên hệ với chúng tôi</a><br>
-        <p class="text-muted">.............................</p>
-        <p class="text-muted">Điện thoại hỗ trợ</p>
-        <p class="text-muted">0163 255 7717</p>
-      </div>
-      <div class="col-xs-2" >
-        <p class="text-muted"><strong>Lựa chọn ngôn ngữ</strong></p>
-        <a href="http://google.com" class="text-muted">Tiếng Việt</a><br>
-        <a href="http://google.com" class="text-muted">English</a><br>
-      </div>
-    </div>
+   <footer>
+        <div class="row">
+		<div class="col-lg-offset-1">
+        <p>© 2013 VietnamPhoto   <a href="#">Home</a> · <a href="#">About</a> .</p>
+		</div>
+		<div class="row">
+        <div class="col-lg-3 col-lg-offset-1">
+          <img class="img-circle"  alt="140x140" style="width: 140px; height: 140px;" src="<?php echo Yii::app()->theme->baseUrl;?>/images/Vietnam icon.png">
+          <h3>VIETNAMPHOTO</h3>
+			<p>Millions of stock photographs, illustrations from artists all around Vietnam.</p>	  
+          
+		
+        
+        </div><!-- /.col-lg-3 col-lg-offset-1 -->
+        <div class="col-lg-3 col-lg-offset-1">
+          
+          <h2>Contact & Support</h2>
+		
+          <p>VietnamPhoto provides support for your product in many ways. Find out what options are available to you and how you can contact us. Contact VietnamPhoto for support - ‎Complimentary Support</p>
+		   <a class="text-muted">Contact Us</a>
+		    <p>.......................</p>
+		    <p>Sales and Support:</p>
+			<p class="text-muted">+84 1632557717</p>
+			
+			<a class="text-muted" href="#">Vietnamphoto-support@gmail.com</a>
+		   
+		   <div style="margin-top:20px;">
+             <p>Follow us: 
+			<span> <img class="follow-icon" src="<?php echo Yii::app()->theme->baseUrl;?>/images/facebook-icon25x25.png">  </span>
+			<span> <img class="follow-icon" src="<?php echo Yii::app()->theme->baseUrl;?>/images/gplusicon-25x25.png">  </span>
+			<span> <img class="follow-icon" src="<?php echo Yii::app()->theme->baseUrl;?>/images/v5-twitter-icon-25x25px.png">  </span>
+			
+		     </p>
+		 </div>
+        </div><!-- col-lg-2 col-lg-offset-1 -->
+        <div class="col-lg-3 col-lg-offset-1 ">
+          
+          <h2>Legal</h2>
+          
+          			
+			<p><a class="text-muted">Website Terms of Use</a></p>
+			<p><a class="text-muted">Photo Licensing Terms</a></p>
+			<p><a class="text-muted">Privacy Policy</a></p>
+		   
+		   <div style="margin-top:20px;">
+		  <img class="img-circle"  alt="140x140" style="width: 140px;" src="<?php echo Yii::app()->theme->baseUrl;?>/images/worldmap_sm.png">
+		  </div>
+		 
+		</div>
+          <!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+   </footer>
   </div>
 </div>
+
+<!-- END FOOTER-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 
 
@@ -164,9 +199,9 @@
 <script  src="<?php echo Yii::app()->theme->baseUrl;?>/js/jscolor/jscolor.js" type="text/javascript"></script>
 
 <!--colorPicker-->
-
-<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl;?>js/colorpicker1/src/jquery.simple-color.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorpicker/jquery.colourPicker.js" type="text/javascript"></script>
+<!--<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.min.js" type="text/javascript"></script>-->
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>

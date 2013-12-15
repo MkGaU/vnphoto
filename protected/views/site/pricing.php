@@ -1,4 +1,4 @@
-
+<script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js" type="text/javascript"></script>
 <div id="container">
     
         <div class="col-lg-offset-3 col-lg-6">
@@ -49,7 +49,7 @@
             <div>
                 <a target="_blank" href="https://www.nganluong.vn/button_payment.php?receiver=nhaqueonline_24h@yahoo.com.vn&product_name=vietnam photo&price=2000&return_url=http://localhost:1080/vnphoto/index.php/site/pricing&comments=Không" ><img src="https://www.nganluong.vn/data/images/buttons/3.gif"  border="0" /></a> 
             </div>
->>>>>>> branch 'master' of https://github.com/vietnamphoto/vnphoto.git
+
             
             <!--Continued Form-->
             <div class="pull-right">
