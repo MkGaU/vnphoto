@@ -10,10 +10,10 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                      
-                    <p><span class="h4">Please waiting in 30 minutes to system active your downloading account   </span>  </p>
+                    <p><span class="h4">Please waiting 30 minutes to system active your downloading account   </span>  </p>
                     <div class="pull-right"><?php 
                     
-                            echo CHtml::link('Continue',array('//image/index'),array('class' => 'btn btn-default'));
+                            echo CHtml::link('Continue',array('//image/index'),array('class' => 'btn btn-success'));
                             ?></div>
                 </div>
 

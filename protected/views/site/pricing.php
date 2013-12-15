@@ -11,7 +11,7 @@
                 <div class="panel-body">
                     
                     <p><span class="h4">Register Only  </span>       Browse our entire collections</p>
-                    <div class="pull-right"><?php echo CHtml::link('Try for free',array('//user/RegisterB'),array('class' => 'btn btn-default'))?></div>
+                    <div class="pull-right"><?php echo CHtml::link('Try for free',array('//user/RegisterB'),array('class' => 'btn btn-success'))?></div>
                 
                 </div>
                
