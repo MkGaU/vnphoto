@@ -104,7 +104,7 @@ $this->breadcrumbs = array(
                                 'type' => 'raw',
                                 'value' => function($data) {
                          if(Yii::app()->user->IsGuest){ 
-                             return CHtml::link('Download',array('//user/Registerb'),array('class' => 'btn btn-default'));}
+                             return CHtml::link('Download',array('//user/Registerb '),array('class' => 'btn btn-default'));}
                              else{
                                     return CHtml::link('Download', array('Image/DownloadFile',
                                                 'id' => $data->id,
