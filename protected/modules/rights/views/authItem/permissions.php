@@ -1,3 +1,10 @@
+
+<?php $this->breadcrumbs = array(
+	'Rights'=>Rights::getBaseUrl(),
+	Rights::t('core', 'Permissions'),
+); ?>
+
+<div id="permissions">
 <ul class="nav nav-tabs">
     <li ><?php echo CHtml::link('Assignments',array('//rights/assignment/view')) ?></li>
     <li class="active"><?php echo CHtml::link('Permissions',array('//rights/authItem/permissions')) ?></li>
@@ -6,13 +13,6 @@
     <li><?php echo Chtml::link('Operations',array('//rights/authItem/operations')) ?></li>
    
 </ul>
-<?php $this->breadcrumbs = array(
-	'Rights'=>Rights::getBaseUrl(),
-	Rights::t('core', 'Permissions'),
-); ?>
-
-<div id="permissions">
-
 	<h3 class="col-lg-offset-4"><?php echo Rights::t('core', 'Permissions'); ?></h3>
 
 	<p>

@@ -342,13 +342,9 @@ class ImageController extends Controller {
         if(Yii::app()->user->getIsSuperuser()){
             $model = $this->loadModel($id);
         EDownloadHelper::download(Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . $file_name);
-        echo stream_get_contents($model->$file_field, -1, 0);       
-        }else{
-            echo Chtml::link('Home',array('//image/FirstIndex'));
-        }
-        
+        echo stream_get_contents($model->$file_field, -1, 0);
     }
-
+    }
     /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.

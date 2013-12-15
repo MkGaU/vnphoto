@@ -65,7 +65,7 @@
             <?php echo $form->labelEx($model, 'verifyPassword'); ?>
             <?php
             echo $form->passwordField($model, 'verifyPassword', array(
-                'class' => 'form-control ',
+                'class' => 'form-control ', 
                     )
             );
             ?> 
@@ -97,6 +97,7 @@
             }
         }
         ?>
+        
         <?php /* if (UserModule::doCaptcha('registration')): ?>
           <div class="row">
           <?php echo $form->labelEx($model,'verifyCode'); ?>
@@ -109,6 +110,15 @@
           <br/><?php echo UserModule::t("Letters are not case-sensitive."); ?></p>
           </div>
           <?php endif; */ ?>
+         <div class="form-group">
+          <p class="checkbox">
+            <input type="checkbox"  id="inlineCheckbox1" value="horizontal">
+             Yes, e-mail me updates and special offers from VietnamPhoto </p>
+          <p class="checkbox">
+            <input type="checkbox" id="inlineCheckbox2" value="vertical" required >
+              I agree to Vietnamphoto's <?php echo CHtml::link('Website term',array('//site/WebsiteTerm')) ?>. </p>
+        </div>
+        
         <div class="form-group">
             <button class="btn btn-success" type="submit">Create an account</button>
         </div>
