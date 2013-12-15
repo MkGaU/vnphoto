@@ -28597,3 +28597,1141 @@ Stack trace:
 REQUEST_URI=/vnphoto/index.php/user/user/Registerb
 HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
 ---
+2013/12/11 11:24:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Registerb".' in C:\xamppp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xamppp\yii\framework\web\CController.php(270): CController->missingAction('Registerb')
+#1 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('Registerb')
+#2 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/Regis...')
+#3 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/vnphoto/index.php/user/user/Registerb
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/Registerb
+---
+2013/12/11 11:31:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/user/admin
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/11 11:31:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/user/admin
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/site/Administrator
+---
+2013/12/11 11:32:23 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:33:36 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:37:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/Registerb
+---
+2013/12/11 11:37:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/213
+---
+2013/12/11 11:40:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/213
+---
+2013/12/11 11:44:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/213
+---
+2013/12/11 11:44:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/213
+---
+2013/12/11 11:45:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/213
+---
+2013/12/11 11:45:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/admin')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/admin
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/site/Administrator
+---
+2013/12/11 11:45:52 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:344)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (344)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:46:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/11 11:49:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/11 11:49:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/11 11:49:31 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:49:47 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:50:03 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:52:20 [error] [exception.CException] exception 'CException' with message 'Property "CAccessRule.role" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(115): CComponent->__set('role', Array)
+#1 C:\xamppp\yii\framework\web\CController.php(1144): CAccessControlFilter->setRules(Array)
+#2 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#8 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+---
+2013/12/11 11:52:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/11 11:52:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/11 11:55:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/11 11:55:37 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:56:03 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:56:28 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 11:58:59 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/11 17:08:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "WebsiteTerm".' in C:\xamppp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xamppp\yii\framework\web\CController.php(270): CController->missingAction('WebsiteTerm')
+#1 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('WebsiteTerm')
+#2 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/WebsiteTer...')
+#3 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/vnphoto/index.php/site/WebsiteTerm
+---
+2013/12/15 06:47:31 [error] [exception.CException] exception 'CException' with message 'Property "RWebUser.user" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('user')
+#1 C:\xamppp\htdocs\vnphoto\protected\views\image\view.php(96): CWebUser->__get('user')
+#2 C:\xamppp\yii\framework\web\CBaseController.php(126): require('C:\xamppp\htdoc...')
+#3 C:\xamppp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xamppp\htdoc...', Array, true)
+#4 C:\xamppp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xamppp\htdoc...', Array, true)
+#5 C:\xamppp\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(60): CController->render('view', Array)
+#7 [internal function]: ImageController->actionView('210')
+#8 C:\xamppp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ImageController), Array)
+#9 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ImageController), Object(ReflectionMethod), Array)
+#10 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#20 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/
+---
+2013/12/15 06:50:35 [error] [exception.CException] exception 'CException' with message 'Property "RWebUser.isUser" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('isUser')
+#1 C:\xamppp\htdocs\vnphoto\protected\views\image\view.php(96): CWebUser->__get('isUser')
+#2 C:\xamppp\yii\framework\web\CBaseController.php(126): require('C:\xamppp\htdoc...')
+#3 C:\xamppp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xamppp\htdoc...', Array, true)
+#4 C:\xamppp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xamppp\htdoc...', Array, true)
+#5 C:\xamppp\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(60): CController->render('view', Array)
+#7 [internal function]: ImageController->actionView('210')
+#8 C:\xamppp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ImageController), Array)
+#9 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ImageController), Object(ReflectionMethod), Array)
+#10 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#20 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/
+---
+2013/12/15 06:50:37 [error] [exception.CException] exception 'CException' with message 'Property "RWebUser.isUser" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('isUser')
+#1 C:\xamppp\htdocs\vnphoto\protected\views\image\view.php(96): CWebUser->__get('isUser')
+#2 C:\xamppp\yii\framework\web\CBaseController.php(126): require('C:\xamppp\htdoc...')
+#3 C:\xamppp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xamppp\htdoc...', Array, true)
+#4 C:\xamppp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xamppp\htdoc...', Array, true)
+#5 C:\xamppp\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(60): CController->render('view', Array)
+#7 [internal function]: ImageController->actionView('210')
+#8 C:\xamppp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ImageController), Array)
+#9 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ImageController), Object(ReflectionMethod), Array)
+#10 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#20 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/
+---
+2013/12/15 06:52:46 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 06:54:32 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 06:58:30 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 07:11:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/15 07:11:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/user/admin
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/site/Administrator
+---
+2013/12/15 07:11:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/admin')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/admin
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/site/Administrator
+---
+2013/12/15 07:13:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/15 07:14:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/admin')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/admin
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/site/Administrator
+---
+2013/12/15 07:15:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/15 07:17:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/15 07:17:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/15 07:18:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/15 07:18:27 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 07:19:04 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 07:19:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/213?file_name=%2Fimages%2F2013%2F12%2F04%2F617ea9a5d9d26e702a01c3adbb6c2fa6.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/213
+---
+2013/12/15 07:19:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/15 07:20:34 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 07:20:49 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 07:23:31 [error] [exception.CException] exception 'CException' with message 'Property "RightsModule.role" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\yii\framework\base\CModule.php(105): CComponent->__get('role')
+#1 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): CModule->__get('role')
+#2 C:\xamppp\yii\framework\web\CController.php(1144): ImageController->accessRules()
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/index
+---
+2013/12/15 07:23:52 [error] [exception.CException] exception 'CException' with message 'Property "RightsModule.roles" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\yii\framework\base\CModule.php(105): CComponent->__get('roles')
+#1 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): CModule->__get('roles')
+#2 C:\xamppp\yii\framework\web\CController.php(1144): ImageController->accessRules()
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/index
+---
+2013/12/15 07:26:02 [error] [exception.CException] exception 'CException' with message 'Property "RightsModule.authitem" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\yii\framework\base\CModule.php(105): CComponent->__get('authitem')
+#1 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): CModule->__get('authitem')
+#2 C:\xamppp\yii\framework\web\CController.php(1144): ImageController->accessRules()
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/index
+---
+2013/12/15 07:26:20 [error] [exception.CException] exception 'CException' with message 'Property "RightsModule.AuthItem" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\yii\framework\base\CModule.php(105): CComponent->__get('AuthItem')
+#1 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): CModule->__get('AuthItem')
+#2 C:\xamppp\yii\framework\web\CController.php(1144): ImageController->accessRules()
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/index
+---
+2013/12/15 07:27:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/15 07:27:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/user/login
+---
+2013/12/15 08:06:04 [error] [php] Array to string conversion (C:\xamppp\yii\framework\web\helpers\CHtml.php:162)
+Stack trace:
+#0 unknown(0): ImageController->{closure}()
+#1 C:\xamppp\yii\framework\zii\widgets\CDetailView.php(212): call_user_func()
+#2 C:\xamppp\yii\framework\web\CBaseController.php(173): TbDetailView->run()
+#3 C:\xamppp\htdocs\vnphoto\protected\views\image\view.php(117): ImageController->widget()
+#4 C:\xamppp\yii\framework\web\CBaseController.php(126): require()
+#5 C:\xamppp\yii\framework\web\CBaseController.php(95): ImageController->renderInternal()
+#6 C:\xamppp\yii\framework\web\CController.php(869): ImageController->renderFile()
+#7 C:\xamppp\yii\framework\web\CController.php(782): ImageController->renderPartial()
+#8 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(60): ImageController->render()
+#9 unknown(0): ImageController->actionView()
+#10 C:\xamppp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#11 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#12 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#14 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#17 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#20 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#21 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/image/210
+in C:\xamppp\htdocs\vnphoto\protected\views\image\view.php (107)
+in C:\xamppp\htdocs\vnphoto\protected\views\image\view.php (117)
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (60)
+2013/12/15 09:33:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/15 09:33:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xamppp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xamppp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xamppp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('DownloadFile')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Image/DownloadF...')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php/image/210
+---
+2013/12/15 09:35:24 [error] [exception.CException] exception 'CException' with message 'Property "RAuthorizer.downloader" is not defined.' in C:\xamppp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): CComponent->__get('downloader')
+#1 C:\xamppp\yii\framework\web\CController.php(1144): ImageController->accessRules()
+#2 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#8 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php
+---
+2013/12/15 09:36:51 [error] [exception.CException] exception 'CException' with message 'RightsModule and its behaviors do not have a method or closure named "getAuthItems".' in C:\xamppp\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): CComponent->__call('getAuthItems', Array)
+#1 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): RightsModule->getAuthItems()
+#2 C:\xamppp\yii\framework\web\CController.php(1144): ImageController->accessRules()
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php
+---
+2013/12/15 09:38:57 [error] [exception.CException] exception 'CException' with message 'RightsModule and its behaviors do not have a method or closure named "getAuthItems".' in C:\xamppp\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): CComponent->__call('getAuthItems', Array)
+#1 C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php(41): RightsModule->getAuthItems()
+#2 C:\xamppp\yii\framework\web\CController.php(1144): ImageController->accessRules()
+#3 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xamppp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xamppp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/view')
+#9 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xamppp\htdocs\vnphoto\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vnphoto/index.php/image/210
+HTTP_REFERER=http://localhost:1080/vnphoto/index.php
+---
+2013/12/15 09:39:12 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 09:39:48 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)
+2013/12/15 09:40:04 [error] [php] Undefined variable: file_field (C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php:341)
+Stack trace:
+#0 C:\xamppp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xamppp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xamppp\yii\framework\web\filters\CFilterChain.php(133): ImageController->runAction()
+#3 C:\xamppp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xamppp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xamppp\yii\framework\web\filters\CInlineFilter.php(58): ImageController->filterAccessControl()
+#6 C:\xamppp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xamppp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xamppp\yii\framework\web\CController.php(265): ImageController->runActionWithFilters()
+#9 C:\xamppp\yii\framework\web\CWebApplication.php(282): ImageController->run()
+#10 C:\xamppp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xamppp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xamppp\htdocs\vnphoto\index.php(13): CWebApplication->run()
+REQUEST_URI=/vnphoto/index.php/Image/DownloadFile/210?file_name=%2Fimages%2F2013%2F12%2F04%2F12671a9f29ad29fc6f4dc1fee67797ad.jpg&file_field=ImgLink
+in C:\xamppp\htdocs\vnphoto\protected\controllers\ImageController.php (341)
+in C:\xamppp\htdocs\vnphoto\index.php (13)

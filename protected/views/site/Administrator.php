@@ -43,7 +43,7 @@
 			</div>
                     
                            <div class="col-lg-3">
-                             <?php $image = CHtml::image(Yii::app()->baseUrl.'/images/Backend/categories.png');?>
+                             <?php $image = CHtml::image(Yii::app()->baseUrl.'/images/Backend/rights.jpg');?>
                               <a><?php echo CHtml::link($image,array('/rights'))?> </a>
                                <br>
                                <span class="h4 text-default">Permission management</span>

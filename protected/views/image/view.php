@@ -93,7 +93,7 @@ $this->breadcrumbs = array(
                     <p>Size : <?php echo number_format($model->size / 1048576, 2); ?> MB</p>
                              
                 </div>
-
+                
                 <div class="form-group ">
                     <?php
                     $this->widget('bootstrap.widgets.TbDetailView', array(
@@ -103,11 +103,14 @@ $this->breadcrumbs = array(
                             array(
                                 'type' => 'raw',
                                 'value' => function($data) {
+                         if(Yii::app()->user->IsGuest){ 
+                             return CHtml::link('Download',array('//user/Registerb'),array('class' => 'btn btn-default'));}
+                             else{
                                     return CHtml::link('Download', array('Image/DownloadFile',
                                                 'id' => $data->id,
                                                 'file_name' => $data->ImgLink,
                                                 'file_field' => 'ImgLink'), array('class' => 'btn btn-default')
-                                    );
+                             );}
                                 }),
                         ),
                         'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
@@ -117,6 +120,7 @@ $this->breadcrumbs = array(
                     <!--                    <button class="btn btn-default">Download</button>-->
 
                 </div>
+                
             </form>
         </div>
         <div class="form-group">            

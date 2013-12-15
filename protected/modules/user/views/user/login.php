@@ -15,8 +15,7 @@
 <div class="form">
     <?php echo CHtml::beginForm(); ?>
 
-    <p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
-
+   
     <?php echo CHtml::errorSummary($model_l); ?>
 
     <div class="form-group">

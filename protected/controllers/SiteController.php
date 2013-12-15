@@ -140,6 +140,14 @@ class SiteController extends Controller {
         $this->render('//site/pricing');
 	
     }
+     public function actionPricingSuccess(){
+        $this->render('//site/PricingSuccess');
+	
+    }
+     public function actionWebsiteTerm(){
+        $this->render('//site/WebsiteTerm');
+	
+    }
       public function actionPaypalButton()
         {
 

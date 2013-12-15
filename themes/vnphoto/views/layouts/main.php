@@ -57,8 +57,9 @@
           </ul>
         </li>
         <?php }?>
-        <li><?php echo CHtml::link('View Plans & Pricing <span class="glyphicon glyphicon-circle-arrow-right"></span>',array('//site/pricing'))?> </li>
-        <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
+        <li><?php if(Yii::app()->user->isGuest){echo CHtml::link('Start Downloading <span class="glyphicon glyphicon-circle-arrow-right"></span>',array('//user/Registerb'));}
+        else echo CHtml::link('View Plans & Pricing <span class="glyphicon glyphicon-circle-arrow-right"></span>',array('//site/pricing'))?> </li>
+        <li><?php if(Yii::app()->user->isGuest){ echo CHtml::link('Sign in',array('//user/Registerb'),array('role'=>'menuitem','tabindex'=>'-1'))?>  </li>
         <?php } ?> 
       </ul>
     </div>
