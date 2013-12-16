@@ -51,7 +51,7 @@
             
             <!--Continued Form-->
             <div class="pull-right">
-            <a target="_blank" href="https://www.nganluong.vn/button_payment.php?receiver=erikp.vn@gmail.com&product_name=vietnam photo&price=2000&return_url=http://localhost:1080/vnphoto/index.php/site/PricingSuccess&comments=Không" ><img src="https://www.nganluong.vn/data/images/buttons/3.gif"  border="0" /></a> 
+            <a target="_blank" href="https://www.nganluong.vn/button_payment.php?receiver=erikp.vn@gmail.com&product_name=vietnam photo&price=2000&return_url=http://localhost/vietnamnphoto/index.php/site/PricingSuccess&comments=Không" ><img src="https://www.nganluong.vn/data/images/buttons/3.gif"  border="0" /></a> 
          
             </div>
             <!--end -Continued Form-->

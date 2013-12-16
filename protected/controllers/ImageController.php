@@ -20,7 +20,6 @@ class ImageController extends Controller {
         );
     }
 
-    
     /**
      * Specifies the access control rules.
      * This method is used by the 'accessControl' filter.
@@ -29,7 +28,7 @@ class ImageController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view','search','SuggestImages','FirstIndex'),
+                'actions' => array('index', 'view', 'search', 'SuggestImages', 'FirstIndex'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -45,17 +44,22 @@ class ImageController extends Controller {
             ),
         );
     }
+
     /*
      * the default action for the controller
      */
+
     public $defaultAction = 'FirstIndex';
+
     /*
      * Display first page of site
      */
-    public function actionFirstIndex() { 
+
+    public function actionFirstIndex() {
         $model = new Image;
-        $this -> render('index',array('model'=>$model));
+        $this->render('index', array('model' => $model));
     }
+
     /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
@@ -66,7 +70,7 @@ class ImageController extends Controller {
         ));
     }
 
-    // Note: $image is an Imagick object, not a filename! See example use below.
+// Note: $image is an Imagick object, not a filename! See example use below.
     function autoRotateImage($image) {
         $orientation = $image->getImageOrientation();
 
@@ -84,43 +88,45 @@ class ImageController extends Controller {
                 break;
         }
 
-        // Now that it's auto-rotated, make sure the EXIF data is correct in case the EXIF gets saved with the image!
+// Now that it's auto-rotated, make sure the EXIF data is correct in case the EXIF gets saved with the image!
         $image->setImageOrientation(imagick::ORIENTATION_TOPLEFT);
     }
 
     public function createThumbnail($imagePath, $imageThumbPath) {
-        $im = new Imagick();        
+        $im = new Imagick();
         $im->readImage(Yii::app()->basePath . '/..' . $imagePath);
         $this->autoRotateImage($im);
         $watermark = new Imagick();
         $watermark->readimage(Yii::app()->basePath . '/../watermark/w3-fix.png');
 
-        //get size original image and watermark image
+//get size original image and watermark image
         $iWidth = $im->getimagewidth();
         $iHeight = $im->getimageheight();
         $wWidth = $watermark->getimagewidth();
         $wHeight = $watermark->getimageheight();
 
         if ($iHeight > $wHeight || $iWidth > $wWidth) {
-            // resize the watermark
+// resize the watermark
             $watermark->scaleImage($iWidth, $iHeight);
 
-            // get new size
+// get new size
             $wWidth = $watermark->getImageWidth();
             $wHeight = $watermark->getImageHeight();
         }
 
-        // calculate the position
+// calculate the position
         $x = ($iWidth - $wWidth) / 2;
         $y = ($iHeight - $wHeight) / 2;
 
         $im->compositeimage($watermark, Imagick::COMPOSITE_OVER, $x, $y);
 
         /*         * * thumbnail the image ** */
-        if($this->defineDimension(Yii::app()->basePath . '/..' .$imagePath)=='vertical')
+        $or = $this->defineDimension(Yii::app()->basePath . '/..' . $imagePath);
+        if ($or[2] == 'vertical') {
             $im->thumbnailImage(460, null);
-        else
-            $im->thumbnailimage (null, 460);
+        } else {
+            $im->thumbnailimage(null, 460);
+        }
         $im->writeimage(Yii::app()->basePath . '/..' . $imageThumbPath);
     }
 
@@ -150,7 +156,7 @@ class ImageController extends Controller {
 
     /**
      * Creates a new model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * 
      */
     public function actionCreate() {
         $model = new Image;
@@ -161,18 +167,18 @@ class ImageController extends Controller {
             if (isset($images) && count($images) > 0) {
                 foreach ($images as $image => $pic) {
                     $model->filename = $pic->name;
-                    //Get image extension
+//Get image extension
                     $model->format = $pic->getExtensionName();
-                    //Get image size in bytes
+//Get image size in bytes
                     $model->size = $pic->getSize();
-                    //Get path of the uploaded file on the server
+//Get path of the uploaded file on the server
                     $path = $pic->getTempName();
-                    //Get dimension of image that uploaded
+//Get dimension of image that uploaded
                     $r = $this->defineDimension($path);
                     $model->width = $r[0];
                     $model->height = $r[1];
                     $model->tendency = $r[2];
-                    // Encrypt name of image by md5
+// Encrypt name of image by md5
                     $thumbName = md5(date('dmy') . time() . rand());
                     $imageName = md5(date('YMD') . time() . rand());
                     $model->ImgLink = $this->createMkdir(date('Y', time()), date('m', time()), date('d', time())) . '/' . $imageName . '.' . $model->format;
@@ -216,6 +222,7 @@ class ImageController extends Controller {
                 Yii::app()->user->setFlash('success', "Update Successful");
                 $this->redirect(array('update', 'id' => $model->id));
             } else {
+                $this->redirect(array('update', 'id' => $model->id));
                 Yii::app()->user->setFlash('failure', "Update Failure");
             }
         }
@@ -266,9 +273,7 @@ class ImageController extends Controller {
                 'dataProvider' => $dataProvider,
                 'model' => $model,
             ));
-
-        }
-        else {
+        } else {
             if (isset($_GET['Image']))
                 $model->attributes = $_GET['Image'];
 
@@ -276,7 +281,7 @@ class ImageController extends Controller {
             $this->render('mainView', array(
                 'dataProvider' => $model->search(),
                 'model' => $model,
-                ));
+            ));
         }
     }
 
@@ -339,12 +344,12 @@ class ImageController extends Controller {
      */
 
     public function actionDownloadFile($id, $file_name) {
-        if(Yii::app()->user->getIsSuperuser()){
-            $model = $this->loadModel($id);
+
+        $model = $this->loadModel($id);
         EDownloadHelper::download(Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . $file_name);
         echo stream_get_contents($model->$file_field, -1, 0);
     }
-    }
+
     /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
@@ -369,7 +374,5 @@ class ImageController extends Controller {
             Yii::app()->end();
         }
     }
-
-    
 
 }

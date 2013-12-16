@@ -1,4 +1,4 @@
-<div class="span-8">
+<div class="col-lg-offset-4 span-8">
 <div class="form box">
 <?php echo CHtml::beginForm(); ?>
 <?php echo CHtml::errorSummary($model); ?>

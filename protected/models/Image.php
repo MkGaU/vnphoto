@@ -219,7 +219,7 @@ class Image extends CActiveRecord {
         ));
         if ($record !== null)
             return $record->id;
-        return $this->id;
+        return null;
     }
 
     /*
@@ -235,7 +235,7 @@ class Image extends CActiveRecord {
         ));
         if ($record !== null)
             return $record->id;
-        return $this->id;
+        return null;
     }
 
     protected function beforeSave() {
@@ -257,8 +257,8 @@ class Image extends CActiveRecord {
      * This is invoked after the record is saved.
      */
     protected function afterSave() {
-         $this->iduser= Yii::app()->user->id;
-        $this->addImages();
+         $this->id= Yii::app()->user->id;
+        
         parent::afterSave();
         Tags::model()->updateFrequency($this->_oldTags, $this->tags);
     }

@@ -43,22 +43,14 @@ $form = $this->beginWidget('CActiveForm', array(
                 );
                 ?>
                 <?php
-//                $this->widget('ext.dropzone.EDropzone', array(
-//                    'model' => $model,
-//                    'attribute' => 'filename',
-//                    'name'=>'Image',
-//                    'url' => $this->createUrl('image/Create'),
-//                    'mimeTypes' => array('image/jpeg', 'image/png'),
-//                    'onSuccess' => 'someJsFunction();',
-//                    'options' => array(),
-//                ));
+
                 $this->widget('CMultiFileUpload', array(
                     'name' => 'Image',
                     'model' => $model,
                     'attribute' => 'filename',
                     'accept' => 'jpg|png',
-                    'duplicate' => 'Duplicate file!', // useful, i think
-                    'denied' => 'Invalid file type', // useful, i think
+                    'duplicate' => 'Duplicate file!', 
+                    'denied' => 'Invalid file type', 
                     'max' => 10,
                     'remove' => Yii::t('ui', 'Remove'),
                     'htmlOptions' => array('size' => 50),

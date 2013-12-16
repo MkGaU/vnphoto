@@ -19,7 +19,7 @@
 <link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/css/jpicker-1.1.6.min.css" />
 <link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jPicker/jPicker.css" />
 <link rel="Stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/colorpicker/jquery.colourPicker.css" />
-
+<link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jQuery-Color-Picker/jquery.colorpicker.css" type="text/css" media="screen"/>
 <!-- Le fav and touch icons -->
 </head>
 
@@ -53,7 +53,7 @@
         <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php if(!Yii::app()->user->isGuest){echo 'Hello <strong class="text-danger">' . Yii::app()->session->get('admin') . '</strong>'?> <strong class="caret"></strong></a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <li role="presentation"><?php echo CHtml::link('Upload',array('//image/create'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>
+<!--            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ảnh đã  tải về máy</a></li>-->
             <li role="presentation"><?php echo CHtml::link('Invidvidual profile',array('//user/profile'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
             <li role="presentation" class="divider"></li>
             <li role="presentation"><?php echo CHtml::link('Logout',array('//user/logout'),array('role'=>'menuitem','tabindex'=>'-1'))?></li>
@@ -97,11 +97,7 @@
     </div>
 
   </div>
-</div>
-<!--End logo --> 
 
-<!-- Main Container -->
-<div class="container"> 
   
   <!-- row main content-->
   <div class="row"> 
@@ -111,7 +107,7 @@
     <!--end collum sidebar -->     
     <!--start collum primary-->     
       
-<?php //$this->renderPartial('/_menu'); ?>
+
 	<?php echo $content; ?>
  
     
@@ -123,7 +119,7 @@
 </div>
 <!-- End Container --> 
 
-<!--Footer-->
+<!--FOOTER-->
 
 <div class="footer">
   <div class="panel-footer">
@@ -131,6 +127,7 @@
         <div class="row">
 		<div class="col-lg-offset-1">
         <p>© 2013 VietnamPhoto   <a href="#">Home</a> · <a href="#">About</a> .</p>
+		</div>
 		</div>
 		<div class="row">
         <div class="col-lg-3 col-lg-offset-1">
@@ -175,13 +172,13 @@
 		  <img class="img-circle"  alt="140x140" style="width: 140px;" src="<?php echo Yii::app()->theme->baseUrl;?>/images/worldmap_sm.png">
 		  </div>
 		 
-		</div>
+
           <!-- /.col-lg-4 -->
       </div><!-- /.row -->
-   </footer>
+  </div>
+ </footer>
   </div>
 </div>
-
 <!-- END FOOTER-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 
@@ -197,7 +194,7 @@
 <script  src="<?php echo Yii::app()->theme->baseUrl;?>/js/jscolor/jscolor.js" type="text/javascript"></script>
 
 <!--colorPicker-->
-<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl;?>js/colorpicker1/src/jquery.simple-color.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/jQuery-Color-Picker/jquery.colorpicker.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorpicker/jquery.colourPicker.js" type="text/javascript"></script>
 <!--<script src="<?php echo Yii::app()->theme->baseUrl;?>/js/colorPicker/jquery.colorPicker.min.js" type="text/javascript"></script>-->
 <!-- Include all compiled plugins (below), or include individual files as needed --> 

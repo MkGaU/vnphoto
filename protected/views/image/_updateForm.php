@@ -170,7 +170,9 @@
 
             <div class="form-group">
                 <div class="btn-group">
-                    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-primary')); ?>
+                    <?php // echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-primary')); ?>
+                    <?php echo CHtml::button('Update', array('submit' => array('image/update','id'=>$model->id), 
+                        'class' => 'btn btn-primary', 'value' => 'Update')); ?>
                     <input type="reset" class="btn btn-default" value="Undo">
 
                 </div>

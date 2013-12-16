@@ -8,7 +8,7 @@
 
 
 
-<div class="container">
+<div class="container" >
   <div class="row" style="height:400px; margin-top:100px;">
     <div class="col-lg-3"></div>
     <div class="col-xs-4" >

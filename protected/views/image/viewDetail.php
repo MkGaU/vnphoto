@@ -48,7 +48,7 @@ $this->menu = array(
                 }(document, 'script', 'facebook-jssdk'));</script>
             <ul class="nav navbar-nav">
 
-                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Chia sẻ			<strong class="caret"></strong></a>
+                <li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Share			<strong class="caret"></strong></a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation"><div class="fb-share-button" data-href="http://www.shutterstock.com/pic-141205420" data-type="icon_link"></div></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Zing me</a></li>
@@ -75,7 +75,7 @@ $this->menu = array(
                 array(
                     'label' => CHtml::label('Author : ', '', array('class' => 'text-muted')),
                     'type' => 'html',
-                    'value' => CHtml::link(CHtml::encode($model->Author), array("/user/user/view", "id" => Yii::app()->user->id)),
+                    'value' => CHtml::encode($model->Author),
                 //'value'=> CHtml::encode(User::findname('1')),
                 ),
                 array(

@@ -62,11 +62,11 @@ return array(
             # registrationLogin path
             'registrationloginUrl' => array('/user/Registerb'),
             # registration path
-            'registrationUrl' => array('/user/registration'),
+            'registrationUrl' => array('/user/Registerb'),
             # recovery password path
             'recoveryUrl' => array('/user/recovery'),
             # login form path
-            'loginUrl' => array('/user/login'),
+            'loginUrl' => array('/user/Registerb'),
             # page after login
             'returnUrl' => array('//site/Administrator'),
             # page after logout
@@ -132,14 +132,14 @@ return array(
             ),
         ),
         // uncomment the following to enable URLs in path-format
-        'urlManager' => array(
-            'urlFormat' => 'path',
-            'rules' => array(
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-            ),
-        ),
+//        'urlManager' => array(
+//            'urlFormat' => 'path',
+//            'rules' => array(
+//                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+//                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+//                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+//            ),
+//        ),
         'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=vietnamphoto',
             'emulatePrepare' => true,
