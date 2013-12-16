@@ -28,16 +28,16 @@
                                    <?php $image = CHtml::image(Yii::app()->baseUrl.'/images/Backend/images.png');?>
                               <a><?php echo CHtml::link($image,array('/image/admin'))?> </a>
                                
-                               <br>
+                               <br></br><br>
                              <span class="h4 text-default">Photos Management</span>
                               
 			</div>
                     
                     
-                        <div class="col-lg-3">
+                        <div class="col-lg-5">
                             <?php $image = CHtml::image(Yii::app()->baseUrl.'/images/Backend/users.png');?>
                               <a><?php echo CHtml::link($image,array('/user/admin'))?> </a>
-                               <br>
+                               <br></br><br>
                                <span class="h4 text-default">Users management</span>
                                
 			</div>
@@ -46,7 +46,7 @@
                              <?php $image = CHtml::image(Yii::app()->baseUrl.'/images/Backend/rights.jpg');?>
                               <a><?php echo CHtml::link($image,array('/rights'))?> </a>
                                <br>
-                               <span class="h4 text-default">Permission management</span>
+                               <span class=" center h4 text-default">Rights management</span>
                                
 			</div>
                     

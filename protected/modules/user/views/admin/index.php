@@ -1,23 +1,4 @@
 
-
-<?php
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-    $('.search-form').toggle();
-    return false;
-});	
-$('.search-form form').submit(function(){
-    $.fn.yiiGridView.update('user-grid', {
-        data: $(this).serialize()
-    });
-    return false;
-});
-");
-
-?>
-
-
 <?php
 $this->breadcrumbs=array(
 	UserModule::t('Users')=>array('/user'),
@@ -97,4 +78,3 @@ $('.search-form form').submit(function(){
 		),
 	),
 )); ?>
-

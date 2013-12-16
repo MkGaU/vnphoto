@@ -26,6 +26,14 @@ $this->breadcrumbs=array(
 <?php echo Yii::app()->user->getFlash('profileMessage'); ?>
 </div>
 <?php endif; ?>
+<div id="container">
+    
+        <div class="col-lg-offset-3 col-lg-6">
+ <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="h3 col-lg-offset-4">Edit profile</p>
+                </div>
+                <div class="panel-body">
 <div class="form col-lg-offset-4">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'profile-form',
@@ -80,3 +88,7 @@ $this->breadcrumbs=array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+</div>
+     </div>
+            </div>
+    </div>
