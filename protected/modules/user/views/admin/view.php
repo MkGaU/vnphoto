@@ -5,7 +5,7 @@
     <li class="active"><?php echo CHtml::link('View Users') ?></li>
     <li><?php echo CHtml::link('Update Inform User',array('update','id'=>$model->id)) ?></li>
     <li ><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
-    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+  
    
 </ul>
 <?php

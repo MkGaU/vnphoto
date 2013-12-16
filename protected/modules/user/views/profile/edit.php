@@ -2,7 +2,6 @@
     <li class="active"><?php echo CHtml::link('Edit Profile',array('//user/profile/edit')) ?></li>
     <li><?php echo CHtml::link('Change Password',array('//user/profile/changepassword')) ?></li>
     <li><?php echo CHtml::link('Profile',array('//user/profile')) ?></li>
-    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
    
 </ul>
 <?php $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Profile");
@@ -60,7 +59,7 @@ $this->breadcrumbs=array(
 		} elseif ($field->field_type=="TEXT") {
 			echo $form->textArea($profile,$field->varname,array('rows'=>6, 'cols'=>50));
 		} else {
-			echo $form->textField($profile,$field->varname,array('class'=>'form-control','style'=>'width:250px','size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
+			echo $form->textField($profile,$field->varname,array('class'=>'form-control','style'=>'color:red;','width:250px','size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
 		}
 		echo $form->error($profile,$field->varname); ?>
 	</div>	
@@ -71,13 +70,13 @@ $this->breadcrumbs=array(
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username',array('class'=>'form-control','style'=>'width:250px','size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'username'); ?>
+		<?php echo $form->error($model,'username',array('style'=>'color:red;')); ?>
 	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('class'=>'form-control','style'=>'width:250px','size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'email'); ?>
+		<?php echo $form->error($model,'email',array('style'=>'color:red;')); ?>
 	</div>
 
 	<div class="form-group buttons">

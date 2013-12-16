@@ -21,11 +21,13 @@
     <div class="form-group">
         <?php echo CHtml::activeLabelEx($model_l, 'username'); ?>
         <?php echo CHtml::activeTextField($model_l, 'username', array('class' => 'form-control')) ?>
+        <?php echo CHtml::error($model_l,'username',array('style'=>'color:red;')); ?>
     </div>
 
     <div class="form-group">
         <?php echo CHtml::activeLabelEx($model_l, 'password'); ?>
         <?php echo CHtml::activePasswordField($model_l, 'password', array('class' => 'form-control')) ?>
+        <?php echo CHtml::error($model_l,'password',array('style'=>'color:red;')); ?>
     </div>
 
     <div class="form-group">

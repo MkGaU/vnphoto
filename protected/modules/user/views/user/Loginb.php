@@ -6,10 +6,12 @@
 <div class="form-group">
 <?php echo CHtml::activeLabelEx($model,'username'); ?>
 <?php echo CHtml::activeTextField($model,'username', array('class'=>'form-control','style'=>'width:250px','size'=>35)) ?>
+<?php echo CHtml::error($model,'username',array('style'=>'color:red;')); ?>
 </div>
 <div class="form-group">
 <?php echo CHtml::activeLabelEx($model,'password'); ?>
 <?php echo CHtml::activePasswordField($model,'password', array('class'=>'form-control','style'=>'width:250px','size'=>35)) ?>
+<?php echo CHtml::error($model,'password',array('style'=>'color:red;')); ?>
 </div>
 <div class="form-group">
 <p class="hint">

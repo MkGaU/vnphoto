@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
 </div>
 <?php else: ?>
 
-<div class="form">
+<div class="form col-lg-offset-4">
 <?php echo CHtml::beginForm(); ?>
 
 	<?php echo CHtml::errorSummary($form); ?>
@@ -21,7 +21,7 @@ $this->breadcrumbs=array(
 	<div class="form-group">
 		<?php echo CHtml::activeLabel($form,'login_or_email'); ?>
 		<?php echo CHtml::activeTextField($form,'login_or_email',array('class'=>'form-control','style'=>'width:250px')) ?>
-		<p class="hint"><?php echo UserModule::t("Please enter your login or email addres."); ?></p>
+		<p class="hint" style="color:red;"><?php echo UserModule::t("Please enter your login or email addres."); ?></p>
 	</div>
 	
 	<div class="form-group submit">
@@ -30,4 +30,4 @@ $this->breadcrumbs=array(
 
 <?php echo CHtml::endForm(); ?>
 </div><!-- form -->
-<?php endif; ?>
+<?php endif; ?> 

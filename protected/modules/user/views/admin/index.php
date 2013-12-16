@@ -31,7 +31,7 @@ $('.search-form form').submit(function(){
     <li><?php echo CHtml::link('List User',array('//user')) ?></li>
     <li><?php echo CHtml::link('Create User',array('//user/admin/create')) ?></li>
       <li><?php echo Chtml::link('Manage profile field',array('//user/profileField/admin')) ?></li>
-    <li><?php echo Chtml::link('Logout',array('//user/logout')) ?></li>
+    
    
 </ul>
 <h3 class="col-lg-offset-4">Manage Users</h3>

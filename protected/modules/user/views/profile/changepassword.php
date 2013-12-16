@@ -46,13 +46,13 @@ $this->breadcrumbs=array(
 	<div class="form-group">
 	<?php echo $form->labelEx($model,'oldPassword'); ?>
 	<?php echo $form->passwordField($model,'oldPassword',array('style'=>'width:250px','class'=>'form-control')); ?>
-	<?php echo $form->error($model,'oldPassword'); ?>
+	<?php echo $form->error($model,'oldPassword',array('style'=>'color:red;')); ?>
 	</div>
 	
 	<div class="form-group">
 	<?php echo $form->labelEx($model,'password'); ?>
 	<?php echo $form->passwordField($model,'password',array('style'=>'width:250px','class'=>'form-control')); ?>
-	<?php echo $form->error($model,'password'); ?>
+	<?php echo $form->error($model,'password',array('style'=>'color:red;')); ?>
 	<p class="hint">
 	<?php echo UserModule::t("Minimal password length 4 symbols."); ?>
 	</p>
@@ -61,7 +61,7 @@ $this->breadcrumbs=array(
 	<div class="form-group">
 	<?php echo $form->labelEx($model,'verifyPassword'); ?>
 	<?php echo $form->passwordField($model,'verifyPassword',array('style'=>'width:250px','class'=>'form-control')); ?>
-	<?php echo $form->error($model,'verifyPassword'); ?>
+	<?php echo $form->error($model,'verifyPassword',array('style'=>'color:red;')); ?>
 	</div>
 	
 	

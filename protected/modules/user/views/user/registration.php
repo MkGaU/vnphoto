@@ -33,7 +33,7 @@
             );
             ?>   
 
-            <?php echo $form->error($model, 'username'); ?>
+            <?php echo $form->error($model, 'username',array('style'=>'color:red;')); ?>
         </div>
 
         <div class="form-group">
@@ -44,7 +44,7 @@
                     )
             );
             ?> 
-            <?php echo $form->error($model, 'email'); ?>
+            <?php echo $form->error($model, 'email',array('style'=>'color:red;')); ?>
         </div>
         <div class="form-group">
             <?php echo $form->labelEx($model, 'password'); ?>
@@ -54,7 +54,7 @@
                     )
             );
             ?> 
-            <?php echo $form->error($model, 'password'); ?>
+            <?php echo $form->error($model, 'password',array('style'=>'color:red;')); ?>
             <p class="hint">
                 <?php // echo UserModule::t("Minimal password length 4 symbols."); ?>
             </p>
@@ -69,7 +69,7 @@
                     )
             );
             ?> 
-            <?php echo $form->error($model, 'verifyPassword'); ?>
+            <?php echo $form->error($model, 'verifyPassword',array('style'=>'color:red;')); ?>
         </div>
 
 
@@ -91,7 +91,7 @@
                         echo $form->textField($profile, $field->varname, array('class' => 'form-control'), array('size' => 20, 'maxlength' => (($field->field_size) ? $field->field_size : 255)));
                     }
                     ?>
-                    <?php echo $form->error($profile, $field->varname); ?>
+                    <?php echo $form->error($profile, $field->varname,array('style'=>'color:red;')); ?>
                 </div>	
                 <?php
             }
@@ -116,7 +116,7 @@
              Yes, e-mail me updates and special offers from VietnamPhoto </p>
           <p class="checkbox">
             <input type="checkbox" id="inlineCheckbox2" value="vertical" required >
-              I agree to Vietnamphoto's <?php echo CHtml::link('Website term',array('//site/WebsiteTerm')) ?>. </p>
+              I agree to Vietnamphoto's <?php echo CHtml::link('Website term',array('//site/WebsiteTerm'),array("target"=>"_blank")) ?></p>
         </div>
         
         <div class="form-group">
