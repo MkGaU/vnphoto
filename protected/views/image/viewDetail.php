@@ -115,11 +115,16 @@ $this->menu = array(
                             array(
                                 'type' => 'raw',
                                 'value' => function($data) {
+                         if(Yii::app()->user->IsGuest){ 
+                             return CHtml::link('Download',array('//site/price '),array('class' => 'btn btn-default'));
+                             
+                         }
+                             else{
                                     return CHtml::link('Download', array('Image/DownloadFile',
                                                 'id' => $data->id,
                                                 'file_name' => $data->ImgLink,
                                                 'file_field' => 'ImgLink'), array('class' => 'btn btn-default')
-                                    );
+                             );}
                                 }),
                         ),
                         'itemTemplate' => "<div class=\"{class}\">{label}{value}</div>",
